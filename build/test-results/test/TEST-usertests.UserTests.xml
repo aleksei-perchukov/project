@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="usertests.UserTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-24T15:03:38" hostname="belvg-Lenovo-ideapad-Y700-15ISK" time="12.482">
+  <properties/>
+  <testcase name="Create user test" classname="usertests.UserTests" time="12.482"/>
+  <system-out><![CDATA[Bye-bye!
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: /home/belvg/IdeaProjects/skanva.dk/build/downloads/1666623818568_120063_1
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 106.0.5249.61 (resolved driver for Chrome 106)
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /home/belvg/.cache/selenium/chromedriver/linux64/106.0.5249.61/chromedriver
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 55645
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Oct 24, 2022 6:03:43 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected upstream dialect: W3C
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+Oct 24, 2022 6:03:43 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found exact CDP implementation for version 106
+[Test worker] INFO com.codeborne.selenide.webdriver.BrowserResizer - Set browser size to 1920x1080
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=106.0.5249.119 Platform=LINUX
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.9.0
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.5.0 build revision: fe167b119a
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -> ChromeDriver: chrome on LINUX (b5535909a9a90733e9a200063c1ed5e2)
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on LINUX (b5535909a9a90733e9a200063c1ed5e2),proxy=null,downloadsFolder=/home/belvg/IdeaProjects/skanva.dk/build/downloads/1666623818568_120063_1] in 1 [size=1]
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 1 [size=1]
+]]></system-err>
+</testsuite>

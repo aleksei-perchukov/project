@@ -1,0 +1,815 @@
+<html lang="da"><head>
+    <script src="//az19942.vo.msecnd.net/script/raptor-3.0.min.js" async=""></script><script type="text/javascript" async="" src="//storage.googleapis.com/code.snapengage.com/js/26ac4d12-84e8-4b35-b333-75124fb63a05.js"></script><script async="" src="https://s.pinimg.com/ct/lib/main.0e6a432f.js"></script><script async="" src="https://sparxpres.dk/app/webintegration/static/module-loader.js"></script><script async="" src="https://s.pinimg.com/ct/core.js"></script><script>
+    var LOCALE = 'da\u002DDK';
+    var BASE_URL = 'https\u003A\u002F\u002Fdev.skanva.dk\u002F';
+    var require = {
+        'baseUrl': 'https\u003A\u002F\u002Fdev.skanva.dk\u002Fstatic\u002Fversion1663912349\u002Ffrontend\u002FBelVG\u002Fvinduesgrossisten\u002Fda_DK'
+    };</script>    <meta charset="utf-8">
+<meta name="title" content="Opret ny kundekonto">
+<meta name="robots" content="NOINDEX,FOLLOW">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>Opret ny kundekonto</title>
+<link rel="stylesheet" type="text/css" media="all" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/Mageplaza_Blog/css/mpBlogIcon.css">
+<link rel="stylesheet" type="text/css" media="all" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/css/styles.css">
+<link rel="stylesheet" type="text/css" media="all" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/Mageplaza_Core/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/Mageplaza_Core/css/magnific-popup.css">
+<link rel="stylesheet" type="text/css" media="all" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/Klarna_Keb/css/button.css">
+<link rel="stylesheet" type="text/css" media="print" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/css/print.css">
+<link rel="icon" sizes="16x16" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/images/favicon/16x16.ico">
+<link rel="icon" sizes="32x32" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/images/favicon/32x32.ico">
+<link rel="icon" sizes="128x128" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/images/favicon/128x128.ico">
+<link rel="icon" type="image/x-icon" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/Magento_Theme/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/Magento_Theme/favicon.ico">
+<script type="text/javascript" src="https://dev.skanva.dk/static/version1663912349/_cache/merged/7b47becf2f22ed279c20ddf2ffe8ca17.min.js"></script>
+<meta name="facebook-domain-verification" content="c4per0234mngi1sh3b5ahx93c2vn21">
+
+
+<!-- Pinterest Tag -->
+<script>
+!function(e){if(!window.pintrk){window.pintrk = function () {
+window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+  n=window.pintrk;n.queue=[],n.version="3.0";var
+  t=document.createElement("script");t.async=!0,t.src=e;var
+  r=document.getElementsByTagName("script")[0];
+  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load', '2613372271815', {em: '<user_email_address>'});
+pintrk('page');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt=""
+  src="https://ct.pinterest.com/v3/?event=init&tid=2613372271815&pd[em]=<hashed_email_address>&noscript=1" />
+</noscript>
+<!-- end Pinterest Tag -->    <!--TrustBox script-->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async=""></script>
+
+
+    <!-- Start of Sleeknote signup and lead generation tool - www.sleeknote.com -->
+    <script type="text/javascript" charset="utf-8" src="//sleeknotecustomerscripts.sleeknote.com/62338.js"></script><script id="sleeknoteScript" type="text/javascript">
+         (function () {
+         var sleeknoteScriptTag = document.createElement('script');
+         sleeknoteScriptTag.type = 'text/javascript';
+         sleeknoteScriptTag.charset = 'utf-8';
+         sleeknoteScriptTag.src = ('//sleeknotecustomerscripts.sleeknote.com/62338.js');
+         var s = document.getElementById('sleeknoteScript');
+         s.parentNode.insertBefore(sleeknoteScriptTag, s);
+         })();
+    </script>
+        <!-- End of Sleeknote signup and lead generation tool - www.sleeknote.com -->
+
+    <script>
+        function LoadCookieInformation() {
+            var banner = document.createElement('script');
+            banner.type = 'text/javascript';
+            banner.setAttribute('data-culture','DA');
+            banner.src = 'https://policy.app.cookieinformation.com/uc.js';
+            document.head.appendChild(banner);
+        }
+        LoadCookieInformation();
+    </script><script type="text/javascript" data-culture="DA" src="https://policy.app.cookieinformation.com/uc.js"></script><iframe name="cookie-information-sharinglibrary-iframe" src="https://policy.app.cookieinformation.com/cookiesharingiframe.html" title="Cookie Information cookie sharing library" style="display: none;"></iframe>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_PageCache/js/form-key-provider": {
+                    "isPaginationCacheEnabled":
+                        0                }
+            }
+        }
+    </script>
+    <script>
+        window.cityAutocompleteConfig = {"data_provider_code":"dawa","uid":"nbr@vinduesgrossisten.dk","api_key":"323e059c-e1dc-4e02-b070-afe6a2cf59f2","store_code":"default"};
+    </script>
+
+    <!--Magento Security Scan-->
+    <!--EJ5TC40XIjL4Bhhkw3XmTdBHut7o9vRg-->
+
+    <script>
+    (function(d,l){var f=d.getElementsByTagName('script')[0],s=d.createElement('script');s.async=true;s.src='https://sparxpres.dk/app/webintegration/static/module-loader.js';s.onload=function(){sparxpresClientLoader(l);};f.parentNode.insertBefore(s,f);})(document,'058bce0d-224a-4e72-9d49-19c2d11b4974');
+    </script>
+
+<link rel="prefetch" as="script" href="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/magepack/bundle-common.min.js">
+
+
+
+    <script type="text/javascript">
+        window.raptor||(window.raptor={q:[{event:"trackevent",params:{p1:"pageview"}}],push:function(event,params,options){this.q.push({event:event,params:params,options:options})},customerId:"15948"});
+    </script>
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="mage/common" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/magepack/bundle-common.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="js/babel-polyfill.min" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/js/babel-polyfill.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="BelVG_MageWorxChangeOfMaterialsInOffer/js/catalog/product/materials-updater" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/BelVG_MageWorxChangeOfMaterialsInOffer/js/catalog/product/materials-updater.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/ui-modules/widget" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/jquery/ui-modules/widget.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="BelVG_MageWorxChangeOfMaterialsInOffer/js/catalog/product/materials-management" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/BelVG_MageWorxChangeOfMaterialsInOffer/js/catalog/product/materials-management.min.js"></script><script src="https://assets.emaerket.dk/widget/v3/widget.min.js?v=20220831-502" async=""></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="BelVG_Minicart/js/minicart-mobile" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/BelVG_Minicart/js/minicart-mobile.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="Magento_ReCaptchaWebapiUi/js/jquery-mixin" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/Magento_ReCaptchaWebapiUi/js/jquery-mixin.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/ui-modules/core" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/jquery/ui-modules/core.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/z-index" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/jquery/z-index.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="BelVG_MageWorxOptionServerSideRender/js/catalog/product/url-managment-mixin" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/BelVG_MageWorxOptionServerSideRender/js/catalog/product/url-managment-mixin.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/ui-modules/version" src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/jquery/ui-modules/version.min.js"></script></head>
+<body data-container="body" data-mage-init="{&quot;loaderAjax&quot;: {}, &quot;loader&quot;: { &quot;icon&quot;: &quot;https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/images/loader-1.gif&quot;}}" class="store-code-default website-code-base customer-group-name-general not-logged customer-account-create page-layout-1column" id="html-body">
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_PageBuilder/js/widget-initializer": {
+                "config": {"[data-content-type=\"slider\"][data-appearance=\"default\"]":{"Magento_PageBuilder\/js\/content-type\/slider\/appearance\/default\/widget":false},"[data-content-type=\"map\"]":{"Magento_PageBuilder\/js\/content-type\/map\/appearance\/default\/widget":false},"[data-content-type=\"row\"]":{"Magento_PageBuilder\/js\/content-type\/row\/appearance\/default\/widget":false},"[data-content-type=\"tabs\"]":{"Magento_PageBuilder\/js\/content-type\/tabs\/appearance\/default\/widget":false},"[data-content-type=\"slide\"]":{"Magento_PageBuilder\/js\/content-type\/slide\/appearance\/default\/widget":{"buttonSelector":".pagebuilder-slide-button","showOverlay":"hover","dataRole":"slide"}},"[data-content-type=\"banner\"]":{"Magento_PageBuilder\/js\/content-type\/banner\/appearance\/default\/widget":{"buttonSelector":".pagebuilder-banner-button","showOverlay":"hover","dataRole":"banner"}},"[data-content-type=\"buttons\"]":{"Magento_PageBuilder\/js\/content-type\/buttons\/appearance\/inline\/widget":false},"[data-content-type=\"products\"][data-appearance=\"carousel\"]":{"Magento_PageBuilder\/js\/content-type\/products\/appearance\/carousel\/widget":false}},
+                "breakpoints": {"desktop":{"label":"Desktop","stage":true,"default":true,"class":"desktop-switcher","icon":"Magento_PageBuilder::css\/images\/switcher\/switcher-desktop.svg","conditions":{"min-width":"1024px"},"options":{"products":{"default":{"slidesToShow":"5"}}}},"tablet":{"conditions":{"max-width":"1024px","min-width":"768px"},"options":{"products":{"default":{"slidesToShow":"4"},"continuous":{"slidesToShow":"3"}}}},"mobile":{"label":"Mobile","stage":true,"class":"mobile-switcher","icon":"Magento_PageBuilder::css\/images\/switcher\/switcher-mobile.svg","media":"only screen and (max-width: 768px)","conditions":{"max-width":"768px","min-width":"640px"},"options":{"products":{"default":{"slidesToShow":"3"}}}},"mobile-small":{"conditions":{"max-width":"640px"},"options":{"products":{"default":{"slidesToShow":"2"},"continuous":{"slidesToShow":"1"}}}}}            }
+        }
+    }
+</script>
+<script>
+    require([
+        'jquery',
+        'uiRegistry',
+        'BelVG_MageWorxUrls/js/catalog/product/url-updater'
+    ], function($, registry, optionUrlUpdater) {
+
+        registry.get('mageworxOptionBase', function(optionBase) {
+            var order = 1300,
+                config = {};
+            if (optionBase) {
+                optionBase.addUpdater(order, optionUrlUpdater(config));
+            } else {
+                var updaters = registry.get('mageworxOptionUpdaters');
+                if (!updaters) {
+                    updaters = {};
+                }
+                updaters[order] = optionUrlUpdater(config);
+                registry.set('mageworxOptionUpdaters', updaters);
+            }
+        });
+
+    });
+</script>
+<script>
+    require([
+        'jquery',
+        'uiRegistry',
+        'BelVG_MageWorxChangeOfMaterialsInOffer/js/catalog/product/materials-updater'
+    ], function($, registry, optionMaterialsUpdater) {
+
+        registry.get('mageworxOptionBase', function(optionBase) {
+            var order = 1400,
+                config = {};
+            if (optionBase) {
+                optionBase.addUpdater(order, optionMaterialsUpdater(config));
+            } else {
+                var updaters = registry.get('mageworxOptionUpdaters');
+                if (!updaters) {
+                    updaters = {};
+                }
+                updaters[order] = optionMaterialsUpdater(config);
+                registry.set('mageworxOptionUpdaters', updaters);
+            }
+        });
+
+    });
+</script>
+<!-- TODO: remove style attr while rewriting critical.css -->
+<div class="cookie-status-message" id="cookie-status" style="display: none;">
+    Butikken vil ikke fungere korrekt i tilfælde, hvor cookies er deaktiveret.</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "cookieStatus": {}
+        }
+    }
+</script>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "mage/cookies": {
+                "expires": null,
+                "path": "\u002F",
+                "domain": ".dev.skanva.dk",
+                "secure": true,
+                "lifetime": "3600"
+            }
+        }
+    }
+</script>
+
+<script>
+    window.cookiesConfig = window.cookiesConfig || {};
+    window.cookiesConfig.secure = true;
+</script><script>    require.config({
+        map: {
+            '*': {
+                wysiwygAdapter: 'mage/adminhtml/wysiwyg/tiny_mce/tinymce5Adapter'
+            }
+        }
+    });</script><script>
+    require.config({
+        paths: {
+            googleMaps: 'https\u003A\u002F\u002Fmaps.googleapis.com\u002Fmaps\u002Fapi\u002Fjs\u003Fv\u003D3\u0026key\u003D'
+        },
+        config: {
+            'Magento_PageBuilder/js/utils/map': {
+                style: ''
+            },
+            'Magento_PageBuilder/js/content-type/map/preview': {
+                apiKey: '',
+                apiKeyErrorMessage: 'You\u0020must\u0020provide\u0020a\u0020valid\u0020\u003Ca\u0020href\u003D\u0027https\u003A\u002F\u002Fdev.skanva.dk\u002Fadminhtml\u002Fsystem_config\u002Fedit\u002Fsection\u002Fcms\u002F\u0023cms_pagebuilder\u0027\u0020target\u003D\u0027_blank\u0027\u003EGoogle\u0020Maps\u0020API\u0020key\u003C\u002Fa\u003E\u0020to\u0020use\u0020a\u0020map.'
+            },
+            'Magento_PageBuilder/js/form/element/map': {
+                apiKey: '',
+                apiKeyErrorMessage: 'You\u0020must\u0020provide\u0020a\u0020valid\u0020\u003Ca\u0020href\u003D\u0027https\u003A\u002F\u002Fdev.skanva.dk\u002Fadminhtml\u002Fsystem_config\u002Fedit\u002Fsection\u002Fcms\u002F\u0023cms_pagebuilder\u0027\u0020target\u003D\u0027_blank\u0027\u003EGoogle\u0020Maps\u0020API\u0020key\u003C\u002Fa\u003E\u0020to\u0020use\u0020a\u0020map.'
+            },
+        }
+    });
+</script>
+
+<script>
+    require.config({
+        shim: {
+            'Magento_PageBuilder/js/utils/map': {
+                deps: ['googleMaps']
+            }
+        }
+    });
+</script>
+<!-- Container for scripts -->
+<div class="page-wrapper"><header class="page-header"><div class="panel panel__top"><div class="panel header"><div class="delivery-info-wrap"><style>#html-body [data-pb-style=BH8B2V7]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0;margin-left:0;margin-top:0;margin-right:0}#html-body [data-pb-style=F4I42C5]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}</style><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-video-fallback-src="" data-element="inner" data-pb-style="BH8B2V7"><div data-content-type="text" data-appearance="default" data-element="main" data-pb-style="F4I42C5"><p><a style="text-decoration:none" tabindex="0" href="/kundeservice/levering">Fragt fra: 395,-</a></p></div></div></div></div><div class="emarketicon"><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-element="inner" data-pb-style="607D682F30B8C"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="607D682F30B98" data-decoded="true"><a href="https://certifikat.emaerket.dk/vinduesgrossisten.dk" target="_blank"><span class="emarket-icon-wrap"></span></a></div></div></div><style>#html-body [data-pb-style="607D682F30B8C"]{justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}#html-body [data-pb-style="607D682F30B98"]{border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}</style></div><div class="trust-pilot"><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-element="inner" data-pb-style="607D682F307CA"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="607D682F307D6" data-decoded="true"><div class="trustpilot-widget" data-locale="da-DK" data-template-id="5419b732fbfb950b10de65e5" data-businessunit-id="53074e2300006400057843ac" data-style-height="20px" data-style-width="304px" data-theme="light" style="position: relative;"><iframe title="Customer reviews powered by Trustpilot" loading="auto" src="https://widget.trustpilot.com/trustboxes/5419b732fbfb950b10de65e5/index.html?templateId=5419b732fbfb950b10de65e5&amp;businessunitId=53074e2300006400057843ac#locale=da-DK&amp;styleHeight=20px&amp;styleWidth=304px&amp;theme=light" style="position: relative; height: 20px; width: 304px; border-style: none; display: block; overflow: hidden;"></iframe></div></div></div></div><style>#html-body [data-pb-style="607D682F307CA"]{justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin-left: 0px; margin-top: 0px; margin-right: 0px;}#html-body [data-pb-style="607D682F307D6"]{border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}</style></div><div class="shedule-info"><ul class="address-block">
+    <li class="phone">
+        <a href="tel:+72 62 90 40">72 62 90 40</a>
+    </li>
+</ul>
+
+<div id="open-hours" class="block" data-bind="scope:'open-hours'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "open-hours": {
+                    "component": "BelVG_OpenHours/js/schedule",
+                    "elementId": "open-hours",
+                    "ajaxUrl": "https://dev.skanva.dk/openhours/schedule/ajax/",
+                    "config": {"open_text":"Telefonen er \u00e5ben i dag til kl. {today_close}","closed_text":"Telefonen er lukket, vi \u00e5bner igen p\u00e5 {nearest_open_day} kl. {nearest_open}","weekend_closed_text":"Telefonen er lukket, vi \u00e5bner igen p\u00e5 {nearest_open_day} kl. {nearest_open}"}                }
+            }
+        }
+    }
+}
+</script>
+</div></div></div><div class="wrapper header content panel__middle">    <a class="logo" href="https://dev.skanva.dk/" title="">
+                <img src="https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg" title="" alt="">
+            </a>
+<div class="wrapper header content middle-header"><ul class="buttons-cont"><div class="action nav-toggle">
+    <div class="cont">
+        <p class="ico">
+            <span></span>
+        </p>
+        <strong class="head">
+            Menu        </strong>
+    </div>
+</div>
+
+<div class="product__menu">
+    <div class="product__menu__button"></div>
+    <div class="cont">
+        <p class="ico">
+            <span></span>
+        </p>
+        <strong class="head">
+            Beregn pris        </strong>
+    </div>
+</div>
+</ul>    
+                    
+<nav class="belvg-navigation desktop view__horizontal position__left desktop" data-action="navigation">
+    <ul class="ui-menu" data-mage-init="{&quot;menu&quot;: {}}">
+        <li class="belvg-navigation__item parent-menu-item type__dropdown has-parent"><a class="belvg-navigation__link parent" href="https://dev.skanva.dk/#"><span class="text">Kvalitet</span></a><div class="submenu"><ul class="submenu__list"><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kvalitet/garanti"><span class="text">Garanti</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kvalitet/vinduesgrossistens-kvalitet"><span class="text">Vinduesgrossistens Kvalitet</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kvalitet/energikrav"><span class="text">Energikrav</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kvalitet/materiale-og-design"><span class="text">Materiale og design</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kvalitet/vinduesgrossistens-fordele"><span class="text">Vinduesgrossistens fordele</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kvalitet/leverandoerer"><span class="text">Leverandører</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kvalitet/kvalitetsgaranti"><span class="text">Kvalitetsgaranti</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kvalitet/indbrudssikre-vinduer-og-doere"><span class="text">Indbrudssikre vinduer og døre</span></a></li></ul><div class="submenu__banner submenu__banner-bottom"><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-element="inner" style="justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px;"></div></div></div></div></li><li class="belvg-navigation__item type__dropdown has-parent"><a class="belvg-navigation__link parent" href="https://dev.skanva.dk/#"><span class="text">Kundeservice</span></a><div class="submenu"><ul class="submenu__list"><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kundeservice/support-og-service"><span class="text">Support og service</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kundeservice/levering"><span class="text">levering</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kundeservice/snittegninger"><span class="text">Snittegninger</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kundeservice/opmaaling"><span class="text">Opmåling</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kundeservice/montering"><span class="text">Montering</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kundeservice/medarbejdere"><span class="text">Medarbejdere</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kundeservice/saadan-bestiller-du"><span class="text">Sådan bestiller du</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/kundeservice/vedligehold"><span class="text">Vedligehold</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/video"><span class="text">Video</span></a></li></ul></div></li><li class="belvg-navigation__item parent-menu-item type__dropdown has-parent"><a class="belvg-navigation__link parent" href="https://dev.skanva.dk/#"><span class="text">Inspiration</span></a><div class="submenu"><ul class="submenu__list"><li class="submenu__item type__link"><a class="submenu__link" href="https://dev.skanva.dk/inspiration/referencer"><span class="text">Referencer</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/inspiration/idegalleri/"><span class="text">Idégalleri</span></a></li><li class="submenu__item type__dropdown view__fullwidth"><a class="submenu__link" href="https://dev.skanva.dk/samarbejder"><span class="text">Samarbejder</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/inspiration/boligtyper"><span class="text">Boligtyper</span></a></li><li class="submenu__item type__dropdown"><a class="submenu__link" href="https://dev.skanva.dk/inspiration/tips-til-hjemmet"><span class="text">Tips til hjemmet</span></a></li></ul></div></li><li class="belvg-navigation__item type__link"><a class="belvg-navigation__link" href="https://dev.skanva.dk/info"><span class="text">info</span></a></li><li class="belvg-navigation__item type__link"><a class="belvg-navigation__link" href="https://dev.skanva.dk/info/kontakt"><span class="text">Kontakt</span></a></li>    </ul>
+</nav>
+            <ul class="header links">
+<!--        <li class="om_os">-->
+<!--            <a href="--><!--">--><!--</a>-->
+<!--        </li>-->
+    
+        <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "customer": {
+                            "component": "Magento_Customer/js/view/customer"
+                        }
+                    }
+                }
+            }
+        }
+
+        </script>
+        <li class="link authorization-link" data-label="eller">
+    <a href="https://dev.skanva.dk/customer/account/login/">Log ind</a>
+</li>
+</ul></div></div><div class="panel panel__bottom"><div class="wrapper header content bottom-header"><div data-content-type="row" data-appearance="contained" data-element="main"><div data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-element="inner" data-pb-style="607D682F310BD"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="607D682F310C8" data-decoded="true">
+<nav class="belvg-navigation desktop view__horizontal position__left product__menu-list grid-menu-sidebar" data-action="navigation">
+    <ul class="ui-menu" data-mage-init="{&quot;menu&quot;: {}}">
+        <li class="belvg-navigation__item parent-menu-item type__grid-with-sidebar view__fullwidth has-parent"><a class="belvg-navigation__link parent" href="https://dev.skanva.dk/vinduer" alt="Vinduer"><span class="text">Vinduer</span></a><div class="submenu with_sidebar"><div class="wrapper"><div class="submenu__wrapper"><a class="submenu__root-img" href="https://dev.skanva.dk/vinduer" alt="Vinduer"><span class="label">Vinduer</span></a><ul class="submenu__grid submenu__grid-bottom"><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/scandiline/topstyrede-vinduer" alt="Topstyrede vinduer"><span class="text">Topstyrede vinduer</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/scandiline/dannebrogsvinduer" alt="Dannebrogsvinduer"><span class="text">Dannebrogsvinduer</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/scandiline/sidehaengte-vinduer" alt="Sidehængte vinduer uden sprosser"><span class="text">Sidehængte vinduer uden sprosser</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/scandiline/new-yorker-vinduer" alt="Indvendige New Yorker vinduer"><span class="text">Indvendige New Yorker vinduer</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/scandiline/bondehusvinduer" alt="Bondehusvinduer"><span class="text">Bondehusvinduer</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/scandiline/palaevinduer" alt="Palævinduer"><span class="text">Palævinduer</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/scandiline/fastkarmsvinduer" alt="Fastkarmsvinduer"><span class="text">Fastkarmsvinduer</span></a></li></ul><ul class="submenu__grid submenu__grid-bottom"><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/scandiline/fastkarmsvinduer-med-opluk" alt="Fastkarmsvinduer med opluk"><span class="text">Fastkarmsvinduer med opluk</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/scandiline/skraavinduer" alt="Skråvinduer"><span class="text">Skråvinduer</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/scandiline/udestueelementer" alt="Udestueelementer"><span class="text">Udestueelementer</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/euroline/pvc/dreje-kip-vinduer" alt="Dreje-kip vinduer"><span class="text">Dreje-kip vinduer</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/euroline/pvc/dreje-kip-vinduer-med%20sprosser" alt="Dreje-kip vinduer med sprosser"><span class="text">Dreje-kip vinduer med sprosser</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/vinduer/euroline/fastkarmsvinduer-uden-ramme" alt="Fastkarmsvinduer til dreje-kip profil"><span class="text">Fastkarmsvinduer til dreje-kip profil</span></a></li></ul></div></div></div></li><li class="belvg-navigation__item parent-menu-item type__grid-with-sidebar view__fullwidth has-parent"><a class="belvg-navigation__link parent" href="https://dev.skanva.dk/doere" alt="Døre"><span class="text">Døre</span></a><div class="submenu with_sidebar"><div class="wrapper"><div class="submenu__wrapper"><a class="submenu__root-img" href="https://dev.skanva.dk/doere" alt="Døre"><span class="label">Døre</span></a><ul class="submenu__grid submenu__grid-bottom"><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/doere/scandiline/facadedoere" alt="Facadedøre"><span class="text">Facadedøre</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/doere/scandiline/pladedoere" alt="Pladedøre"><span class="text">Pladedøre</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/doere/scandiline/facadedoerspartier" alt="Facadedørspartier"><span class="text">Facadedørspartier</span></a></li></ul><ul class="submenu__grid submenu__grid-bottom"><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/doere/scandiline/stalddoere" alt="Halvdøre"><span class="text">Halvdøre</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/doere/scandiline/dobbelt-facadedoere" alt="Dobbelt facadedøre"><span class="text">Dobbelt facadedøre</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/doere/scandiline/sidepartier" alt="Sidepartier"><span class="text">Sidepartier</span></a></li></ul></div></div></div></li><li class="belvg-navigation__item parent-menu-item type__grid-with-sidebar view__fullwidth has-parent"><a class="belvg-navigation__link parent" href="https://dev.skanva.dk/terrassedoere" alt="Terrassedøre"><span class="text">Terrassedøre</span></a><div class="submenu with_sidebar"><div class="wrapper"><div class="submenu__wrapper"><a class="submenu__root-img" href="https://dev.skanva.dk/terrassedoere" alt="Terrassedøre"><span class="label">Terrassedøre</span></a><ul class="submenu__grid submenu__grid-bottom"><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/terrassedoere/scandiline/terrassedoere" alt="Terrassedøre"><span class="text">Terrassedøre</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/terrassedoere/scandiline/dobbelt-terrassedoere" alt="Dobbelt terrassedøre"><span class="text">Dobbelt terrassedøre</span></a></li><li class="submenu__item type__grid-with-sidebar-child view__fullwidth"><a class="submenu__title" href="https://dev.skanva.dk/terrassedoere/euroline/pvc/terrassedoere" alt="Dreje-kip terrassedøre"><span class="text">Dreje-kip terrassedøre</span></a></li></ul></div></div></div></li><li class="belvg-navigation__item type__link"><a class="belvg-navigation__link" href="https://dev.skanva.dk/skydedoere" alt="Skydedøre"><span class="text">Skydedøre</span></a></li>    </ul>
+</nav>
+</div></div></div><style>#html-body [data-pb-style="607D682F310BD"]{justify-content: flex-start; display: flex; flex-direction: column; background-position: left top; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}#html-body [data-pb-style="607D682F310C8"]{border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;}</style>
+<div data-block="minicart" class="minicart-wrapper">
+    <a class="action showcart" href="https://dev.skanva.dk/checkout/cart/" data-bind="scope: 'minicart_content'">
+        <!-- Override reason: delete text from span -->
+        <span class="text">
+        </span>
+        <!-- Override reason: end -->
+        <span class="counter qty empty" data-bind="css: { empty: !!getCartParam('summary_count') == false &amp;&amp; !isLoading() }, blockLoader: isLoading">
+            <span class="counter-number"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>
+            <span class="counter-label">
+            <!-- ko if: getCartParam('summary_count') -->
+                <!-- ko text: getCartParam('summary_count') --><!-- /ko -->
+                <!-- ko i18n: 'items' --><!-- /ko -->
+                <!-- /ko -->
+            </span>
+        </span>
+    </a>
+            <div class="minicart-bg"></div>
+        <div class="block block-minicart" data-role="dropdownDialog" data-mage-init="{&quot;dropdownDialog&quot;:{
+                &quot;appendTo&quot;:&quot;[data-block=minicart]&quot;,
+                &quot;triggerTarget&quot;:&quot;.showcart&quot;,
+                &quot;timeout&quot;: &quot;2000&quot;,
+                &quot;closeOnMouseLeave&quot;: false,
+                &quot;closeOnEscape&quot;: true,
+                &quot;triggerClass&quot;:&quot;active&quot;,
+                &quot;parentClass&quot;:&quot;active&quot;,
+                &quot;bodyClass&quot;:&quot;minicart-opened&quot;,
+                &quot;show&quot;: { &quot;effect&quot;: &quot;slide&quot;, &quot;duration&quot;: 400, &quot;direction&quot;: &quot;right&quot;},
+                &quot;hide&quot;: { &quot;effect&quot;: &quot;slide&quot;, &quot;duration&quot;: 400, &quot;direction&quot;: &quot;right&quot;},
+                &quot;buttons&quot;:[]}}">
+            <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+                <!-- ko template: getTemplate() --><!-- /ko -->
+            </div>
+                    </div>
+        <script>
+        window.checkout = {"shoppingCartUrl":"https:\/\/dev.skanva.dk\/checkout\/cart\/","checkoutUrl":"https:\/\/dev.skanva.dk\/checkout\/","updateItemQtyUrl":"https:\/\/dev.skanva.dk\/checkout\/sidebar\/updateItemQty\/","removeItemUrl":"https:\/\/dev.skanva.dk\/checkout\/sidebar\/removeItem\/","imageTemplate":"Magento_Catalog\/product\/image_with_borders","baseUrl":"https:\/\/dev.skanva.dk\/","minicartMaxItemsVisible":3,"websiteId":"1","maxItemsToDisplay":4,"storeId":"1","storeGroupId":"1","customerLoginUrl":"https:\/\/dev.skanva.dk\/customer\/account\/login\/","isRedirectRequired":false,"autocomplete":"off","captcha":{"user_login":{"isCaseSensitive":false,"imageHeight":50,"imageSrc":"","refreshUrl":"https:\/\/dev.skanva.dk\/captcha\/refresh\/","isRequired":false,"timestamp":1666613329}}};
+    </script>
+    <script type="text/x-magento-init">
+    {
+        "[data-block='minicart']": {
+            "Magento_Ui/js/core/app": {"components":{"minicart_content":{"children":{"subtotal.container":{"children":{"subtotal":{"children":{"subtotal.totals":{"config":{"display_cart_subtotal_incl_tax":1,"display_cart_subtotal_excl_tax":0,"template":"Magento_Tax\/checkout\/minicart\/subtotal\/totals"},"children":{"subtotal.totals.msrp":{"component":"Magento_Msrp\/js\/view\/checkout\/minicart\/subtotal\/totals","config":{"displayArea":"minicart-subtotal-hidden","template":"Magento_Msrp\/checkout\/minicart\/subtotal\/totals"}}},"component":"Magento_Tax\/js\/view\/checkout\/minicart\/subtotal\/totals"}},"component":"BelVG_Minicart\/js\/view\/minicart\/subtotal","config":{"template":"BelVG_Minicart\/minicart\/subtotal"},"sortOrder":"1000"}},"component":"uiComponent","config":{"displayArea":"subtotalContainer"},"sortOrder":"1000"},"item.renderer":{"component":"Magento_Checkout\/js\/view\/cart-item-renderer","config":{"displayArea":"defaultRenderer","template":"BelVG_Minicart\/minicart\/item\/default"},"children":{"item.image":{"component":"Magento_Catalog\/js\/view\/image","config":{"template":"Magento_Catalog\/product\/image","displayArea":"itemImage"}},"checkout.cart.item.price.sidebar":{"component":"BelVG_Minicart\/js\/price-sidebar","config":{"template":"BelVG_Minicart\/minicart\/item\/price","displayArea":"priceSidebar"}}}},"promotion":{"component":"uiComponent","config":{"displayArea":"promotion"}},"grandTotal.container":{"sortOrder":"2000","component":"uiComponent","config":{"displayArea":"subtotalContainer"},"children":{"discount":{"sortOrder":"1000","component":"BelVG_Minicart\/js\/view\/minicart\/cart","config":{"template":"BelVG_Minicart\/minicart\/discount"}},"grandTotal":{"sortOrder":"2000","component":"BelVG_Minicart\/js\/view\/minicart\/grandTotal","config":{"template":"BelVG_Minicart\/minicart\/grandTotal"}},"delivery_weeks":{"component":"BelVG_Minicart\/js\/view\/minicart\/cart","sortOrder":"1200","config":{"template":"BelVG_OrderFactoryMinicart\/minicart\/delivery_week"}}}},"magekey":{"component":"uiComponent","config":{"displayArea":"sign-in-popup"},"children":{"savecart":{"component":"MageKey_SaveCart\/js\/view\/button","config":{"template":"MageKey_SaveCart\/button"}}}},"extra_info":{"component":"uiComponent","config":{"displayArea":"extraInfo"}}},"config":{"itemRenderer":{"default":"defaultRenderer","simple":"defaultRenderer","virtual":"defaultRenderer"},"template":"BelVG_Minicart\/minicart\/content"},"component":"Magento_Checkout\/js\/view\/minicart"}},"types":[]}        },
+        "*": {
+            "Magento_Ui/js/block-loader": "https\u003A\u002F\u002Fdev.skanva.dk\u002Fstatic\u002Fversion1663912349\u002Ffrontend\u002FBelVG\u002Fvinduesgrossisten\u002Fda_DK\u002Fimages\u002Floader\u002D1.gif"
+        }
+    }
+    </script>
+</div>
+</div></div></header><main id="maincontent" class="page-main"><a id="contentarea" tabindex="-1"></a>
+<div class="page messages"><div data-placeholder="messages"></div>
+<div data-bind="scope: 'messages'">
+    <!-- ko if: cookieMessages && cookieMessages.length > 0 -->
+    <div aria-atomic="true" role="alert" data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages">
+        <div data-bind="attr: {
+            class: 'message-' + message.type + ' ' + message.type + ' message',
+            'data-ui-id': 'message-' + message.type
+        }">
+            <div data-bind="html: $parent.prepareMessageForHtml(message.text)"></div>
+        </div>
+    </div>
+    <!-- /ko -->
+
+    <!-- ko if: messages().messages && messages().messages.length > 0 -->
+    <div aria-atomic="true" role="alert" class="messages" data-bind="foreach: {
+        data: messages().messages, as: 'message'
+    }">
+        <div data-bind="attr: {
+            class: 'message-' + message.type + ' ' + message.type + ' message',
+            'data-ui-id': 'message-' + message.type
+        }">
+            <div data-bind="html: $parent.prepareMessageForHtml(message.text)"></div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                        "messages": {
+                            "component": "Magento_Theme/js/view/messages"
+                        }
+                    }
+                }
+            }
+    }
+</script>
+</div><div class="columns"><div class="column main"><div class="column main wrapper centered-content">
+<div id="ajaxlogin-popup" data-bind="scope:'ajaxLogin'" style="display: none;">
+    <script>
+        window.ajaxLogin = {"autocomplete":"off","customerRegisterUrl":"https:\/\/dev.skanva.dk\/customer\/account\/create\/","customerForgotPasswordUrl":"https:\/\/dev.skanva.dk\/customer\/account\/forgotpassword\/","baseUrl":"https:\/\/dev.skanva.dk\/","customerLoginUrl":"https:\/\/dev.skanva.dk\/customer\/ajax\/login\/"};
+    </script>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "#ajaxlogin-popup": {
+                "Magento_Ui/js/core/app": {"components":{"ajaxLogin":{"component":"BelVG_CustomerLoginPopup\/js\/view\/ajaxlogin-popup","children":{"messages":{"component":"Magento_Ui\/js\/view\/messages","displayArea":"messages"}}}}}            }
+        }
+    </script>
+</div><input name="form_key" type="hidden" value="lFTqHfBV4FmP2F8P"><div id="authenticationPopup" data-bind="scope:'authenticationPopup', style: {display: 'none'}">
+        <script>window.authenticationPopup = {"autocomplete":"off","customerRegisterUrl":"https:\/\/dev.skanva.dk\/customer\/account\/create\/","customerForgotPasswordUrl":"https:\/\/dev.skanva.dk\/customer\/account\/forgotpassword\/","baseUrl":"https:\/\/dev.skanva.dk\/","customerLoginUrl":"https:\/\/dev.skanva.dk\/customer\/ajax\/login\/"}</script>    <!-- ko template: getTemplate() --><!-- /ko -->
+        <script type="text/x-magento-init">
+        {
+            "#authenticationPopup": {
+                "Magento_Ui/js/core/app": {"components":{"authenticationPopup":{"component":"Magento_Customer\/js\/view\/authentication-popup","children":{"messages":{"component":"Magento_Ui\/js\/view\/messages","displayArea":"messages"}}}}}            },
+            "*": {
+                "Magento_Ui/js/block-loader": "https\u003A\u002F\u002Fdev.skanva.dk\u002Fstatic\u002Fversion1663912349\u002Ffrontend\u002FBelVG\u002Fvinduesgrossisten\u002Fda_DK\u002Fimages\u002Floader\u002D1.gif"
+                                ,
+                "Magento_Customer/js/customer-global-session-loader": {}
+                            }
+        }
+    </script>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/section-config": {
+                "sections": {"stores\/store\/switch":["*"],"stores\/store\/switchrequest":["*"],"directory\/currency\/switch":["*"],"*":["messages","apptrian_facebook_pixel_matching_section","belvg_salecountdown","belvg_openhours"],"customer\/account\/logout":["*","recently_viewed_product","recently_compared_product","persistent"],"customer\/account\/loginpost":["*"],"customer\/account\/createpost":["*"],"customer\/account\/editpost":["*"],"customer\/ajax\/login":["checkout-data","cart","captcha"],"catalog\/product_compare\/add":["compare-products"],"catalog\/product_compare\/remove":["compare-products"],"catalog\/product_compare\/clear":["compare-products"],"sales\/guest\/reorder":["cart"],"sales\/order\/reorder":["cart"],"checkout\/cart\/add":["cart","directory-data","gtm"],"checkout\/cart\/delete":["cart","gtm"],"checkout\/cart\/updatepost":["cart"],"checkout\/cart\/updateitemoptions":["cart"],"checkout\/cart\/couponpost":["cart"],"checkout\/cart\/estimatepost":["cart"],"checkout\/cart\/estimateupdatepost":["cart"],"checkout\/onepage\/saveorder":["cart","checkout-data","last-ordered-items"],"checkout\/sidebar\/removeitem":["cart","gtm"],"checkout\/sidebar\/updateitemqty":["cart"],"rest\/*\/v1\/carts\/*\/payment-information":["cart","last-ordered-items","captcha","instant-purchase","gtm"],"rest\/*\/v1\/guest-carts\/*\/payment-information":["cart","captcha","gtm"],"rest\/*\/v1\/guest-carts\/*\/selected-payment-method":["cart","checkout-data"],"rest\/*\/v1\/carts\/*\/selected-payment-method":["cart","checkout-data","instant-purchase"],"customer\/address\/*":["instant-purchase"],"customer\/account\/*":["instant-purchase"],"vault\/cards\/deleteaction":["instant-purchase"],"multishipping\/checkout\/overviewpost":["cart"],"paypal\/express\/placeorder":["cart","checkout-data"],"paypal\/payflowexpress\/placeorder":["cart","checkout-data"],"paypal\/express\/onauthorization":["cart","checkout-data"],"persistent\/index\/unsetcookie":["persistent"],"review\/product\/post":["review"],"wishlist\/index\/add":["wishlist"],"wishlist\/index\/remove":["wishlist"],"wishlist\/index\/updateitemoptions":["wishlist"],"wishlist\/index\/update":["wishlist"],"wishlist\/index\/cart":["wishlist","cart"],"wishlist\/index\/fromcart":["wishlist","cart"],"wishlist\/index\/allcart":["wishlist","cart"],"wishlist\/shared\/allcart":["wishlist","cart"],"wishlist\/shared\/cart":["cart"],"mgk_savecart\/cart\/restore":["cart"],"masteraccount\/customer\/login":["customer"],"masteraccount\/customer\/logout":["customer"],"checkout\/cart\/configure":["gtm"],"rest\/*\/v1\/guest-carts\/*\/shipping-information":["gtm"],"rest\/*\/v1\/carts\/*\/shipping-information":["gtm"]},
+                "clientSideSections": ["checkout-data","cart-data"],
+                "baseUrls": ["https:\/\/dev.skanva.dk\/"],
+                "sectionNames": ["messages","customer","compare-products","last-ordered-items","cart","directory-data","captcha","instant-purchase","persistent","review","wishlist","apptrian_facebook_pixel_matching_section","belvg_salecountdown","belvg_openhours","gtm","recently_viewed_product","recently_compared_product","product_data_storage","paypal-billing-agreement"]            }
+        }
+    }
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/customer-data": {
+                "sectionLoadUrl": "https\u003A\u002F\u002Fdev.skanva.dk\u002Fcustomer\u002Fsection\u002Fload\u002F",
+                "expirableSectionLifetime": 60,
+                "expirableSectionNames": ["cart","persistent"],
+                "cookieLifeTime": "3600",
+                "updateSessionUrl": "https\u003A\u002F\u002Fdev.skanva.dk\u002Fcustomer\u002Faccount\u002FupdateSession\u002F"
+            }
+        }
+    }
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/invalidation-processor": {
+                "invalidationRules": {
+                    "website-rule": {
+                        "Magento_Customer/js/invalidation-rules/website-rule": {
+                            "scopeConfig": {
+                                "websiteId": "1"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
+<script type="text/x-magento-init">
+    {
+        "body": {
+            "pageCache": {"url":"https:\/\/dev.skanva.dk\/page_cache\/block\/render\/","handles":["default","customer_account_create","belvg_customerloginpopup_not_logged"],"originalRequest":{"route":"customer","controller":"account","action":"create","uri":"\/customer\/account\/create"},"versionCookieName":"private_content_version"}        }
+    }
+</script>
+<div id="mgkSavecartPopup" data-bind="scope:'mgkSavecartPopup'" style="display: none;">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script>
+        window.mgkSaveCartEnabled = true;
+    </script>
+    <script type="text/x-magento-init">
+        {
+            "#mgkSavecartPopup": {
+                "Magento_Ui/js/core/app": {"components":{"mgkSavecartPopup":{"component":"MageKey_SaveCart\/js\/view\/popup","config":{"template":"BelVG_MageKeySaveCart\/popup","saveAction":"https:\/\/dev.skanva.dk\/mgk_savecart\/cart\/save\/"},"children":{"messages":{"component":"Magento_Ui\/js\/view\/messages","displayArea":"messages"}}}}}            },
+            "*": {
+                "Magento_Ui/js/block-loader": "https://dev.skanva.dk/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/images/loader-1.gif"
+            }
+        }
+    </script>
+</div>
+<script type="text/x-magento-init">
+    {
+        "body": {
+            "requireCookie": {"noCookieUrl":"https:\/\/dev.skanva.dk\/cookie\/index\/noCookies\/","triggers":[".action.submit"],"isRedirectCmsPage":true}        }
+    }
+</script>
+<div class="user-account-form shadow-light login-container">
+<div class="block account-nav">
+    <div class="title account-nav-title" data-mage-init="{&quot;toggleAdvanced&quot;: {&quot;toggleContainers&quot;: &quot;#account-nav&quot;, &quot;selectorsToggleClass&quot;: &quot;active&quot;}}">
+        <strong>
+                    </strong>
+    </div>
+    <div class="content account-nav-content" id="account-nav">
+        <div class="page-title-wrapper">
+    <h1 class="page-title">
+        <span class="base" data-ui-id="page-title-wrapper">Opret ny kundekonto</span>    </h1>
+    </div>
+    </div>
+</div>
+<form class="form create account form-create-account" action="https://dev.skanva.dk/customer/account/createpost/" method="post" id="form-validate" enctype="multipart/form-data" autocomplete="off">
+    <input name="form_key" type="hidden" value="lFTqHfBV4FmP2F8P">    <fieldset class="fieldset create info">
+        <!-- Override reason: replace string  tag -->
+        <legend class="legend"><strong>Personlig informationer</strong></legend>
+
+        <input type="hidden" name="success_url" value="">
+        <input type="hidden" name="error_url" value="">
+        
+            <div class="field field-name-firstname required">
+            <label class="label" for="firstname"><span>Fornavn</span></label>
+            <div class="control">
+                <input type="text" id="firstname" name="firstname" value="" title="Fornavn" class="input-text required-entry" data-validate="{required:true}">
+            </div>
+        </div>
+            <div class="field field-name-lastname required">
+            <label class="label" for="lastname"><span>Efternavn</span></label>
+            <div class="control">
+                <input type="text" id="lastname" name="lastname" value="" title="Efternavn" class="input-text required-entry" data-validate="{required:true}">
+            </div>
+        </div>
+    
+    
+                
+                
+                    </fieldset>
+        <fieldset class="fieldset create account" data-hasrequired="* Påkrævede felter">
+        <legend class="legend"><span>Login-oplysninger</span></legend>
+
+        <div class="field required">
+            <!-- Override reason: replace string  tag -->
+            <label for="email_address" class="label"><strong>E-mail</strong></label>
+            <div class="control">
+                <input type="email" name="email" autocomplete="email" id="email_address" value="" title="E-mail" class="input-text" data-mage-init="{&quot;mage/trim-input&quot;:{}}" data-validate="{required:true, 'validate-email':true}">
+            </div>
+        </div>
+        <div class="field password required">
+            <label for="password" class="label"><span>Kodeord</span></label>
+            <div class="control">
+                <input type="password" name="password" id="password" title="Kodeord" class="input-text" data-password-min-length="8" data-password-min-character-sets="1" data-validate="{required:true, 'validate-customer-password':true}" autocomplete="off">
+                <div id="password-strength-meter-container" data-role="password-strength-meter" aria-live="polite">
+                    <div id="password-strength-meter" class="password-strength-meter">
+                        Styrken af adgangskoden:
+                        <span id="password-strength-meter-label" data-role="password-strength-meter-label">
+                            Ingen adgangskode                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="field confirmation required">
+            <label for="password-confirmation" class="label"><span>Bekræft kodeord</span></label>
+            <div class="control">
+                <input type="password" name="password_confirmation" title="Bekræft kodeord" id="password-confirmation" class="input-text" data-validate="{required:true, equalTo:'#password'}" autocomplete="off">
+            </div>
+        </div>
+        <div id="remember-me-box" class="field choice persistent">
+        <input type="checkbox" name="persistent_remember_me" class="checkbox" id="remember_meyGPFKGr9qk" checked="checked" title="Husk mig">
+    <label for="remember_meyGPFKGr9qk" class="label"><span>Husk mig</span></label>
+</div>
+<div class="field-recaptcha" id="recaptcha-f979c2ff515d921c34af9bd2aee8ef076b719d03-container" data-bind="scope:'recaptcha-f979c2ff515d921c34af9bd2aee8ef076b719d03'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+{
+    "#recaptcha-f979c2ff515d921c34af9bd2aee8ef076b719d03-container": {
+        "Magento_Ui/js/core/app": {"components":{"recaptcha-f979c2ff515d921c34af9bd2aee8ef076b719d03":{"settings":{"rendering":{"sitekey":"6Lcjq6sbAAAAALBHGKnhVTow4LhG9m843FD1D0Jf","badge":"inline","size":"invisible","theme":"light","hl":""},"invisible":true},"component":"Magento_ReCaptchaFrontendUi\/js\/reCaptcha","reCaptchaId":"recaptcha-f979c2ff515d921c34af9bd2aee8ef076b719d03"}}}    }
+}
+</script>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="Opret en konto">
+                <span>Opret en konto</span></button>
+        </div>
+        <div class="secondary">
+            <a class="action back" href="https://dev.skanva.dk/customer/account/login/"><span>Tilbage</span></a>
+        </div>
+    </div>
+</form>
+<script>
+    require([
+        'jquery',
+        'mage/mage'
+    ], function ($) {
+
+        var dataForm = $('#form-validate');
+        var ignore = null;
+
+        dataForm.mage('validation', {
+                        ignore: ignore ? ':hidden:not(' + ignore + ')' : ':hidden'
+                    }).find('input:text').attr('autocomplete', 'off');
+
+        dataForm.on('submit', function (event) {
+            if(dataForm.validation('isValid'))
+                $(event.target).find('button[type=submit]').attr('disabled', 'disabled');
+        })
+
+    });
+</script>
+
+<script type="text/x-magento-init">
+    {
+        ".field.password": {
+            "passwordStrengthIndicator": {
+                "formSelector": "form.form-create-account"
+            }
+        }
+    }
+
+</script>
+</div></div></div></div></main><footer class="page-footer"><style>#html-body [data-pb-style=EOMIMVM],#html-body [data-pb-style=JQMWR3D]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0}#html-body [data-pb-style=EOMIMVM]{margin-left:0;margin-top:0;margin-right:0}#html-body [data-pb-style=JQMWR3D]{width:25%;margin:0;align-self:stretch}#html-body [data-pb-style=BP0NXSC]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=X94GPPX]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0;width:25%;margin:0;align-self:stretch}#html-body [data-pb-style=BKQXJHU]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=OAKXAOC]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0;width:25%;margin:0;align-self:stretch}#html-body [data-pb-style=AA5NMDF]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=Q01X43A]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0;width:25%;margin:0;align-self:stretch}#html-body [data-pb-style=H6UQM3R],#html-body [data-pb-style=PLE8C2W]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}#html-body [data-pb-style=H6UQM3R]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat no-repeat;background-attachment:scroll;padding:10px}#html-body [data-pb-style=HUAE8VL]{text-align:center;border-style:none;border-width:1px;border-radius:0;margin:0 0 10px;padding:10px}#html-body [data-pb-style=O0UYLG2]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat no-repeat;background-attachment:scroll;border-style:none;border-width:1px;border-radius:0;margin-left:0;margin-top:0;margin-right:0}#html-body [data-pb-style=Q0TPR15]{border-style:none;border-width:1px;border-radius:0;margin:0;padding:0}</style><div class="footer-top" data-content-type="row" data-appearance="full-width" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-video-fallback-src="" data-element="main" data-pb-style="EOMIMVM"><div class="row-full-width-inner" data-element="inner"><div class="pagebuilder-column-group" style="display: flex;" data-content-type="column-group" data-grid-size="12" data-element="main"><div class="pagebuilder-column contact-list" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="JQMWR3D"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="BP0NXSC" data-decoded="true"><span class="head">Kontakt</span>
+<ul>
+    <li>Vinduesgrossisten A/S</li>
+    <li>Mosevangen 4</li>
+    <li>9230 Svenstrup J</li>
+    <li>CVR: 35143637</li>
+    <li><a type="email" href="mailto:info@vinduesgrossisten.dk">info@vinduesgrossisten.dk</a></li>
+    <li><a href="tel:+4572629040">+45 72 62 90 40</a></li>
+</ul></div></div><div class="pagebuilder-column instructions-list" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="X94GPPX"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="BKQXJHU" data-decoded="true"><span class="head">Vejledninger</span>
+<ul>
+    <li><a href="/kundeservice/levering">Levering</a></li>
+    <li><a href="/kvalitet/garanti">Garanti</a></li>
+    <li><a href="/kundeservice/montering">Montering</a></li>
+    <!--<li><a href="/kundeservice/fleksibel-finansiering">Fleksibel finansiering</a></li>!-->
+    <li><a href="/kundeservice/saadan-bestiller-du">Sådan bestiller du</a></li>
+    <li><a href="/kundeservice/snittegninger">Snittegninger</a></li>
+</ul></div></div><div class="pagebuilder-column info-list" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="OAKXAOC"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="AA5NMDF" data-decoded="true"><span class="head">Info</span>
+<ul>
+    <li><a href="/info/faq">FAQ</a></li>
+    <li><a href="/info/kontakt">Kontakt</a></li>
+    <li><a href="/info/om-os">Om os</a></li>
+    <li><a href="/info/handelsbetingelser">Handelsbetingelser</a></li>
+    <li><a href="/info/persondatapolitik">Persondatapolitik</a></li>
+    <li><a href="/info/whistleblower">GDPR og Whistleblowerordning</a></li>
+    <li><a href="/info/cookie-og-privatlivspolitik">Cookie og privatlivspolitik</a></li>
+    <li><a href="#" class="create-new-ticket-link">Opret en service sag</a></li>
+
+</ul></div></div><div class="pagebuilder-column" data-content-type="column" data-appearance="full-height" data-background-images="{}" data-element="main" data-pb-style="Q01X43A"><div class="products-menu" data-content-type="html" data-appearance="default" data-element="main" data-pb-style="PLE8C2W" data-decoded="true"><span class="head">Skanva Group</span>
+<ul>
+    <li><a target="_blank" href="https://skanva.no">Ytterdører og vinduer i Norge</a></li>
+    <li><a target="_blank" href="https://skanva.is">Gluggar og hurðir á Íslandi</a></li>
+<li><a target="_blank" href="https://skanvafenster.de">Fenster und Türen in Deutschland</a></li>
+<li><a href="/billige-vinduer">Billige vinduer</a></li>
+<li><a href="/billige-doere">Billige døre</a></li>
+<li><a href="/new-yorker-vaeg">New Yorker væg</a></li>
+<li><a href="/orangeri">Orangeri</a></li>
+<li><a href="/jobs">Job</a></li>
+
+</ul></div></div></div></div></div><div class="footer-newsletter" data-content-type="row" data-appearance="full-width" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-video-fallback-src="" data-element="main" data-pb-style="H6UQM3R"><div class="row-full-width-inner" data-element="inner"><div class="footer-newsletter__wrap" data-content-type="block" data-appearance="default" data-element="main" data-pb-style="HUAE8VL"><div class="widget block block-static-block">
+    </div>
+</div></div></div><div class="footer-bottom" data-content-type="row" data-appearance="full-width" data-enable-parallax="0" data-parallax-speed="0.5" data-background-images="{}" data-video-fallback-src="" data-element="main" data-pb-style="O0UYLG2"><div class="row-full-width-inner" data-element="inner"><div data-content-type="html" data-appearance="default" data-element="main" data-pb-style="Q0TPR15" data-decoded="true"><ul class="cert-list">
+    <!-- <li class="energy"></li>
+    <li class="laven"></li>
+    <li class="iso"></li>
+    <li class="ce"></li> !-->
+<li style="height: auto; width: auto;"><a target="_blank" href="https://certifikat.emaerket.dk/vinduesgrossisten.dk"><img src="/media/emaerket_vinduesgrossisten.png" alt="emaerke"></a></li>
+<li style="height: auto; width: auto;"><a target="_blank" href="https://www.ingenco2.dk/crt/dispcust/c/5421/l/2" rel="nofollow"><img src="/media/co2neutralt_vinduesgrossisten.png" alt="co2neutralt"></a></li>
+<li style="height: 40px; width: 67px; margin-top: -4px;"><a rel="nofollow" target="_blank" href="https://www.bisnode.dk/om-bisnode/hvad-vi-gor/live-rating-logo/" style="text-decoration: none;"><img style="background: #fff; border-radius: 4px;" oncontextmenu="return false" title="Vi er en kreditværdig virksomhed baseret på Bisnodes kreditvurderingssystem. Vurderingen er foretaget ud fra en mængde forskellige beslutningsregler. Oplysningerne bliver opdateret dagligt via Bisnodes database. Kreditvurderingen af virksomheden er således altid aktuel." alt="Vi er en kreditværdig virksomhed baseret på Bisnodes kreditvurderingssystem. Vurderingen er foretaget ud fra en mængde forskellige beslutningsregler. Oplysningerne bliver opdateret dagligt via Bisnodes database. Kreditvurderingen af virksomheden er således altid aktuel." id="img_98_58_px" src="https://merit.soliditet.dk/merit/imageGenerator/display?lang=DK&amp;country=DK&amp;cId=lROn4z9tR%2B%2ByyKmHxHsoZQ%3D%3D&amp;cUid=zvUkHpbgI7A%3D&amp;imgType=img_98_58_px"></a></li>
+<li style="height: auto; width: auto;"><a target="_blank" href="https://energivinduer.dk/wp-content/uploads/sites/3/positiv_100221.pdf"><img src="https://vinduesgrossisten.dk/media/energivinduer_vinduesgrossisten.png" alt="energivinduer"></a></li>
+</ul>
+
+
+    <ul class="social-list">
+                    <li class="facebook"><a href="https://www.facebook.com/vinduesgrossisten" target="_blank"></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/vinduesgrossisten/" target="_blank"></a></li>
+                    <li class="linkedin"><a href="https://www.linkedin.com/company/vinduesgrossisten/" target="_blank"></a></li>
+                    <li class="pinterest"><a href="https://www.pinterest.dk/vinduesgrossisten/" target="_blank"></a></li>
+                    <li class="youtube"><a href="https://www.youtube.com/channel/UCbVCCEQ5huMzxUaIBfCbalw" target="_blank"></a></li>
+            </ul>
+
+
+<ul class="paym-list">
+<li style="height: 40px; width: 40px;"><img class=" ls-is-cached lazyloaded" data-src="/media/payments/dankort.svg" alt="dk" src="/media/payments/dankort.svg"></li>
+<li style="height: 40px; width: 40px;"><img class=" ls-is-cached lazyloaded" data-src="/media/payments/mastercard.svg" alt="mastercard" src="/media/payments/mastercard.svg"></li>
+<li style="height: 40px; width: 40px;"><img class=" ls-is-cached lazyloaded" data-src="/media/payments/visa.svg" alt="visa" src="/media/payments/visa.svg"></li>
+<li style="height: 40px; width: 40px;"><img class=" ls-is-cached lazyloaded" data-src="/media/payments/mobilepay.svg" alt="mobilepay" src="/media/payments/mobilepay.svg"></li>
+</ul></div></div></div></footer><script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "storage-manager": {
+                            "component": "Magento_Catalog/js/storage-manager",
+                            "appendTo": "",
+                            "storagesConfiguration" : {"recently_viewed_product":{"requestConfig":{"syncUrl":"https:\/\/dev.skanva.dk\/catalog\/product\/frontend_action_synchronize\/"},"lifetime":"1000","allowToSendRequest":null},"recently_compared_product":{"requestConfig":{"syncUrl":"https:\/\/dev.skanva.dk\/catalog\/product\/frontend_action_synchronize\/"},"lifetime":"1000","allowToSendRequest":null},"product_data_storage":{"updateRequestConfig":{"url":"https:\/\/dev.skanva.dk\/rest\/default\/V1\/products-render-info"},"requestConfig":{"syncUrl":"https:\/\/dev.skanva.dk\/catalog\/product\/frontend_action_synchronize\/"},"allowToSendRequest":null}}                        }
+                    }
+                }
+            }
+        }
+</script>
+
+<script>
+    window.belvgMinicartDiscountHash = '';
+</script>
+
+    <!-- begin SnapEngage code -->
+    <script type="text/javascript">
+        (function() {
+            var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+            se.src = '//storage.googleapis.com/code.snapengage.com/js/26ac4d12-84e8-4b35-b333-75124fb63a05.js';
+            var done = false;
+            se.onload = se.onreadystatechange = function() {
+                if (!done&&(!this.readyState||this.readyState==='loaded'||this.readyState==='complete')) {
+                    done = true;
+                    /* Place your SnapEngage JS API code below */
+                    /* SnapEngage.allowChatSound(true); Example JS API: Enable sounds for Visitors. */
+                }
+            };
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+        })();
+    </script>
+    <!-- end SnapEngage code -->
+    <div id="create-ticket-popup" class="customer-popup-register" style="display: none;">
+
+        <div class="block block-customer-login ticket-create-form">
+            <div class="block-content" aria-labelledby="block-customer-login-heading">
+                <div class="ticket-messages"></div>
+                <form class="form form-login form-create-ticket" action="https://dev.skanva.dk/create_ticket_form/ticket_ajax/create/" method="post" id="login-form-for-ticket" data-mage-init="{&quot;validation&quot;:{}}">
+                    <input name="form_key" type="hidden" value="lFTqHfBV4FmP2F8P">                    <fieldset class="fieldset login" data-hasrequired="* At least fill in one field">
+                        <div class="field note">Hvis du vil oprette en billet, bedes du udfylde og sende formularen</div>
+                        <div class="field">
+                            <label class="label" for="order_id"><span>Ordrenummer</span></label>
+                            <div class="control">
+                                <input name="order_id" value="" id="order_id" type="text" class="input-text" title="Ordrenummer" data-mage-init="{&quot;mage/trim-input&quot;:{}}" data-validate="{'validate-one-required-field':true}">
+                            </div>
+                        </div>
+                        <div class="field email">
+                            <label class="label" for="email"><span>E-mail</span></label>
+                            <div class="control">
+                                <input name="customer_email" value="" id="email" type="email" class="input-text" title="E-mail" data-mage-init="{&quot;mage/trim-input&quot;:{}}" data-validate="{'validate-one-required-field':true, 'validate-email':true}">
+                            </div>
+                        </div>
+                        <div class="actions-toolbar">
+                            <div class="primary"><button type="submit" class="action login primary" name="send"><span>Send</span></button></div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <br>
+        <br>
+        <script type="text/x-magento-init">
+            {
+                "#create-ticket-popup": {
+                    "BelVG_CreateTicketForm/js/action/create-ticket-popup": {
+                        "popupTitle": "Opret servicesag",
+                        "innerWidth": "600"
+                    }
+                }
+            }
+        </script>
+    </div>
+<script>
+    require([
+        'BelVG_Minicart/js/minicart-mobile'
+    ], function () {})
+</script>
+</div><script type="text/javascript" async="" id="consent-file" src="https://policy.app.cookieinformation.com/e71ed9/dev.skanva.dk/da.js" charset="UTF-8"></script>    <script type="text/javascript" src="https://widget.emaerket.dk/js/570242da1dd521b3fcad2a5c8bcac71f" async=""></script>
+
+
+    <script type="text/javascript">
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//az19942.vo.msecnd.net/script/raptor-3.0.min.js",g.async="true",s.parentNode.insertBefore(g,s)}(document,"script"));
+
+                    </script>
+
+    <script type="text/javascript">
+        require(
+            [
+                'jquery'
+            ],
+            function (
+                $
+            ) {
+                $(window).on('ajax:addToCart', function(e, response){
+                    if (typeof(response.response.raptor) != 'undefined') {
+                        let trackingData = prepareTrackingData(response.response);
+                        raptor.push("trackEvent", trackingData)
+
+                        console.log('[RaptorSmartAdvisor::trackAddToCart]', trackingData);
+                    }
+                });
+
+                $(window).on('ajax:cartQtyUpdate', function(e, response){
+                    if (typeof(response.response.raptor) != 'undefined') {
+                        let trackingData = prepareTrackingData(response.response);
+                        raptor.push("trackEvent", trackingData)
+
+                        console.log('[RaptorSmartAdvisor::trackCartQtyUpdate]', trackingData);
+                    }
+                });
+
+                $(window).on('ajax:cartDeleteItem', function(e, response){
+                    if (typeof(response.response.responseText) != 'undefined') {
+                        let res = JSON.parse(response.response.responseText);
+                        if (typeof(res.raptor) != 'undefined') {
+                            let trackingData = prepareTrackingData(res);
+                            raptor.push("trackEvent", trackingData);
+
+                            console.log('[RaptorSmartAdvisor::trackCartDeleteItem]', trackingData);
+                        }
+                    }
+                });
+
+                function prepareTrackingData(response) {
+                    return {
+                        p1:"basket",
+                        p10:response.raptor.cart_content,
+                        p11:response.raptor.cart_id
+                    };
+                }
+            }
+        );
+    </script>
+
+
+
+</body></html>
