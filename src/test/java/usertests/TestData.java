@@ -10,10 +10,10 @@ public class TestData {
 
     //CREATE USER
     static Faker faker = new Faker();
-    static String firstName = faker.name().firstName();
-    static String lastName = faker.name().lastName();
-    static String email = firstName + lastName + "@test.com";
-    static String password = getRandomString(16);
+    public static String firstName = faker.name().firstName();
+    public static String lastName = faker.name().lastName();
+    public static String email = firstName + lastName + "@test.com";
+    public static String password = getRandomString(16);
 
     //PAGES
     static String homePage = "";

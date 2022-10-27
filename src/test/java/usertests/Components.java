@@ -8,7 +8,7 @@ public class Components {
     static String basicAuthLogin = "admin";
     static String basicAuthPassword = "BilarIsgreaT2020!%23";
 
-    static void openPage(String url) {
+    public static void openPage(String url) {
         open(url, "", basicAuthLogin, basicAuthPassword);
     }
 }

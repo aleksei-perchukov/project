@@ -19,6 +19,7 @@ import static io.qameta.allure.Allure.step;
 @Tag("User account tests")
 public class UserTests extends TestBase {
 
+    @Tag ("UI")
     @DisplayName("Create user test")
     @Test
     void createUser() {
