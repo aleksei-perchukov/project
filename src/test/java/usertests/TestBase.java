@@ -8,7 +8,12 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.restassured.RestAssured.baseURI;
 
 public class TestBase {
@@ -23,13 +28,21 @@ public class TestBase {
             capabilities.setCapability("enableVideo", true);
         }
         Configuration.browserCapabilities = capabilities;
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--auto-open-devtools-for-tabs");
         Configuration.browser = System.getProperty("browser_name", "chrome");
         Configuration.browserVersion = System.getProperty("browser_version", "95.0");
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://skanva.dk";
+
+
+//        capabilities.setCapability("devtools", true);
+//        System.setProperty("noExit", "true");
+//        System.setProperty("moon_debugged", "true");
+//        System.setProperty("devtools", "true");
         baseURI = "https://skanva.dk";
-        Configuration.timeout = 100000;
+        Configuration.timeout = 300000;
 
     }
 

@@ -3,12 +3,15 @@ package checkouttests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
 import usertests.TestBase;
 
 import static Utils.RandomUtils.getRandomLong;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.Allure.step;
 import static usertests.Components.openPage;
 import static usertests.TestData.*;
@@ -17,21 +20,19 @@ public class CheckoutTests extends TestBase {
     @Test
     void quickPayTestGuest() throws InterruptedException {
         step("Opening /tr/topstyret-vindue-2-fags page", () -> {openPage("/tr/topstyret-vindue-2-fags");});
+//        DevTools chromeDevTools;
+//        ChromeDriver driver = (ChromeDriver) getWebDriver();
+//        chromeDevTools = driver.getDevTools();
+//        chromeDevTools.createSession();
         step("Clicking 'Accept all cookies' button", () -> {$(".coi-banner__accept").click();});
-        step("Clicking to 'add to cart' button", () -> {$("#img-resized-2").shouldBe(visible, interactable);});
-        step("Clicking to 'add to cart' button", () -> {$("#product-customizer").shouldBe(visible);});
         step("Clicking to 'add to cart' button", () -> {$("#width").sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE);});
         step("Clicking to 'add to cart' button", () -> {$("#width").setValue("250");});
         step("Clicking to 'add to cart' button", () -> {$("#height").sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE);});
         step("Clicking to 'add to cart' button", () -> {$("#height").setValue("130");});
         step("Clicking to 'add to cart' button", () -> {$(".incr").click();});
-        step("Clicking to 'add to cart' button", () -> {$(".fotorama__img").click();});
-        step("Clicking to 'add to cart' button", () -> {$(".fotorama__fullscreen-icon").click();});
-        Thread.sleep(3000);
+ //       Thread.sleep(10000);
  //     step("Clicking to 'add to cart' button", () -> {$(".price").shouldHave(text("8.759,94 kr"));});
-
-        step("Clicking to 'add to cart' button", () -> {$("#product-addtocart-button").shouldNot(disabled).shouldBe(enabled, editable).hover().click();});
-
+        step("Clicking to 'add to cart' button", () -> {$("#product-addtocart-button").shouldBe(enabled).submit();});
   //    step("Clicking to 'minicart' button ", () -> {$(".minicart-wrapper").click();});
         step("Clicking to 'proceed to cart' button", () -> {$(".action.primary").click();});
         step("Clicking to 'proceed to shipping' button", () -> {$(".action.primary.checkout").click();});
