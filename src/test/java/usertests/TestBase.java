@@ -33,7 +33,7 @@ public class TestBase {
         Configuration.browser = System.getProperty("browser_name", "chrome");
         Configuration.browserVersion = System.getProperty("browser_version", "95.0");
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
-        Configuration.pageLoadStrategy = "eager";
+        Configuration.pageLoadStrategy = "none";
         Configuration.baseUrl = "https://skanva.dk";
 
 
@@ -42,7 +42,7 @@ public class TestBase {
 //        System.setProperty("moon_debugged", "true");
 //        System.setProperty("devtools", "true");
         baseURI = "https://skanva.dk";
-        Configuration.timeout = 300000;
+        Configuration.timeout = 60000;
 
     }
 
