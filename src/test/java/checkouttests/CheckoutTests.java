@@ -1,5 +1,6 @@
 package checkouttests;
 
+import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -18,20 +19,21 @@ import static usertests.TestData.*;
 
 public class CheckoutTests extends TestBase {
     @Test
-    void quickPayTestGuest() throws InterruptedException {
+    void quickPayTestGuest() {
         step("Opening /tr/topstyret-vindue-2-fags page", () -> {openPage("/tr/topstyret-vindue-2-fags");});
         step("Clicking 'Accept all cookies' button", () -> {$(".coi-banner__accept").click();});
-        step("Clicking to 'add to cart' button", () -> {$("#product_addtocart_form").submit();});
+              step("Clicking to 'add to cart' button", () -> {$("#product_addtocart_form").submit();});
         step("Clicking 'Accept all cookies' button", () -> {$("#transparent-button").shouldBe(visible, enabled);});
         step("Clicking to 'add to cart' button", () -> {$("#product_addtocart_form").submit();});
         step("Clicking to 'add to cart' button", () -> {$("#product-addtocart-button").doubleClick();});
         step("Clicking to 'proceed to cart' button", () -> {$("[data-action=close]").click();});
 
-        step("Clicking to 'proceed to cart' button", () -> {$("#form-validate").submit();});
+        step("Clicking to 'proceed to cart' button", () -> {$("#shipping-zip-form").submit();});
+        step("Clicking to 'proceed to cart' button", () -> {$(".cart-container").click();});
+        //      step("Clicking to 'proceed to cart' button", () -> {$("#form-validate").submit();});
         step("Clicking 'Accept all cookies' button", () -> {$("#transparent-button").shouldBe(visible, enabled);});
-  //      step("Clicking to 'proceed to cart' button", () -> {$("#shipping-zip-form").submit();});
         step("Clicking to 'proceed to cart' button", () -> {$("#form-validate").submit();});
-        step("Clicking to 'proceed to shipping' button", () -> {$("[data-role=proceed-to-checkout]").shouldNotBe(disabled).shouldBe(visible, enabled).doubleClick();});
+        step("Clicking to 'proceed to shipping' button", () -> {$("[data-role=proceed-to-checkout]").shouldNotBe(disabled).doubleClick();});
 
         step("Entering " + email + " in email field", () -> {$("#customer-email").setValue(email);});
         step("Entering " + firstName + " in first name field", () -> {$("[name=firstname]").setValue(firstName);});
@@ -49,7 +51,7 @@ public class CheckoutTests extends TestBase {
   //      step("Clicking 'Proceed to payment' button", () -> {$(".button.action.continue.primary").doubleClick();});
 
         step("Clicking on 'Quick Pay' payment method'", () -> {$("[for=quickpay]").click();});
-        step("Clicking on 'confirm payment method' checkbox", () -> {$("[for=agreement_quickpay_1]").click();});
+        step("Clicking on 'confirm payment method' checkbox", () -> {$("[for=agreement_quickpay_1]").click(ClickOptions.usingDefaultMethod().offset(-400, 0));});
         step("Clicking on 'confirm payment method' checkbox", () -> {$("#co-payment-form").click();});
   //      step("Clicking on 'Proceed to payment window' button", () -> {$(".action.primary.checkout").click();});
 
@@ -59,7 +61,7 @@ public class CheckoutTests extends TestBase {
         step("Entering '123' CVC", () -> {$("#cvd").setValue("123");});
         step("Clicking on 'Confirm payment' button", () -> {$(".btn.btn-info").click();});
         step("Checking thank you page title", () -> {$("#success-page-custom").shouldHave(text("Mange tak for din ordre, " + firstName));});
-        step("", () -> {$("").click();});
-        step("", () -> {$("").click();});
+//        step("", () -> {$("").click();});
+//        step("", () -> {$("").click();});
     }
 }
