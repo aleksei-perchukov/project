@@ -4,19 +4,20 @@ import com.codeborne.selenide.WebDriverRunner;
 import models.CreateUserPojoModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.given;
-import static specs.Specs.requestSpecification;
-import static specs.Specs.responseSpecification;
+import static specs.Specs.requestSpecification1;
+import static specs.Specs.responseSpecification1;
 import static usertests.Components.openPage;
 import static usertests.TestData.*;
 import static io.qameta.allure.Allure.step;
 
-@Tag("User account tests")
+@Tag("UserAccount")
 public class UserTests extends TestBase {
 
     @Tag ("UI")
@@ -54,12 +55,12 @@ public class UserTests extends TestBase {
         request.setPassword_confirmation("Nanana88");
         String cookie;
         cookie = given()
-                .spec(requestSpecification)
+                .spec(requestSpecification1)
                 .log().all()
                 .body(request)
                 .post(createUserPage)
                 .then()
-                .spec(responseSpecification)
+                .spec(responseSpecification1)
                 .extract()
                 .cookie("form_key");
     }
