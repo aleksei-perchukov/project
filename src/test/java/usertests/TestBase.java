@@ -28,12 +28,6 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browser_size", "1900x1080");
         Configuration.pageLoadStrategy = "none";
         Configuration.baseUrl = "https://skanva.dk";
-
-
-//        capabilities.setCapability("devtools", true);
-//        System.setProperty("noExit", "true");
-//        System.setProperty("moon_debugged", "true");
-//        System.setProperty("devtools", "true");
         baseURI = "https://skanva.dk";
         Configuration.timeout = 60000;
 
@@ -47,8 +41,6 @@ public class TestBase {
 //        if (remote != null) {
 //            Attach.addVideo();
 //        }
-        driver().clearCookies();
-        clearBrowserCache();
         closeWebDriver();
     }
 

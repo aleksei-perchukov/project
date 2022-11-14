@@ -3,10 +3,8 @@ package usertests;
 import com.github.javafaker.Faker;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import static Utils.RandomUtils.*;
+import static utils.RandomUtils.*;
 
 public class TestData {
     //ADMIN CREDS
