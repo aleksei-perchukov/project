@@ -2,6 +2,8 @@ package utils;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -32,5 +34,15 @@ public class RandomUtils {
 
     public static String getRandomPhone() {
         return "+382" + getRandomLong(1111111111L, 9999999999L).toString();
+    }
+
+    public static Date getCookieExpirationDate() {
+        Date date = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.MONTH, 6);
+
+        java.util.Date cookieExpirationDate = calendar.getTime();
+        return cookieExpirationDate;
     }
 }

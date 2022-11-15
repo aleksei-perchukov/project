@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static checkouttests.CheckoutData.*;
 import static io.restassured.RestAssured.baseURI;
 
 public class CheckoutTestsToPerform {
@@ -13,23 +14,23 @@ public class CheckoutTestsToPerform {
     @Tag("UI")
     @Tag("NO")
     void quickPayTestNO(){
-        Configuration.baseUrl = "https://skanva.no";
-        baseURI = "https://skanva.no";
+        Configuration.baseUrl = urlNO;
+        baseURI = urlNO;
     }
     @Test
     @Tag("API")
     @Tag("UI")
     @Tag("DK")
     void quickPayTestDK(){
-        Configuration.baseUrl = "https://skanva.dk";
-        baseURI = "https://skanva.dk";
+        Configuration.baseUrl = urlDK;
+        baseURI = urlDK;
     }
     @Test
     @Tag("API")
     @Tag("UI")
     @Tag("IS")
     void quickPayTestIS(){
-        Configuration.baseUrl = "https://skanva.is";
-        baseURI = "https://skanva.is";
+        Configuration.baseUrl = urlIS;
+        baseURI = urlIS;
     }
 }

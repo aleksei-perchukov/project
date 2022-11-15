@@ -1,6 +1,7 @@
 package checkouttests;
 
 import com.codeborne.selenide.ClickOptions;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
 
@@ -31,6 +32,7 @@ public class CheckoutWebSteps {
 
     @Step("-=Shipping form=-")
     static void fillShippingForm() {
+        String zipCode = getZipCode();
         step("Shipping form -> First name = " + firstName, () -> {
             $("[name=firstname]").setValue(firstName);
         });
@@ -43,9 +45,12 @@ public class CheckoutWebSteps {
         step("Shipping form -> House number = '42'", () -> {
             $("[name='custom_attributes[house_number]']").setValue("42");
         });
-        step("Shipping form -> Postnummer = '8000'", () -> {
-            $("[name=postcode]").setValue("8000");
+        step("Shipping form -> Postnummer = '" + zipCode + "'", () -> {
+            $("[name=postcode]").setValue(zipCode);
         });
+        if(Configuration.baseUrl.equals(urlNO)) {
+            $("[name=city]").setValue("Test City");
+        }
         step("Shipping form -> Telefonnummer = " + mobileNumber + " in mobile phone field", () -> {
             $(".telephone-input__telephone.input-text").setValue(mobileNumber);
         });
@@ -92,38 +97,107 @@ public class CheckoutWebSteps {
                     Selenide.sleep(10000);
                 });
                 step("Clicking on 'Place order' button", () -> {
-                    $$(".action.primary.checkout").get(0).click();
+                    if(Configuration.baseUrl.equals(urlDK)) {
+                        $$(".action.primary.checkout").get(0).click();
+                    } else if(Configuration.baseUrl.equals(urlNO)) {
+                        $$(".action.primary.checkout").get(1).click();
+                    } else if(Configuration.baseUrl.equals(urlIS)) {
+
+                    } else if(Configuration.baseUrl.equals(urlDE)) {
+
+                    } else if(Configuration.baseUrl.equals(urlSE)) {
+
+                    }
                 });
             }
             else if (paymentMethod.equals(quickPay)) {
                 step("Clicking on 'Accept terms of conditions' checkbox", () -> {
-                    $("[for=agreement_quickpay_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                    if(Configuration.baseUrl.equals(urlDK)) {
+                        $("[for=agreement_quickpay_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                    } else if(Configuration.baseUrl.equals(urlNO)) {
+                        $("[for=agreement_quickpay_3]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                    } else if(Configuration.baseUrl.equals(urlIS)) {
+
+                    } else if(Configuration.baseUrl.equals(urlDE)) {
+
+                    } else if(Configuration.baseUrl.equals(urlSE)) {
+
+                    }
+
                 });
                 step("Clicking on 'confirm 50% payment' checkbox", () -> {
-                    $("[for=agreement_quickpay_2]").click();
+                    if(Configuration.baseUrl.equals(urlDK)) {
+                        $("[for=agreement_quickpay_2]").click();
+                    } else if(Configuration.baseUrl.equals(urlNO)) {
+                        $("[for=agreement_quickpay_4]").click();
+                    } else if(Configuration.baseUrl.equals(urlIS)) {
+
+                    } else if(Configuration.baseUrl.equals(urlDE)) {
+
+                    } else if(Configuration.baseUrl.equals(urlSE)) {
+
+                    }
                     Selenide.sleep(10000);
                 });
                 step("Clicking on 'Place order' button", () -> {
-                    $$(".action.primary.checkout").get(1).click();
+                    if(Configuration.baseUrl.equals(urlDK)) {
+                        $$(".action.primary.checkout").get(1).click();
+                    } else if(Configuration.baseUrl.equals(urlNO)) {
+                        $$(".action.primary.checkout").get(2).click();
+                    } else if(Configuration.baseUrl.equals(urlIS)) {
+
+                    } else if(Configuration.baseUrl.equals(urlDE)) {
+
+                    } else if(Configuration.baseUrl.equals(urlSE)) {
+
+                    }
                 });
             }
             else if (paymentMethod.equals(bankPay)) {
                 step("Clicking on 'Accept terms of conditions' checkbox", () -> {
-                    $("[for=agreement_banktransfer_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                    if(Configuration.baseUrl.equals(urlDK)) {
+                        $("[for=agreement_banktransfer_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                    } else if(Configuration.baseUrl.equals(urlNO)) {
+                        $("[for=agreement_banktransfer_3]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                    } else if(Configuration.baseUrl.equals(urlIS)) {
+
+                    } else if(Configuration.baseUrl.equals(urlDE)) {
+
+                    } else if(Configuration.baseUrl.equals(urlSE)) {
+
+                    }
                     Selenide.sleep(10000);
                    });
                 step("Clicking on 'Place order' button", () -> {
-                    $$(".action.primary.checkout").get(2).click();
+                    if(Configuration.baseUrl.equals(urlDK)) {
+                        $$(".action.primary.checkout").get(2).click();
+                    } else if(Configuration.baseUrl.equals(urlNO)) {
+                        $$(".action.primary.checkout").get(3).click();
+                    } else if(Configuration.baseUrl.equals(urlIS)) {
+
+                    } else if(Configuration.baseUrl.equals(urlDE)) {
+
+                    } else if(Configuration.baseUrl.equals(urlSE)) {
+
+                    }
                 });
-
-
             } else if (paymentMethod.equals(viaBillPay)) {
                 step("Clicking on 'Accept terms of conditions' checkbox", () -> {
                     $("[for=agreement_viabill_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
                 });
                 Selenide.sleep(10000);
                 step("Clicking on 'Place order' button", () -> {
-                    $$(".action.primary.checkout").get(3).click();
+                    if(Configuration.baseUrl.equals(urlDK)) {
+                        $$(".action.primary.checkout").get(3).click();
+                    } else if(Configuration.baseUrl.equals(urlNO)) {
+                        $$(".action.primary.checkout").get(5).click();
+                    } else if(Configuration.baseUrl.equals(urlIS)) {
+
+                    } else if(Configuration.baseUrl.equals(urlDE)) {
+
+                    } else if(Configuration.baseUrl.equals(urlSE)) {
+
+                    }
                 });
             } else if (paymentMethod.equals(sparkXpressPay)) {
                 step("Clicking on 'Accept terms of conditions' checkbox", () -> {
@@ -131,10 +205,38 @@ public class CheckoutWebSteps {
                 });
                 Selenide.sleep(10000);
                 step("Clicking on 'Place order' button", () -> {
-                    $$(".action.primary.checkout").get(4).click();
+                    if(Configuration.baseUrl.equals(urlDK)) {
+                        $$(".action.primary.checkout").get(4).click();
+                    } else if(Configuration.baseUrl.equals(urlNO)) {
+
+                    } else if(Configuration.baseUrl.equals(urlIS)) {
+
+                    } else if(Configuration.baseUrl.equals(urlDE)) {
+
+                    } else if(Configuration.baseUrl.equals(urlSE)) {
+
+                    }
+                });
+            } else if (paymentMethod.equals(klarnaPay)) {
+                step("Clicking on 'Accept terms of conditions' checkbox", () -> {
+                            $("[for=agreement_klarna_pay_later_3]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                });
+                Selenide.sleep(5000);
+                step("Clicking on 'Place order' button", () -> {
+                    if (Configuration.baseUrl.equals(urlDK)) {
+                        $$(".action.primary.checkout").get(0).click();
+                    } else if (Configuration.baseUrl.equals(urlNO)) {
+                        $$(".action.primary.checkout").get(0).click();
+                    } else if (Configuration.baseUrl.equals(urlIS)) {
+
+                    } else if (Configuration.baseUrl.equals(urlDE)) {
+
+                    } else if (Configuration.baseUrl.equals(urlSE)) {
+
+                    }
                 });
             }
-        Selenide.sleep(5000);
+        Selenide.sleep(3000);
         }
 
         @Step("-=QUICK PAY FORM=-")
@@ -156,9 +258,45 @@ public class CheckoutWebSteps {
             });
         }
 
+        @Step("-=KLARNA PAY FORM=-")
+        static void fillKlarnaPay () {
+            step("KLARNA PAY -> Entering '01087000571' personal number", () -> {
+                Selenide.sleep(5000);
+  //              $("#invoice_kp-purchase-approval-form-national-identification-number__container").click();
+                $("[for=invoice_kp-purchase-approval-form-national-identification-number]").sendKeys("01087000571");
+            });
+            step("KLARNA PAY -> Clicking 'Buy' button", () -> {
+                $("#invoice_kp-purchase-approval-form-continue-button").click();
+            });
+        }
+
         @Step("Check order success")
-        static void checkOrderSuccess (String firstName){
-            $("#success-page-custom").shouldHave(text("Mange tak for din ordre, " + firstName));
+        static void checkOrderSuccess (String firstName, String paymentMethod) {
+            if (paymentMethod.equals(paypalExpressPay)) {
+                $("#headerText").shouldHave(text("Pay with PayPal"));
+            } else if (paymentMethod.equals(quickPay) || paymentMethod.equals(bankPay)){
+                if(Configuration.baseUrl.equals(urlDK)) {
+                    $("#success-page-custom").shouldHave(text("Mange tak for din ordre, " + firstName));
+                } else if(Configuration.baseUrl.equals(urlNO)) {
+                    $("#success-page-custom").shouldHave(text("Takk for at du handlet hos oss, " + firstName));
+                } else if(Configuration.baseUrl.equals(urlIS)) {
+
+                } else if(Configuration.baseUrl.equals(urlDE)) {
+
+                } else if(Configuration.baseUrl.equals(urlSE)) {
+
+                }
+
+            } else if (paymentMethod.equals(bankPay)) {
+                $("#success-page-custom").shouldHave(text("Mange tak for din ordre, " + firstName));
+            } else if (paymentMethod.equals(viaBillPay)) {
+                $(byText("Indkøbskurv")).shouldBe(exist);
+            } else if (paymentMethod.equals(sparkXpressPay)) {
+                $(byText("sparxpres.dk")).shouldBe(exist);
+            } else if (paymentMethod.equals(klarnaPay)) {
+                $(".checkout-success__agreement").shouldHave(text("Bestillingen din er nå registrert, og du vil snart motta en e-post med bestillingsbekreftelsen på: " + email));
+
+            }
         }
 
 

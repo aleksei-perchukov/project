@@ -1,30 +1,43 @@
 package checkouttests;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
 import io.restassured.response.ResponseBodyExtractionOptions;
-import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.Cookie;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.HashMap;
-
+import static checkouttests.CheckoutData.*;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.WebDriverRunner.driver;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static specs.Specs.*;
 import static usertests.Components.openPage;
+import static utils.RandomUtils.getCookieExpirationDate;
 
-public class ApiMethods {
+public class CheckoutApiMethods {
     @Step("Getting PHPSESSID cookie via API")
     static String PhpSessIdCookieGetter() {
-        String phpSessIdCookie = given()
-                .spec(requestSpecification1)
-                .get("/")
-                .then()
-                .spec(responseSpecification1)
-                .log().headers()
-                .extract().cookie("PHPSESSID");
+        String phpSessIdCookie = null;
+        if(Configuration.baseUrl.equals(urlDK)) {
+            phpSessIdCookie = given()
+                    .spec(requestSpecification1)
+                    .get("/")
+                    .then()
+                    .spec(responseSpecification1)
+                    .log().headers()
+                    .extract().cookie("PHPSESSID");
+        } else if(Configuration.baseUrl.equals(urlNO)) {
+           openPage("/tr/1-fags-toppsving-vindu-med-1-glassfelt");
+           Selenide.sleep(1000);
+           $("#height").setValue("100");
+           $(".item.home").click();
+            Selenide.sleep(5000);
+           phpSessIdCookie = WebDriverRunner.getWebDriver().manage().getCookieNamed("PHPSESSID").getValue();
+
+        }
         return phpSessIdCookie;
     }
 
@@ -41,6 +54,7 @@ public class ApiMethods {
     }
     static void openBrowserWithCookies(String phpSessIdCookie, String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
+        Selenide.sleep(1000);
         Cookie authCookie = new Cookie("PHPSESSID", phpSessIdCookie);
         Cookie form_keyCookie = new Cookie("form_key", "x2OdeHWwSION73Xc");
         WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
@@ -49,6 +63,19 @@ public class ApiMethods {
     }
     @Step("Adding product to cart by API")
     static ResponseBodyExtractionOptions apiAddToCart(String phpSessIdCookie) {
+        String productId = null;
+        if(Configuration.baseUrl.equals(urlDK)) {
+            productId = "4404";
+        } else if(Configuration.baseUrl.equals(urlNO)) {
+            productId = "5550";
+        } else if(Configuration.baseUrl.equals(urlIS)) {
+            productId = "";
+        } else if(Configuration.baseUrl.equals(urlDE)) {
+            productId = "";
+        } else if(Configuration.baseUrl.equals(urlSE)) {
+            productId = "";
+        }
+
         ResponseBodyExtractionOptions cart_id_json = given()
                 .spec(requestSpecification1)
                 .cookie("PHPSESSID", phpSessIdCookie)
@@ -56,14 +83,13 @@ public class ApiMethods {
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .header("x-requested-with", "XMLHttpRequest")
                 .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36")
-                .body("product=4404&selected_configurable_option=&related_product=&item=1277812&item=4404&form_key=x2OdeHWwSION73Xc&estimated_delivery_time=%5B8%2C10%5D&width=190&height=120&qty=1&options%5B60380%5D=190&options%5B60381%5D=120&options%5B60382%5D=%7B%22height%22%3A120%2C%22width%22%3A190%2C%22width1%22%3A95%2C%22fieldwidth2%22%3A95%7D&options%5B48328%5D=2131878&special_color_ral%5B5234147%5D=none&options%5B48326%5D=305016&special_color_ral%5B5222597%5D=none&options%5B48327%5D=305021&options%5B48330%5D=305036&options%5B860699%5D=5193080&options%5B57298%5D=361683&options%5B53127%5D=337474&options%5B859559%5D=5190887&options%5B245170%5D=1100313&options%5B352864%5D=2232309&")
-                .when()
-                .post("/checkout/cart/add/product/4404/")
+                .body(getAddToCartBody()).when()
+                .post("/checkout/cart/add/product/" + productId + "/")
                 .then()
                 .spec(responseSpecification1)
                 .log().status()
                 .log().body()
-                .statusCode(200)
+           //     .statusCode(200)
                 .extract().body();
         return cart_id_json;
     }

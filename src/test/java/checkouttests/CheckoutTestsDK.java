@@ -3,33 +3,32 @@ package checkouttests;
 import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.WebDriverRunner;
-import com.fasterxml.jackson.databind.JsonNode;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.Cookie;
-import usertests.TestBase;
 
-import java.time.Duration;
 
 import static checkouttests.CheckoutData.*;
 import static checkouttests.CheckoutWebSteps.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static io.restassured.RestAssured.baseURI;
 import static utils.RandomUtils.getRandomLong;
-import static checkouttests.ApiMethods.*;
+import static checkouttests.CheckoutApiMethods.*;
 import static com.codeborne.selenide.Condition.*;
-import static io.qameta.allure.Allure.step;
-import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
-import static specs.Specs.requestSpecification1;
-import static specs.Specs.responseSpecification1;
 import static usertests.Components.openPage;
 import static usertests.TestData.*;
 
 @Tag("Checkout")
-public class CheckoutTests extends TestBase {
+@Tag("DK")
+public class CheckoutTestsDK extends TestBase {
+    void configureUrls(){
+        Configuration.baseUrl = "https://skanva.dk";
+        baseURI = "https://skanva.dk";
+    };
+
     @Disabled
+    @DisplayName("Initial selenide payment test")
     @RepeatedTest(10)
     void quickPayTest() {
         openPage("/tr/topstyret-vindue-2-fags");
@@ -74,80 +73,76 @@ public class CheckoutTests extends TestBase {
 
     @Test
     @DisplayName("PAYMENT METHOD -> PaypalExpress - Guest")
-    void paypalExpressPayTestGuest(){
+    void paypalExpressPayTestGuest() {
+        configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
-        ResponseBodyExtractionOptions cart_id_json = apiAddToCart(phpSessIdCookie);
-        assertThat(cart_id_json.jsonPath().get("messages.type").equals("success"));
+        apiAddToCart(phpSessIdCookie);
         openBrowserWithCookies(phpSessIdCookie, "/checkout");
         acceptCookies();
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(paypalExpressPay);
-        $("#headerText").shouldHave(text("Pay with PayPal"));
+        checkOrderSuccess(firstName, paypalExpressPay);
     }
+
     @Test
     @DisplayName("PAYMENT METHOD -> QuickPay - Guest")
     void quickPayTestGuest() {
+        configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
-        ResponseBodyExtractionOptions cart_id_json = apiAddToCart(phpSessIdCookie);
-        assertThat(cart_id_json.jsonPath().get("messages.type").equals("success"));
+        apiAddToCart(phpSessIdCookie);
         openBrowserWithCookies(phpSessIdCookie, "/checkout");
         acceptCookies();
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
-        checkOrderSuccess(firstName);
+        checkOrderSuccess(firstName, quickPay);
     }
 
     @Test
     @DisplayName("PAYMENT METHOD -> Bank Transfer - Guest")
-    void bankPayTestGuest(){
+    void bankPayTestGuest() {
+        configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
-        ResponseBodyExtractionOptions cart_id_json = apiAddToCart(phpSessIdCookie);
-        assertThat(cart_id_json.jsonPath().get("messages.type").equals("success"));
+        apiAddToCart(phpSessIdCookie);
         openBrowserWithCookies(phpSessIdCookie, "/checkout");
         acceptCookies();
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(bankPay);
-        checkOrderSuccess(firstName);
+        checkOrderSuccess(firstName, bankPay);
     }
 
     @Test
     @DisplayName("PAYMENT METHOD -> SparkXpress - Guest")
-    void sparkXpressPayTestGuest(){
+    void sparkXpressPayTestGuest() {
+        configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
-        ResponseBodyExtractionOptions cart_id_json = apiAddToCart(phpSessIdCookie);
-        assertThat(cart_id_json.jsonPath().get("messages.type").equals("success"));
+        apiAddToCart(phpSessIdCookie);
         openBrowserWithCookies(phpSessIdCookie, "/checkout");
         acceptCookies();
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
-        $(byText("sparxpres.dk")).shouldBe(exist);
- //       checkOrderSuccess(firstName);
+        checkOrderSuccess(firstName, sparkXpressPay);
     }
 
     @Test
     @DisplayName("PAYMENT METHOD -> ViaBill - Guest")
-    void viaBillPayTestGuest(){
+    void viaBillPayTestGuest() {
+        configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
-        ResponseBodyExtractionOptions cart_id_json = apiAddToCart(phpSessIdCookie);
-        assertThat(cart_id_json.jsonPath().get("messages.type").equals("success"));
+        apiAddToCart(phpSessIdCookie);
         openBrowserWithCookies(phpSessIdCookie, "/checkout");
         acceptCookies();
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(viaBillPay);
         $(byText("APPROVED")).click();
- //       $$("vbc-button.vbc-button_accept").first().click();
-        $(byText("Indkøbskurv")).shouldBe(exist);
- //              checkOrderSuccess(firstName);
+               checkOrderSuccess(firstName, viaBillPay);
     }
 
-
-//    @Disable
 //    @Test
 //    void checkUpdateCartNumber(){
 //    String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -253,6 +248,5 @@ public class CheckoutTests extends TestBase {
 //            System.out.println(cart_update_json.jsonPath().get("cart.summary_count").toString());
 //        });
 //    }
-
 
 }

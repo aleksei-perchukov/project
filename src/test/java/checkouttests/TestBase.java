@@ -1,4 +1,4 @@
-package usertests;
+package checkouttests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -9,7 +9,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static checkouttests.CheckoutData.urlDK;
 import static com.codeborne.selenide.WebDriverRunner.*;
 import static io.restassured.RestAssured.baseURI;
 
@@ -29,8 +28,6 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("browser_version", "95.0");
         Configuration.browserSize = System.getProperty("browser_size", "1900x1080");
         Configuration.pageLoadStrategy = "none";
-        Configuration.baseUrl = urlDK;
-        baseURI = urlDK;
         Configuration.timeout = 20000;
 
     }
