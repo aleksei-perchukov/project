@@ -2,6 +2,7 @@ package usertests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -35,12 +36,14 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
-//        Attach.screenshotAs("Screenshot");
-//        Attach.pageSource();
-//        Attach.browserConsoleLogs();
-//        if (remote != null) {
-//            Attach.addVideo();
-//        }
+        Attach.screenshotAs("Screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        if (remote != null) {
+            Attach.addVideo();
+        }
+        driver().clearCookies();
+        clearBrowserCache();
         closeWebDriver();
     }
 

@@ -9,8 +9,7 @@ import java.time.Duration;
 import static checkouttests.CheckoutData.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.refresh;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static usertests.TestData.*;
 
@@ -79,50 +78,63 @@ public class CheckoutWebSteps {
 
     @Step("-=PAYMENT METHOD FORM=-")
     static void fillPaymentMethod(String paymentMethod) {
-            step("Clicking on 'Quick Pay' payment method'", () -> {
+            step("Clicking on " + paymentMethod + " payment method'", () -> {
                 $(paymentMethod).click();
             });
             step("Submitting payment form", () -> {
                 $("#co-payment-form").submit();
             });
-//            $(".action.primary.checkout").shouldBe(enabled, interactable);
+        //           $(".action.primary.checkout").shouldBe(enabled);
             Selenide.sleep(10000);
             if(paymentMethod.equals(paypalExpressPay)) {
                 step("Clicking on 'Accept terms of conditions' checkbox", () -> {
-                    $("label.label[for=paypal_express_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
-                    Selenide.sleep(5000);
+                    $("[for=agreement_paypal_express_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                    Selenide.sleep(10000);
+                });
+                step("Clicking on 'Place order' button", () -> {
+                    $$(".action.primary.checkout").get(0).click();
                 });
             }
             else if (paymentMethod.equals(quickPay)) {
                 step("Clicking on 'Accept terms of conditions' checkbox", () -> {
-                    $("label.label[for=agreement_quickpay_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                    $("[for=agreement_quickpay_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
                 });
                 step("Clicking on 'confirm 50% payment' checkbox", () -> {
                     $("[for=agreement_quickpay_2]").click();
-                    Selenide.sleep(5000);
-                });
-            } else if (paymentMethod.equals(bankPay)) {
-                step("Clicking on 'Accept terms of conditions' checkbox", () -> {
-                    $("label.label[for=agreement_banktransfer_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
                     Selenide.sleep(10000);
                 });
+                step("Clicking on 'Place order' button", () -> {
+                    $$(".action.primary.checkout").get(1).click();
+                });
+            }
+            else if (paymentMethod.equals(bankPay)) {
+                step("Clicking on 'Accept terms of conditions' checkbox", () -> {
+                    $("[for=agreement_banktransfer_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                    Selenide.sleep(10000);
+                   });
+                step("Clicking on 'Place order' button", () -> {
+                    $$(".action.primary.checkout").get(2).click();
+                });
+
+
             } else if (paymentMethod.equals(viaBillPay)) {
                 step("Clicking on 'Accept terms of conditions' checkbox", () -> {
-                    $("label.label[for=agreement_viabill_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
-                    Selenide.sleep(5000);
+                    $("[for=agreement_viabill_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                });
+                Selenide.sleep(10000);
+                step("Clicking on 'Place order' button", () -> {
+                    $$(".action.primary.checkout").get(3).click();
                 });
             } else if (paymentMethod.equals(sparkXpressPay)) {
                 step("Clicking on 'Accept terms of conditions' checkbox", () -> {
-                    $("label.label[for=agreement_sparxpres_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
-                    Selenide.sleep(5000);
+                    $("[for=agreement_sparxpres_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
+                });
+                Selenide.sleep(10000);
+                step("Clicking on 'Place order' button", () -> {
+                    $$(".action.primary.checkout").get(4).click();
                 });
             }
- //           $(byText("Godkend og betal")).click();
-                step("Clicking on 'Place order' button", () -> {
-                    $("[title='Godkend og betal']").shouldBe(enabled, interactable).click(ClickOptions.withTimeout(Duration.ofSeconds(3)));
-                    Selenide.sleep(5000);
-                    $("[title='Godkend og betal']").shouldBe(enabled, interactable).click(ClickOptions.withTimeout(Duration.ofSeconds(3)));
-                });
+        Selenide.sleep(5000);
         }
 
         @Step("-=QUICK PAY FORM=-")
