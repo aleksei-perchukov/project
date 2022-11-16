@@ -10,50 +10,39 @@ import static checkouttests.CheckoutWebSteps.*;
 import static io.restassured.RestAssured.baseURI;
 import static usertests.TestData.firstName;
 
-public class CheckoutTestsNO extends TestBase{
+public class CheckoutTestsDE extends TestBase{
     void configureUrls(){
-        Configuration.baseUrl = urlNO;
-        baseURI = urlNO;
+        Configuration.baseUrl = urlDE;
+        baseURI = urlDE;
     };
 
     @Test
-    @DisplayName("-=NO=- PAYMENT METHOD -> Klarna - Guest")
-    void klarnaPayTestGuestNO() {
+    @DisplayName("-=DE=- PAYMENT METHOD -> QuickPay - Guest")
+    void quickPayGuestDE() {
         configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie);
         openBrowserWithCookies(phpSessIdCookie, "/checkout");
-        fillShippingForm();
-        fillShippingMethod();
-        fillPaymentMethod(klarnaPay);
-        fillKlarnaPay();
-        checkOrderSuccess(firstName, klarnaPay);
-    }
-
-    @Test
-    @DisplayName("-=NO=- PAYMENT METHOD -> QuickPay - Guest")
-    void quickPayTestGuestNO() {
-        configureUrls();
-        String phpSessIdCookie = PhpSessIdCookieGetter();
-        apiAddToCart(phpSessIdCookie);
-        openBrowserWithCookies(phpSessIdCookie, "/checkout");
+//        acceptCookies();
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(quickPay);
-        fillQuickPay();
+        fillNetgiroPay();
         checkOrderSuccess(firstName, quickPay);
     }
 
     @Test
-    @DisplayName("-=NO=- PAYMENT METHOD -> Bank Transfer - Guest")
-    void bankPayTestGuestNO() {
+    @DisplayName("-=DE=- PAYMENT METHOD -> BankTranfer - Guest")
+    void bankPayTestGuestDE() {
         configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie);
         openBrowserWithCookies(phpSessIdCookie, "/checkout");
+//        acceptCookies();
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(bankPay);
+        fillNetgiroPay();
         checkOrderSuccess(firstName, bankPay);
     }
 }

@@ -8,14 +8,10 @@ import io.restassured.response.ResponseBodyExtractionOptions;
 import org.openqa.selenium.Cookie;
 
 import static checkouttests.CheckoutData.*;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.WebDriverRunner.driver;
 import static io.restassured.RestAssured.given;
-import static org.assertj.core.api.Assertions.assertThat;
 import static specs.Specs.*;
 import static usertests.Components.openPage;
-import static utils.RandomUtils.getCookieExpirationDate;
 
 public class CheckoutApiMethods {
     @Step("Getting PHPSESSID cookie via API")
@@ -29,15 +25,20 @@ public class CheckoutApiMethods {
                     .spec(responseSpecification1)
                     .log().headers()
                     .extract().cookie("PHPSESSID");
-        } else if(Configuration.baseUrl.equals(urlNO)) {
-           openPage("/tr/1-fags-toppsving-vindu-med-1-glassfelt");
+        } else if(Configuration.baseUrl.equals(urlNO) || Configuration.baseUrl.equals(urlIS) || Configuration.baseUrl.equals(urlDE)) {
+            String productUrl = null;
+            if(Configuration.baseUrl.equals(urlNO)){productUrl = "/tr/1-fags-toppsving-vindu-med-1-glassfelt";}
+            if(Configuration.baseUrl.equals(urlIS)){productUrl = "/tr/toppstyrdur-gluggi-2-fags";}
+            if(Configuration.baseUrl.equals(urlDE)){productUrl = "/tr/2-teiliges-klappfenster";}
+           openPage(productUrl);
+
            Selenide.sleep(1000);
            $("#height").setValue("100");
            $(".item.home").click();
             Selenide.sleep(5000);
            phpSessIdCookie = WebDriverRunner.getWebDriver().manage().getCookieNamed("PHPSESSID").getValue();
-
         }
+
         return phpSessIdCookie;
     }
 
@@ -69,9 +70,9 @@ public class CheckoutApiMethods {
         } else if(Configuration.baseUrl.equals(urlNO)) {
             productId = "5550";
         } else if(Configuration.baseUrl.equals(urlIS)) {
-            productId = "";
+            productId = "4404";
         } else if(Configuration.baseUrl.equals(urlDE)) {
-            productId = "";
+            productId = "4404";
         } else if(Configuration.baseUrl.equals(urlSE)) {
             productId = "";
         }

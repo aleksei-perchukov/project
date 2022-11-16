@@ -10,7 +10,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.WebDriverRunner.*;
-import static io.restassured.RestAssured.baseURI;
 
 public class TestBase {
     static String remote = System.getProperty("selenide.remote");
@@ -28,7 +27,7 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("browser_version", "95.0");
         Configuration.browserSize = System.getProperty("browser_size", "1900x1080");
         Configuration.pageLoadStrategy = "none";
-        Configuration.timeout = 20000;
+        Configuration.timeout = 60000;
 
     }
 

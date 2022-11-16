@@ -14,8 +14,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.baseURI;
 import static utils.RandomUtils.getRandomLong;
 import static checkouttests.CheckoutApiMethods.*;
-import static com.codeborne.selenide.Condition.*;
-import static org.assertj.core.api.Assertions.assertThat;
 import static usertests.Components.openPage;
 import static usertests.TestData.*;
 
@@ -23,12 +21,12 @@ import static usertests.TestData.*;
 @Tag("DK")
 public class CheckoutTestsDK extends TestBase {
     void configureUrls(){
-        Configuration.baseUrl = "https://skanva.dk";
-        baseURI = "https://skanva.dk";
+        Configuration.baseUrl = urlDK;
+        baseURI = urlDK;
     };
 
     @Disabled
-    @DisplayName("Initial selenide payment test")
+    @DisplayName("-=DK=- Initial selenide payment test")
     @RepeatedTest(10)
     void quickPayTest() {
         openPage("/tr/topstyret-vindue-2-fags");
@@ -72,7 +70,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("PAYMENT METHOD -> PaypalExpress - Guest")
+    @DisplayName("-=DK=- PAYMENT METHOD -> PaypalExpress - Guest")
     void paypalExpressPayTestGuest() {
         configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -86,7 +84,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("PAYMENT METHOD -> QuickPay - Guest")
+    @DisplayName("-=DK=- PAYMENT METHOD -> QuickPay - Guest")
     void quickPayTestGuest() {
         configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -101,7 +99,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("PAYMENT METHOD -> Bank Transfer - Guest")
+    @DisplayName("-=DK=- PAYMENT METHOD -> Bank Transfer - Guest")
     void bankPayTestGuest() {
         configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -115,7 +113,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("PAYMENT METHOD -> SparkXpress - Guest")
+    @DisplayName("-=DK=- PAYMENT METHOD -> SparkXpress - Guest")
     void sparkXpressPayTestGuest() {
         configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -129,7 +127,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("PAYMENT METHOD -> ViaBill - Guest")
+    @DisplayName("-=DK=- PAYMENT METHOD -> ViaBill - Guest")
     void viaBillPayTestGuest() {
         configureUrls();
         String phpSessIdCookie = PhpSessIdCookieGetter();

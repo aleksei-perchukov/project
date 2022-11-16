@@ -30,7 +30,6 @@ public class TestData {
     static String skydedoreCatalogPage = "/skydedoere";
     static String adminPage = "/skanvacms/admin";
     public static String addToCartPage = "/tr/topstyret-vindue-2-fags";
- //   public static String addToCartPage = "/checkout/cart/add/uenc/aHR0cHM6Ly9za2FudmEuZGsvdHIvdG9wc3R5cmV0LXZpbmR1ZS0yLWZhZ3M%2C/product/4404/";
 
     static public HashMap getAddToCartParams() {
     HashMap<String, String> addToCartParams = new HashMap<>();
