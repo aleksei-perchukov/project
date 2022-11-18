@@ -52,7 +52,7 @@ public class CheckoutTestsDEUser extends TestBase{
     }
 
     @Test
-    @DisplayName("-=DE=- PAYMENT METHOD -> BankTranfer - User")
+    @DisplayName("-=DE=- PAYMENT METHOD -> BankTransfer - User")
     void bankPayTestGuestDE() {
         configureUrls();
         Map map = createUserAndLoginAPI();

@@ -5,23 +5,25 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.user.TestData;
 
+import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
 
+@DisplayName("-=NO=- PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsNO extends TestBase{
     void configureUrlsNO(){
         Configuration.baseUrl = urlNO;
         baseURI = urlNO;
-    };
+    }
 
     @Test
     @DisplayName("-=NO=- PAYMENT METHOD -> Klarna - Guest")
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
-        String phpSessIdCookie = CheckoutApiMethods.PhpSessIdCookieGetter();
-        CheckoutApiMethods.apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        CheckoutApiMethods.openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(klarnaPay);
@@ -33,9 +35,9 @@ public class CheckoutTestsNO extends TestBase{
     @DisplayName("-=NO=- PAYMENT METHOD -> QuickPay - Guest")
     void quickPayTestGuestNO() {
         configureUrlsNO();
-        String phpSessIdCookie = CheckoutApiMethods.PhpSessIdCookieGetter();
-        CheckoutApiMethods.apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        CheckoutApiMethods.openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(quickPay);
@@ -47,9 +49,9 @@ public class CheckoutTestsNO extends TestBase{
     @DisplayName("-=NO=- PAYMENT METHOD -> Bank Transfer - Guest")
     void bankPayTestGuestNO() {
         configureUrlsNO();
-        String phpSessIdCookie = CheckoutApiMethods.PhpSessIdCookieGetter();
-        CheckoutApiMethods.apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        CheckoutApiMethods.openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(bankPay);

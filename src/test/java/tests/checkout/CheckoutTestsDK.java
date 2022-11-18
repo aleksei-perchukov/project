@@ -15,16 +15,16 @@ import static tests.checkout.CheckoutWebSteps.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.baseURI;
-import static utils.RandomUtils.getRandomLong;
 import static tests.user.TestData.*;
 
 @Tag("Checkout")
 @Tag("DK")
+@DisplayName("-=DK=- PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDK extends TestBase {
     void configureUrlsDK(){
         Configuration.baseUrl = urlDK;
         baseURI = urlDK;
-    };
+    }
 
     @Disabled
     @Test

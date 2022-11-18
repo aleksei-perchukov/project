@@ -12,11 +12,12 @@ import static tests.checkout.CheckoutData.bankPay;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
 
+@DisplayName("-=IS=- PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsIS extends TestBase {
     void configureUrlsIS(){
         Configuration.baseUrl = urlIS;
         baseURI = urlIS;
-    };
+    }
 
     @Disabled
     @Test

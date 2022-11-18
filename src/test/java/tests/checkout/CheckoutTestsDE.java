@@ -10,6 +10,8 @@ import static tests.checkout.CheckoutWebSteps.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
 
+
+@DisplayName("-=DE=- PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDE extends TestBase{
     void configureUrlsDE(){
         Configuration.baseUrl = urlDE;
@@ -33,7 +35,7 @@ public class CheckoutTestsDE extends TestBase{
     }
 
     @Test
-    @DisplayName("-=DE=- PAYMENT METHOD -> BankTranfer - Guest")
+    @DisplayName("-=DE=- PAYMENT METHOD -> BankTransfer - Guest")
     void bankPayTestGuestDE() {
         configureUrlsDE();
         String phpSessIdCookie = PhpSessIdCookieGetter();
