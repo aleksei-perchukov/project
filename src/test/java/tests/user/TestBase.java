@@ -32,6 +32,9 @@ public class TestBase {
         Configuration.baseUrl = urlDK;
         baseURI = urlDK;
         Configuration.timeout = 20000;
+        if(remote != null) {
+            Configuration.remote = "https://user1:1234@" + remote;
+        }
 
     }
 
