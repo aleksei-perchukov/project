@@ -32,7 +32,7 @@ public class UserTests extends TestBase {
     @DisplayName("Create user test")
     @Test
     void createUser() {
-        configureUrlsDK()
+        configureUrlsDK();
         step("Opening page: " + createUserPage, () -> {
             Components.openPage(createUserPage);
         });
@@ -73,7 +73,7 @@ public class UserTests extends TestBase {
     @DisplayName("Test: create user by API, check by UI")
     @Test
     void createUserAPI() {
-        configureUrlsDK()
+        configureUrlsDK();
         CreateUserPojoModel request = new CreateUserPojoModel();
         request.setForm_key("2BBExp9Om9X3VF2x");
         request.setSuccess_url("");
@@ -102,7 +102,7 @@ public class UserTests extends TestBase {
     @Disabled
     @Test
     void newTest() {
-        configureUrlsDK()
+        configureUrlsDK();
         Components.openPage("/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Cookie userCookie = new Cookie("rsa", "320859AB-6434-99E1-673F-49761D88377C");
         WebDriverRunner.getWebDriver().manage().addCookie(userCookie);
