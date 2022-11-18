@@ -5,10 +5,9 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-import static helpers.APIListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
-import static usertests.Components.basicAuthLogin;
-import static usertests.Components.basicAuthPassword;
+import static tests.user.Components.basicAuthLogin;
+import static tests.user.Components.basicAuthPassword;
 
 public class Specs {
     public static RequestSpecification requestSpecification1 = with()

@@ -32,6 +32,7 @@ allure {
 
 dependencies {
     testImplementation (
+            'org.projectlombok:lombok:1.18.22',
             "io.rest-assured:rest-assured:$restAssuredVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
