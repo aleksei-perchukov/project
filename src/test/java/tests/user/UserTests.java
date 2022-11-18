@@ -16,7 +16,7 @@ import static specs.Specs.requestSpecification1;
 import static specs.Specs.responseSpecification1;
 import static tests.user.TestData.*;
 import static io.qameta.allure.Allure.step;
-
+@DisplayName("USER TESTS SUITE")
 @Tag("UserAccount")
 public class UserTests extends TestBase {
 

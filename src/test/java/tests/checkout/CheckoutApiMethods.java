@@ -8,6 +8,7 @@ import io.restassured.response.Response;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import models.CreateUserPojoModel;
 import models.LoginUserPojoModel;
+import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.Cookie;
 import tests.user.TestData;
 
@@ -172,6 +173,7 @@ public class CheckoutApiMethods {
         return form_keyCookie;
     }
 
+    @Step("Opening browser with session cookies (PHPSESSID & form_key)")
     static void openBrowserWithCookies(String phpSessIdCookie, String cookieFormKey, String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Selenide.sleep(1000);
