@@ -37,9 +37,9 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
-//        Attach.screenshotAs("Screenshot");
-//        Attach.pageSource();
-//        Attach.browserConsoleLogs();
+        Attach.screenshotAs("Screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
         if (remote != null) {
             Attach.addVideo();
         }
