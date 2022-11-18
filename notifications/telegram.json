@@ -1,11 +1,9 @@
 {
   "base": {
     "project": "Skanva.dk",
-    "environment": "local",
-    "comment": "GoodTest",
     "reportLink": "",
     "language": "en",
-    "allureFolder": "build/allure-report/",
+    "allureFolder": "allure-report/",
     "enableChart": true
   },
   "telegram": {
