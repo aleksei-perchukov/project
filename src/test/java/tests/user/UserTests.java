@@ -1,5 +1,6 @@
 package tests.user;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import io.restassured.response.Response;
 import models.CreateUserPojoModel;
@@ -11,41 +12,68 @@ import org.openqa.selenium.Cookie;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
+import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecification1;
 import static specs.Specs.responseSpecification1;
+import static tests.checkout.CheckoutData.urlDK;
 import static tests.user.TestData.*;
 import static io.qameta.allure.Allure.step;
+
 @DisplayName("USER TESTS SUITE")
 @Tag("UserAccount")
 public class UserTests extends TestBase {
+    void configureUrlsDK() {
+        Configuration.baseUrl = urlDK;
+        baseURI = urlDK;
+    }
 
-    @Tag ("UI")
+    @Tag("UI")
     @DisplayName("Create user test")
     @Test
     void createUser() {
+        configureUrlsDK()
         step("Opening page: " + createUserPage, () -> {
-            Components.openPage(createUserPage);});
-        step("Clicking on 'agree with all cookies' button ", () -> {$(".coi-banner__accept").click();});
-        step("Entering first name: " + firstName, () -> {$("#firstname").setValue(firstName);});
-        step("Entering last name: " + lastName, () -> {$("#lastname").setValue(lastName);});
-        step("Entering e-mail: " + email, () -> {$("#email_address").setValue(email);});
-        step("Entering password: " + password, () -> {$("#password").setValue(password);});
-        step("Entering confirm password: " + password, () -> {$("#password-confirmation").setValue(password);});
-        step("Submitting form", () -> {$(".submit").click();});
+            Components.openPage(createUserPage);
+        });
+        step("Clicking on 'agree with all cookies' button ", () -> {
+            $(".coi-banner__accept").click();
+        });
+        step("Entering first name: " + firstName, () -> {
+            $("#firstname").setValue(firstName);
+        });
+        step("Entering last name: " + lastName, () -> {
+            $("#lastname").setValue(lastName);
+        });
+        step("Entering e-mail: " + email, () -> {
+            $("#email_address").setValue(email);
+        });
+        step("Entering password: " + password, () -> {
+            $("#password").setValue(password);
+        });
+        step("Entering confirm password: " + password, () -> {
+            $("#password-confirmation").setValue(password);
+        });
+        step("Submitting form", () -> {
+            $(".submit").click();
+        });
         step("Confirming that user is registered by checking e-mail which should be shown in account menu", () ->
-        {$(".block-dashboard-info").shouldHave(text(email));});
+        {
+            $(".block-dashboard-info").shouldHave(text(email));
+        });
 //        step("Opening admin panel", () -> {;});
 //        step("Entering admin login", () -> {$("#username").sendKeys(adminLogin);});
 //        step("Entering admin password", () -> {$("#login").sendKeys(adminPassword);});
 //        step("Click 'login' button", () -> {$("#action-login").click();});
 //        step("", () -> {;});
     }
+
     @Disabled
     @Tag("API")
     @DisplayName("Test: create user by API, check by UI")
     @Test
     void createUserAPI() {
+        configureUrlsDK()
         CreateUserPojoModel request = new CreateUserPojoModel();
         request.setForm_key("2BBExp9Om9X3VF2x");
         request.setSuccess_url("");
@@ -70,9 +98,11 @@ public class UserTests extends TestBase {
         System.out.println(cookieFormKey);
         System.out.println(cookiePHPSESSID);
     }
-        @Disabled
-        @Test
-        void newTest(){
+
+    @Disabled
+    @Test
+    void newTest() {
+        configureUrlsDK()
         Components.openPage("/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Cookie userCookie = new Cookie("rsa", "320859AB-6434-99E1-673F-49761D88377C");
         WebDriverRunner.getWebDriver().manage().addCookie(userCookie);
