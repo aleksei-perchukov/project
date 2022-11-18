@@ -28,6 +28,9 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browser_size", "1900x1080");
         Configuration.pageLoadStrategy = "none";
         Configuration.timeout = 60000;
+        if(remote != null) {
+            Configuration.remote = "https://user1:1234@" + remote;
+        }
 
     }
 
