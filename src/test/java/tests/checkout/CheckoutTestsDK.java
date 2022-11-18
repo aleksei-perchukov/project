@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
-
+@Disabled
 @Tag("Checkout")
 @Tag("DK")
 @DisplayName("-=DK=- PAYMENT METHODS TEST SUITE")

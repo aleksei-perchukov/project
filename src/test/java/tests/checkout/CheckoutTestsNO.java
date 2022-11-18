@@ -1,6 +1,7 @@
 package tests.checkout;
 
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.user.TestData;
@@ -9,7 +10,7 @@ import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
-
+@Disabled
 @DisplayName("-=NO=- PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsNO extends TestBase{
     void configureUrlsNO(){

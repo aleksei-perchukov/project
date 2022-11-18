@@ -11,7 +11,7 @@ import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutData.bankPay;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
-
+@Disabled
 @DisplayName("-=IS=- PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsIS extends TestBase {
     void configureUrlsIS(){

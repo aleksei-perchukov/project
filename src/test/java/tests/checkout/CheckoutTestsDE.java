@@ -1,6 +1,7 @@
 package tests.checkout;
 
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,6 @@ import static tests.checkout.CheckoutWebSteps.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
 
-
 @DisplayName("-=DE=- PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDE extends TestBase{
     void configureUrlsDE(){
@@ -18,7 +18,7 @@ public class CheckoutTestsDE extends TestBase{
         baseURI = urlDE;
     }
 
-
+    @Disabled
     @Test
     @DisplayName("-=DE=- PAYMENT METHOD -> QuickPay - Guest")
     void quickPayGuestDE() {
