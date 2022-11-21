@@ -31,7 +31,6 @@ public class TestBase {
         if(remote != null) {
             Configuration.remote = "https://user1:1234@" + remote;
         }
-
     }
 
     @AfterEach

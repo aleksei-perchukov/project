@@ -12,7 +12,6 @@ import static tests.checkout.CheckoutData.bankPay;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
 
-@Disabled
 @DisplayName("-IS- / PAYMENT METHODS TEST SUITE / GUEST")
 public class CheckoutTestsIS extends TestBase {
     void configureUrlsIS() {
@@ -31,7 +30,7 @@ public class CheckoutTestsIS extends TestBase {
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(netgiroPay);
-        CheckoutWebSteps.fillNetgiroPay();
+        fillNetgiroPay();
         checkOrderSuccess(TestData.firstName, netgiroPay);
     }
 
@@ -45,7 +44,7 @@ public class CheckoutTestsIS extends TestBase {
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(valitorPay);
-        CheckoutWebSteps.fillValitorPay();
+        fillValitorPay();
         checkOrderSuccess(TestData.firstName, valitorPay);
     }
 

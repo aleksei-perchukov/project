@@ -18,10 +18,10 @@ public class CheckoutData {
     static String valitorPay = "#valitor";
 
     public static String urlDK = "https://skanva.dk";
-    static String urlNO = "https://no.skanva.dk";
-    static String urlIS = "https://is.skanva.dk";
-    static String urlDE = "https://de.skanva.dk";
-    static String urlSE = "https://se.skanva.dk";
+    public static String urlNO = "https://no.skanva.dk";
+    public static String urlIS = "https://is.skanva.dk";
+    public static String urlDE = "https://de.skanva.dk";
+    public static String urlSE = "https://se.skanva.dk";
 
     //ADD PRODUCT BODY
     public static String getAddToCartBody() {
