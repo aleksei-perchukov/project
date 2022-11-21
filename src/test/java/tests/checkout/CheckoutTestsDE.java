@@ -11,7 +11,7 @@ import static tests.checkout.CheckoutWebSteps.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
 
-@DisplayName("-DE- PAYMENT METHODS TEST SUITE - GUEST")
+@DisplayName("-DE- / PAYMENT METHODS TEST SUITE - GUEST")
 public class CheckoutTestsDE extends TestBase {
     void configureUrlsDE() {
         Configuration.baseUrl = urlDE;

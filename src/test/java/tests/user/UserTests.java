@@ -21,7 +21,7 @@ import static tests.user.Components.openPage;
 import static tests.user.TestData.*;
 import static io.qameta.allure.Allure.step;
 
-@DisplayName("-DK- USER TEST SUITE")
+@DisplayName("-DK- / USER TEST SUITE")
 @Tag("UserAccount")
 public class UserTests extends TestBase {
     void configureUrlsDK() {
