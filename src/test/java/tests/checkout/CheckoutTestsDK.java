@@ -20,7 +20,7 @@ import static tests.user.TestData.*;
 @Disabled
 @Tag("Checkout")
 @Tag("DK")
-@DisplayName("-=DK=- PAYMENT METHODS TEST SUITE - GUEST")
+@DisplayName("-DK- / PAYMENT METHODS TEST SUITE / GUEST")
 public class CheckoutTestsDK extends TestBase {
     void configureUrlsDK() {
         Configuration.baseUrl = urlDK;
@@ -29,7 +29,7 @@ public class CheckoutTestsDK extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-=DK=- PAYMENT METHOD -> PaypalExpress - Guest")
+    @DisplayName("-DK- / PAYMENT METHOD / PaypalExpress / Guest")
     void paypalExpressPayTestGuest() {
         configureUrlsDK();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -43,7 +43,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-=DK=- PAYMENT METHOD -> QuickPay - Guest")
+    @DisplayName("-DK- / PAYMENT METHOD / QuickPay / Guest")
     void quickPayTestGuest() {
         configureUrlsDK();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -58,7 +58,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-=DK=- PAYMENT METHOD -> Bank Transfer - Guest")
+    @DisplayName("-DK- PAYMENT METHOD / Bank Transfer / Guest")
     void bankPayTestGuest() {
         configureUrlsDK();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -73,7 +73,7 @@ public class CheckoutTestsDK extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-=DK=- PAYMENT METHOD -> SparkXpress - Guest")
+    @DisplayName("-DK- PAYMENT METHOD / SparkXpress / Guest")
     void sparkXpressPayTestGuest() {
         configureUrlsDK();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -87,7 +87,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-=DK=- PAYMENT METHOD -> ViaBill - Guest")
+    @DisplayName("-DK- PAYMENT METHOD / ViaBill / Guest")
     void viaBillPayTestGuest() {
         configureUrlsDK();
         String phpSessIdCookie = PhpSessIdCookieGetter();

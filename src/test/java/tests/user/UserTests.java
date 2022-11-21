@@ -17,10 +17,11 @@ import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecification1;
 import static specs.Specs.responseSpecification1;
 import static tests.checkout.CheckoutData.urlDK;
+import static tests.user.Components.openPage;
 import static tests.user.TestData.*;
 import static io.qameta.allure.Allure.step;
 
-@DisplayName("USER TESTS SUITE")
+@DisplayName("-DK- USER TEST SUITE")
 @Tag("UserAccount")
 public class UserTests extends TestBase {
     void configureUrlsDK() {
@@ -34,7 +35,7 @@ public class UserTests extends TestBase {
     void createUser() {
         configureUrlsDK();
         step("Opening page: " + createUserPage, () -> {
-            Components.openPage(createUserPage);
+            openPage(createUserPage);
         });
         step("Clicking on 'agree with all cookies' button ", () -> {
             $(".coi-banner__accept").click();
@@ -103,10 +104,10 @@ public class UserTests extends TestBase {
     @Test
     void newTest() {
         configureUrlsDK();
-        Components.openPage("/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
+        openPage("/static/version1663912349/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Cookie userCookie = new Cookie("rsa", "320859AB-6434-99E1-673F-49761D88377C");
         WebDriverRunner.getWebDriver().manage().addCookie(userCookie);
-        Components.openPage("/customer/account/");
+        openPage("/customer/account/");
         $(".block-dashboard-info").shouldHave(text(email));
     }
 }

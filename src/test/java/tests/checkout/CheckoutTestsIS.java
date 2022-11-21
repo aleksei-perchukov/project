@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
 
 @Disabled
-@DisplayName("-=IS=- PAYMENT METHODS TEST SUITE - GUEST")
+@DisplayName("-IS- / PAYMENT METHODS TEST SUITE / GUEST")
 public class CheckoutTestsIS extends TestBase {
     void configureUrlsIS() {
         Configuration.baseUrl = urlIS;
@@ -22,7 +22,7 @@ public class CheckoutTestsIS extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-=IS=- PAYMENT METHOD -> Netgiro - Guest")
+    @DisplayName("-IS- / PAYMENT METHOD / Netgiro / Guest")
     void netgiroTestGuestIS() {
         configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -36,7 +36,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-=IS=- PAYMENT METHOD -> Valitor - Guest")
+    @DisplayName("-IS- / PAYMENT METHOD / Valitor / Guest")
     void valitorPayTestGuestIS() {
         configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -50,7 +50,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-=IS=- PAYMENT METHOD -> Bank Transfer - Guest")
+    @DisplayName("-IS- / PAYMENT METHOD / Bank Transfer / Guest")
     void bankPayTestGuestIS() {
         configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -64,7 +64,7 @@ public class CheckoutTestsIS extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-=IS=- PAYMENT METHOD -> SparkXpress - Guest")
+    @DisplayName("-IS- / PAYMENT METHOD / SparkXpress / Guest")
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();

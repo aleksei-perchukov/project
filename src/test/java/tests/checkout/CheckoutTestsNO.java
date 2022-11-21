@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
 
 @Disabled
-@DisplayName("-=NO=- PAYMENT METHODS TEST SUITE - GUEST")
+@DisplayName("-NO- / PAYMENT METHODS TEST SUITE / GUEST")
 public class CheckoutTestsNO extends TestBase {
     void configureUrlsNO() {
         Configuration.baseUrl = urlNO;
@@ -20,7 +20,7 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-=NO=- PAYMENT METHOD -> Klarna - Guest")
+    @DisplayName("-NO- / PAYMENT METHOD / Klarna / Guest")
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -34,7 +34,7 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-=NO=- PAYMENT METHOD -> QuickPay - Guest")
+    @DisplayName("-NO- / PAYMENT METHOD / QuickPay / Guest")
     void quickPayTestGuestNO() {
         configureUrlsNO();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -48,7 +48,7 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-=NO=- PAYMENT METHOD -> Bank Transfer - Guest")
+    @DisplayName("-NO- / PAYMENT METHOD / Bank Transfer / Guest")
     void bankPayTestGuestNO() {
         configureUrlsNO();
         String phpSessIdCookie = PhpSessIdCookieGetter();
