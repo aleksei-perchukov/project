@@ -10,10 +10,11 @@ import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
+
 @Disabled
-@DisplayName("-=NO=- PAYMENT METHODS TEST SUITE")
-public class CheckoutTestsNO extends TestBase{
-    void configureUrlsNO(){
+@DisplayName("-=NO=- PAYMENT METHODS TEST SUITE - GUEST")
+public class CheckoutTestsNO extends TestBase {
+    void configureUrlsNO() {
         Configuration.baseUrl = urlNO;
         baseURI = urlNO;
     }

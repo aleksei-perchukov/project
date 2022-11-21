@@ -1,6 +1,7 @@
 package tests.checkout;
 
 import com.codeborne.selenide.Configuration;
+import io.restassured.authentication.FormAuthConfig;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
@@ -9,16 +10,22 @@ import org.junit.jupiter.api.Test;
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.$;
+import static io.restassured.RestAssured.*;
 import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutWebSteps.*;
-import static io.restassured.RestAssured.baseURI;
-import static tests.user.TestData.*;
+
 @Disabled
-public class CheckoutTestsDEUser extends TestBase{
-    void configureUrls(){
+@DisplayName("-=DE=- PAYMENT METHODS TEST SUITE - USER")
+public class CheckoutTestsDEUser extends TestBase {
+    void configureUrls() {
         Configuration.baseUrl = urlDE;
         baseURI = urlDE;
+
+    }
+
+    @Test
+    void usertest() {
 
     }
 
@@ -36,12 +43,15 @@ public class CheckoutTestsDEUser extends TestBase{
         String cookieFormKey = response.getCookie("form_key");
         String phpSessIdCookie = response.getCookie("PHPSESSID");
         String privateContentVersionCookie = response.getCookie("private_content_version");
+        given()
+                .formParam("a.perchukov@belvg.com", "Mambas123", new FormAuthConfig("/authentication", "a.perchukov@belvg.com", "Mambas123"))
+                .formParam("");
         openBrowserWithCookies(phpSessIdCookie, cookieFormKey, "/customer/account/login");
         $("#email").setValue(email);
         $("#pass").setValue(password);
         $("#send2").click();
 
-        apiAddToCart(phpSessIdCookie,cookieFormKeyStatic);
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKey, "/checkout");
 //        acceptCookies();
         fillShippingForm();

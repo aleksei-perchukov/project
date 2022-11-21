@@ -11,9 +11,9 @@ import static tests.checkout.CheckoutWebSteps.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
 
-@DisplayName("-=DE=- PAYMENT METHODS TEST SUITE")
-public class CheckoutTestsDE extends TestBase{
-    void configureUrlsDE(){
+@DisplayName("-=DE=- PAYMENT METHODS TEST SUITE - GUEST")
+public class CheckoutTestsDE extends TestBase {
+    void configureUrlsDE() {
         Configuration.baseUrl = urlDE;
         baseURI = urlDE;
     }
@@ -25,7 +25,7 @@ public class CheckoutTestsDE extends TestBase{
         configureUrlsDE();
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic,"/checkout");
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
 //        acceptCookies();
         fillShippingForm();
         fillShippingMethod();

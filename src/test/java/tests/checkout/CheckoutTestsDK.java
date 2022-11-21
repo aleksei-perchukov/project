@@ -16,12 +16,13 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
+
 @Disabled
 @Tag("Checkout")
 @Tag("DK")
-@DisplayName("-=DK=- PAYMENT METHODS TEST SUITE")
+@DisplayName("-=DK=- PAYMENT METHODS TEST SUITE - GUEST")
 public class CheckoutTestsDK extends TestBase {
-    void configureUrlsDK(){
+    void configureUrlsDK() {
         Configuration.baseUrl = urlDK;
         baseURI = urlDK;
     }
@@ -97,9 +98,8 @@ public class CheckoutTestsDK extends TestBase {
         fillShippingMethod();
         fillPaymentMethod(viaBillPay);
         $(byText("APPROVED")).click();
-               checkOrderSuccess(firstName, viaBillPay);
+        checkOrderSuccess(firstName, viaBillPay);
     }
-
 
 
 }

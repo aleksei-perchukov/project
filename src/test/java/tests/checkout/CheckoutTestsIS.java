@@ -11,10 +11,11 @@ import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutData.bankPay;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
+
 @Disabled
-@DisplayName("-=IS=- PAYMENT METHODS TEST SUITE")
+@DisplayName("-=IS=- PAYMENT METHODS TEST SUITE - GUEST")
 public class CheckoutTestsIS extends TestBase {
-    void configureUrlsIS(){
+    void configureUrlsIS() {
         Configuration.baseUrl = urlIS;
         baseURI = urlIS;
     }
@@ -40,7 +41,7 @@ public class CheckoutTestsIS extends TestBase {
         configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic,"/checkout");
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(valitorPay);
@@ -54,7 +55,7 @@ public class CheckoutTestsIS extends TestBase {
         configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic,  "/checkout");
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(bankPay);
@@ -69,7 +70,7 @@ public class CheckoutTestsIS extends TestBase {
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
- //       acceptCookies();
+        //       acceptCookies();
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
