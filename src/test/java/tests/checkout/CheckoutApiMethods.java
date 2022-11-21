@@ -100,7 +100,7 @@ public class CheckoutApiMethods {
     static String getFromResponseFirstName(Map<String, Object> map) {
         Object obj = map.get("First Name");
         String firstName = obj.toString();
-    return firstName;
+        return firstName;
     }
 
     static String getFromResponseLastName(Map<String, Object> map) {
@@ -120,6 +120,7 @@ public class CheckoutApiMethods {
         String password = obj.toString();
         return password;
     }
+
     static Response getFromResponseResponse(Map<String, Object> map) {
         Object obj = map.get("Response");
         Response response = (Response) obj;
@@ -133,7 +134,7 @@ public class CheckoutApiMethods {
             phpSessIdCookie = given()
                     .spec(requestSpecification1)
                     .contentType("text/html; charset=UTF-8")
-                    .get("/")
+                    .get("/tr/topstyret-vindue-2-fags")
                     .then()
                     .spec(responseSpecification1)
                     .log().headers()
@@ -205,8 +206,6 @@ public class CheckoutApiMethods {
                 .cookie("PHPSESSID", phpSessIdCookie)
                 .cookie("form_key", formKeyCookie)
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-                .header("x-requested-with", "XMLHttpRequest")
-                .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36")
                 .body(getAddToCartBody()).when()
                 .post("/checkout/cart/add/product/" + productId + "/")
                 .then()

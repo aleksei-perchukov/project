@@ -17,7 +17,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
 
-@Disabled
 @Tag("Checkout")
 @Tag("DK")
 @DisplayName("-DK- / PAYMENT METHODS TEST SUITE / GUEST")
@@ -27,7 +26,7 @@ public class CheckoutTestsDK extends TestBase {
         baseURI = urlDK;
     }
 
-    @Disabled
+
     @Test
     @DisplayName("-DK- / PAYMENT METHOD / PaypalExpress / Guest")
     void paypalExpressPayTestGuest() {
@@ -71,7 +70,7 @@ public class CheckoutTestsDK extends TestBase {
         checkOrderSuccess(firstName, bankPay);
     }
 
-    @Disabled
+
     @Test
     @DisplayName("-DK- PAYMENT METHOD / SparkXpress / Guest")
     void sparkXpressPayTestGuest() {
