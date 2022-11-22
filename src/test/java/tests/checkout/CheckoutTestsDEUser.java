@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.$;
 import static io.restassured.RestAssured.*;
 import static tests.checkout.CheckoutApiMethods.*;
@@ -18,10 +19,9 @@ import static tests.checkout.CheckoutWebSteps.*;
 @Disabled
 @DisplayName("-DE- / PAYMENT METHODS TEST SUITE / USER")
 public class CheckoutTestsDEUser extends TestBase {
-    void configureUrls() {
-        Configuration.baseUrl = urlDE;
+    void configureUrlsDE() {
+        baseUrl = urlDE;
         baseURI = urlDE;
-
     }
 
     @Test
@@ -33,7 +33,8 @@ public class CheckoutTestsDEUser extends TestBase {
     @Test
     @DisplayName("-DE- / PAYMENT METHOD / QuickPay / User")
     void quickPayUserDE() {
-        configureUrls();
+        baseUrl = urlDE;
+        baseURI = urlDE;
         Map map = createUserAndLoginAPI();
         String firstName = getFromResponseFirstName(map);
         String lastName = getFromResponseLastName(map);
@@ -64,7 +65,8 @@ public class CheckoutTestsDEUser extends TestBase {
     @Test
     @DisplayName("-DE- / PAYMENT METHOD / BankTransfer / User")
     void bankPayTestGuestDE() {
-        configureUrls();
+        baseUrl = urlDE;
+        baseURI = urlDE;
         Map map = createUserAndLoginAPI();
         String firstName = getFromResponseFirstName(map);
         String lastName = getFromResponseLastName(map);

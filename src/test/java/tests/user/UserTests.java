@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
@@ -25,7 +26,7 @@ import static io.qameta.allure.Allure.step;
 @Tag("UserAccount")
 public class UserTests extends TestBase {
     void configureUrlsDK() {
-        Configuration.baseUrl = urlDK;
+        baseUrl = urlDK;
         baseURI = urlDK;
     }
 

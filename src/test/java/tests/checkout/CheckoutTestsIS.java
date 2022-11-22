@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.user.TestData;
 
+import static com.codeborne.selenide.Configuration.*;
 import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutData.bankPay;
@@ -15,7 +16,7 @@ import static tests.checkout.CheckoutWebSteps.*;
 @DisplayName("-IS- / PAYMENT METHODS TEST SUITE / GUEST")
 public class CheckoutTestsIS extends TestBase {
     void configureUrlsIS() {
-        Configuration.baseUrl = urlIS;
+        baseUrl = urlIS;
         baseURI = urlIS;
     }
 
@@ -23,7 +24,8 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     @DisplayName("-IS- / PAYMENT METHOD / Netgiro / Guest")
     void netgiroTestGuestIS() {
-        configureUrlsIS();
+        baseUrl = urlIS;
+        baseURI = urlIS;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -37,7 +39,8 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     @DisplayName("-IS- / PAYMENT METHOD / Valitor / Guest")
     void valitorPayTestGuestIS() {
-        configureUrlsIS();
+        baseUrl = urlIS;
+        baseURI = urlIS;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -51,7 +54,8 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     @DisplayName("-IS- / PAYMENT METHOD / Bank Transfer / Guest")
     void bankPayTestGuestIS() {
-        configureUrlsIS();
+        baseUrl = urlIS;
+        baseURI = urlIS;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -65,7 +69,8 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     @DisplayName("-IS- / PAYMENT METHOD / SparkXpress / Guest")
     void sparkXpressPayTestGuestIS() {
-        configureUrlsIS();
+        baseUrl = urlIS;
+        baseURI = urlIS;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
