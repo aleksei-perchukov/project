@@ -20,7 +20,6 @@ public class CheckoutTestsDE extends TestBase {
         baseUrl = mainUrl;
     }
 
-    @Disabled
     @Test
     @DisplayName("-DE- / GUEST / PAYMENT METHOD / QuickPay")
     void quickPayGuestDE() {
@@ -37,7 +36,6 @@ public class CheckoutTestsDE extends TestBase {
     }
 
     @Test
-    @Tag("Debug")
     @DisplayName("-DE- / GUEST / PAYMENT METHOD / BankTransfer")
     void bankPayTestGuestDE() {
         configureUrlsDE();

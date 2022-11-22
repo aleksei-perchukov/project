@@ -49,8 +49,7 @@ public class CheckoutTestsNO extends TestBase {
         fillQuickPay();
         checkOrderSuccess(TestData.firstName, quickPay);
     }
-
-    @Disabled
+    
     @Test
     @DisplayName("-NO- / GUEST / PAYMENT METHOD / Bank Transfer")
     void bankPayTestGuestNO() {

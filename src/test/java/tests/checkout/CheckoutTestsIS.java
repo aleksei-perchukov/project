@@ -20,7 +20,6 @@ public class CheckoutTestsIS extends TestBase {
         baseUrl = mainUrl;
     }
 
-    @Disabled
     @Test
     @DisplayName("-IS- / GUEST / PAYMENT METHOD / Netgiro")
     void netgiroTestGuestIS() {

@@ -18,7 +18,7 @@ public class CheckoutWebSteps {
         $(".coi-banner__accept").click();
     }
 
-    @Step("-=Shipping form=-")
+    @Step("-SHIPING FORM-")
     static void fillShippingForm() {
         String zipCode = getZipCode();
         if (Configuration.baseUrl.equals(urlIS)) {
@@ -60,9 +60,10 @@ public class CheckoutWebSteps {
         });
     }
 
-    @Step("-=SHIPPING METHOD=-")
+    @Step("-SHIPPING METHOD-")
     static void fillShippingMethod() {
         step("Clicking on the first shipping method", () -> {
+            Selenide.sleep(2000);
 
 //            if ($(byText("Desværre, ingen produkter er tilgængelige for denne ordre på nuværende tidspunkt.")).exists() ||
             //                   $(byText("Beklager, ingen tilbud er tilgjengelige for denne ordren i øyeblikket.")).exists()) {
@@ -78,7 +79,7 @@ public class CheckoutWebSteps {
         });
     }
 
-    @Step("-=PAYMENT METHOD FORM=-")
+    @Step("-PAYMENT METHOD FORM-")
     static void fillPaymentMethod(String paymentMethod) {
         step("Clicking on " + paymentMethod + " payment method'", () -> {
             $(paymentMethod).click();
@@ -267,7 +268,7 @@ public class CheckoutWebSteps {
         Selenide.sleep(3000);
     }
 
-    @Step("-=QUICK PAY FORM=-")
+    @Step("-QUICK PAY FORM-")
     static void fillQuickPay() {
         step("Quick Pay -> Card number = 1000 0000 0000 0008", () -> {
             $("#cardnumber").setValue("1000000000000008");
@@ -286,7 +287,7 @@ public class CheckoutWebSteps {
         });
     }
 
-    @Step("-=KLARNA PAY FORM=-")
+    @Step("-KLARNA PAY FORM-")
     static void fillKlarnaPay() {
         step("KLARNA PAY -> Entering '01087000571' personal number", () -> {
             Selenide.sleep(5000);
@@ -298,7 +299,7 @@ public class CheckoutWebSteps {
         });
     }
 
-    @Step("-=NETGIRO PAY FORM=-")
+    @Step("-NETGIRO PAY FORM-")
     static void fillNetgiroPay() {
         step("NETGIRO PAY -> Entering '1231231' mobile number", () -> {
             Selenide.sleep(5000);
@@ -318,7 +319,7 @@ public class CheckoutWebSteps {
         });
     }
 
-    @Step("-=VALITOR PAY FORM=-")
+    @Step("-VALITOR PAY FORM-")
     static void fillValitorPay() {
         step("VALITOR PAY -> Entering '2223000010246699' credit card number", () -> {
             Selenide.sleep(5000);
