@@ -27,7 +27,7 @@ public class CheckoutTestsDEUser extends TestBase {
 
 
     @Test
-    @DisplayName("-DE- / PAYMENT METHOD / QuickPay / User")
+    @DisplayName("-DE- / PAYMENT METHOD / USER / QuickPay")
     void quickPayUserDE() {
         Map map = createUserAndLoginAPI();
         String firstName = getFromResponseFirstName(map);
@@ -57,7 +57,7 @@ public class CheckoutTestsDEUser extends TestBase {
     }
 
     @Test
-    @DisplayName("-DE- / PAYMENT METHOD / BankTransfer / User")
+    @DisplayName("-DE- / PAYMENT METHOD / USER / BankTransfer")
     void bankPayTestGuestDE() {
         Map map = createUserAndLoginAPI();
         String firstName = getFromResponseFirstName(map);

@@ -14,7 +14,7 @@ public class CheckoutTestsDE extends TestBase {
     static String url = urlDE;
 
     @Test
-    @DisplayName("-DE- / PAYMENT METHOD / QuickPay / Guest")
+    @DisplayName("-DE- / PAYMENT METHOD / GUEST / QuickPay")
     void quickPayGuestDE() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
@@ -28,7 +28,7 @@ public class CheckoutTestsDE extends TestBase {
     }
 
     @Test
-    @DisplayName("-DE- / PAYMENT METHOD / BankTransfer / Guest")
+    @DisplayName("-DE- / PAYMENT METHOD / GUEST / BankTransfer")
     void bankPayTestGuestDE() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);

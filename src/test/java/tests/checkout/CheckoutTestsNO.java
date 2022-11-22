@@ -17,7 +17,7 @@ public class CheckoutTestsNO extends TestBase {
     static String url = urlNO;
 
     @Test
-    @DisplayName("-NO- / PAYMENT METHOD / Klarna / Guest")
+    @DisplayName("-NO- / PAYMENT METHOD / GUEST / Klarna")
     void klarnaPayTestGuestNO() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
@@ -30,7 +30,7 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-NO- / PAYMENT METHOD / QuickPay / Guest")
+    @DisplayName("-NO- / PAYMENT METHOD / GUEST / QuickPay")
     void quickPayTestGuestNO() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
@@ -43,7 +43,7 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-NO- / PAYMENT METHOD / Bank Transfer / Guest")
+    @DisplayName("-NO- / PAYMENT METHOD / GUEST / Bank Transfer")
     void bankPayTestGuestNO() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);

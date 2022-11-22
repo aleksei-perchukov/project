@@ -16,7 +16,7 @@ public class CheckoutTestsIS extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / Netgiro / Guest")
+    @DisplayName("-IS- / PAYMENT METHOD / GUEST / Netgiro")
     void netgiroTestGuestIS() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
@@ -29,7 +29,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / Valitor / Guest")
+    @DisplayName("-IS- / PAYMENT METHOD / GUEST / Valitor")
     void valitorPayTestGuestIS() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
@@ -42,7 +42,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / Bank Transfer / Guest")
+    @DisplayName("-IS- / PAYMENT METHOD / GUEST /Bank Transfer")
     void bankPayTestGuestIS() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
@@ -55,7 +55,7 @@ public class CheckoutTestsIS extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / SparkXpress / Guest")
+    @DisplayName("-IS- / PAYMENT METHOD / GUEST / SparkXpress")
     void sparkXpressPayTestGuestIS() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);

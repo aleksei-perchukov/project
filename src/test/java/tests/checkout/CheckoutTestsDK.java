@@ -20,7 +20,7 @@ public class CheckoutTestsDK extends TestBase {
     static String url = urlDK;
 
     @Test
-    @DisplayName("-DK- / PAYMENT METHOD / PaypalExpress / Guest")
+    @DisplayName("-DK- / PAYMENT METHOD / GUEST / PaypalExpress")
     void paypalExpressPayTestGuest() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
@@ -33,7 +33,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- / PAYMENT METHOD / QuickPay / Guest")
+    @DisplayName("-DK- / PAYMENT METHOD / GUEST / QuickPay")
     void quickPayTestGuest() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
@@ -47,7 +47,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- PAYMENT METHOD / Bank Transfer / Guest")
+    @DisplayName("-DK- / PAYMENT METHOD / GUEST / Bank Transfer")
     void bankPayTestGuest() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
@@ -61,7 +61,7 @@ public class CheckoutTestsDK extends TestBase {
 
 
     @Test
-    @DisplayName("-DK- PAYMENT METHOD / SparkXpress / Guest")
+    @DisplayName("-DK- / PAYMENT METHOD / GUEST / SparkXpress")
     void sparkXpressPayTestGuest() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
@@ -74,7 +74,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- PAYMENT METHOD / ViaBill / Guest")
+    @DisplayName("-DK- / PAYMENT METHOD / GUEST / ViaBill")
     void viaBillPayTestGuest() {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
