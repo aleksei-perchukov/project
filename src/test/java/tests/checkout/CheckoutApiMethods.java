@@ -150,7 +150,7 @@ public class CheckoutApiMethods {
             if (Configuration.baseUrl.equals(urlDE)) {
                 productUrl = "/tr/2-teiliges-klappfenster";
             }
-            openPage(productUrl);
+            openPage(url + productUrl);
 
             Selenide.sleep(1000);
             $("#height").setValue("100");
