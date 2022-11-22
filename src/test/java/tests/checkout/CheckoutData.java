@@ -6,8 +6,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CheckoutData {
     //PAYMENT METHODS LOCATORS
-    static String cookieFormKeyStatic = "2BBExp9Om9X3VF2x";
-//    static String cookieFormKeyStatic = "x2OdeHWwSION73Xc";
+    //    static String cookieFormKeyStatic = "2BBExp9Om9X3VF2x";
+    static String cookieFormKeyStatic = "x2OdeHWwSION73Xc";
     static String paypalExpressPay = "[for=paypal_express]";
     static String quickPay = "[for=quickpay]";
     static String bankPay = "[for=banktransfer]";
