@@ -20,8 +20,8 @@ import static tests.checkout.CheckoutWebSteps.*;
 @DisplayName("-DE- / USER / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDEUser extends TestBase {
     void configureUrlsDE() {
-        baseUrl = urlDE;
-        baseURI = urlDE;
+        mainUrl = urlDE;
+        baseUrl = mainUrl;
     }
 
     @Test
@@ -33,8 +33,7 @@ public class CheckoutTestsDEUser extends TestBase {
     @Test
     @DisplayName("-DE- / USER / PAYMENT METHOD / QuickPay")
     void quickPayUserDE() {
-        baseUrl = urlDE;
-        baseURI = urlDE;
+        configureUrlsDE();
         Map map = createUserAndLoginAPI();
         String firstName = getFromResponseFirstName(map);
         String lastName = getFromResponseLastName(map);
@@ -65,8 +64,7 @@ public class CheckoutTestsDEUser extends TestBase {
     @Test
     @DisplayName("-DE- / USER / PAYMENT METHOD / BankTransfer")
     void bankPayTestGuestDE() {
-        baseUrl = urlDE;
-        baseURI = urlDE;
+        configureUrlsDE();
         Map map = createUserAndLoginAPI();
         String firstName = getFromResponseFirstName(map);
         String lastName = getFromResponseLastName(map);

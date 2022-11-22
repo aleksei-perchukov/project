@@ -18,7 +18,7 @@ import static tests.checkout.CheckoutWebSteps.*;
 public class CheckoutTestsNO extends TestBase {
     void configureUrlsNO() {
         mainUrl = urlNO;
-        baseUrl = urlNO;
+        baseUrl = mainUrl;
     }
 
     @Test

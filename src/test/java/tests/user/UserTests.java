@@ -17,6 +17,7 @@ import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecification1;
 import static specs.Specs.responseSpecification1;
+import static tests.checkout.CheckoutData.mainUrl;
 import static tests.checkout.CheckoutData.urlDK;
 import static tests.user.Components.openPage;
 import static tests.user.TestData.*;
@@ -26,8 +27,8 @@ import static io.qameta.allure.Allure.step;
 @Tag("UserAccount")
 public class UserTests extends TestBase {
     void configureUrlsDK() {
-        baseUrl = urlDK;
-        baseURI = urlDK;
+        mainUrl = urlDK;
+        baseUrl = mainUrl;
     }
 
     @Tag("UI")

@@ -17,7 +17,7 @@ import static tests.user.TestData.*;
 public class CheckoutTestsDE extends TestBase {
     void configureUrlsDE() {
         mainUrl = urlDE;
-        baseUrl = urlDE;
+        baseUrl = mainUrl;
     }
 
     @Disabled

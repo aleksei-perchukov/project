@@ -16,8 +16,8 @@ import static tests.checkout.CheckoutWebSteps.*;
 @DisplayName("-IS- / GUEST / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsIS extends TestBase {
     void configureUrlsIS() {
-        baseUrl = urlIS;
         mainUrl = urlIS;
+        baseUrl = mainUrl;
     }
 
     @Disabled

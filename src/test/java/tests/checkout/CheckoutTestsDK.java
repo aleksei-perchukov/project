@@ -21,7 +21,7 @@ public class CheckoutTestsDK extends TestBase {
 
     void configureUrlsDK() {
         mainUrl = urlDK;
-        baseUrl = urlDK;
+        baseUrl = mainUrl;
     }
 
     @Test

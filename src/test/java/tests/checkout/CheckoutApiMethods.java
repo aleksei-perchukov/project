@@ -7,16 +7,12 @@ import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import models.CreateUserPojoModel;
-import models.LoginUserPojoModel;
-import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.Cookie;
 import tests.user.TestData;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import static io.restassured.RestAssured.get;
 import static tests.checkout.CheckoutData.*;
 import static com.codeborne.selenide.Selenide.$;
 import static io.restassured.RestAssured.given;
@@ -134,7 +130,7 @@ public class CheckoutApiMethods {
             phpSessIdCookie = given()
                     .spec(requestSpecification1)
                     .contentType("text/html; charset=UTF-8")
-                    .get("/tr/topstyret-vindue-2-fags")
+                    .get(mainUrl + "/tr/topstyret-vindue-2-fags")
                     .then()
                     .spec(responseSpecification1)
                     .log().headers()
@@ -227,7 +223,7 @@ public class CheckoutApiMethods {
                 .header("x-requested-with", "XMLHttpRequest")
                 .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36")
                 .when()
-                .get("customer/section/load/?sections=cart&force_new_section_timestamp=true")
+                .get(mainUrl + "customer/section/load/?sections=cart&force_new_section_timestamp=true")
                 .then()
                 .spec(responseSpecification1)
                 .statusCode(200)
