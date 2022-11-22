@@ -1,5 +1,6 @@
 package tests.checkout;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,20 +9,25 @@ import tests.user.TestData;
 import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutData.bankPay;
+import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
 
 @DisplayName("-IS- / PAYMENT METHODS TEST SUITE / GUEST")
 public class CheckoutTestsIS extends TestBase {
-    static String url = urlIS;
+    void configureUrlsIS() {
+        Configuration.baseUrl = urlIS;
+        baseURI = urlIS;
+    }
 
     @Disabled
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / GUEST / Netgiro")
+    @DisplayName("-IS- / PAYMENT METHOD / Netgiro / Guest")
     void netgiroTestGuestIS() {
-        String phpSessIdCookie = PhpSessIdCookieGetter(url);
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm(url);
+        configureUrlsIS();
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(netgiroPay);
         fillNetgiroPay();
@@ -29,12 +35,13 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / GUEST / Valitor")
+    @DisplayName("-IS- / PAYMENT METHOD / Valitor / Guest")
     void valitorPayTestGuestIS() {
-        String phpSessIdCookie = PhpSessIdCookieGetter(url);
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm(url);
+        configureUrlsIS();
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(valitorPay);
         fillValitorPay();
@@ -42,12 +49,13 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / GUEST /Bank Transfer")
+    @DisplayName("-IS- / PAYMENT METHOD / Bank Transfer / Guest")
     void bankPayTestGuestIS() {
-        String phpSessIdCookie = PhpSessIdCookieGetter(url);
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm(url);
+        configureUrlsIS();
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(bankPay);
         checkOrderSuccess(TestData.firstName, bankPay);
@@ -55,13 +63,14 @@ public class CheckoutTestsIS extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / GUEST / SparkXpress")
+    @DisplayName("-IS- / PAYMENT METHOD / SparkXpress / Guest")
     void sparkXpressPayTestGuestIS() {
-        String phpSessIdCookie = PhpSessIdCookieGetter(url);
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
+        configureUrlsIS();
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
         //       acceptCookies();
-        fillShippingForm(url);
+        fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
         checkOrderSuccess(TestData.firstName, sparkXpressPay);

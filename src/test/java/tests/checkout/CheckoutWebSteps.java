@@ -19,8 +19,8 @@ public class CheckoutWebSteps {
     }
 
     @Step("-=Shipping form=-")
-    static void fillShippingForm(String url) {
-        String zipCode = getZipCode(url);
+    static void fillShippingForm() {
+        String zipCode = getZipCode();
         if (Configuration.baseUrl.equals(urlIS)) {
             step("Shipping form -> Kennitala = '1234567890'", () ->
             $$(".field._required.full-width").first().$(".input-text").setValue("1234567890")

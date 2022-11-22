@@ -1,5 +1,6 @@
 package tests.checkout;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,20 +8,26 @@ import org.junit.jupiter.api.Test;
 import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutWebSteps.*;
+import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
 
 @DisplayName("-DE- / PAYMENT METHODS TEST SUITE - GUEST")
 public class CheckoutTestsDE extends TestBase {
-    static String url = urlDE;
+    void configureUrlsDE() {
+        Configuration.baseUrl = urlDE;
+        baseURI = urlDE;
+    }
 
+    @Disabled
     @Test
-    @DisplayName("-DE- / PAYMENT METHOD / GUEST / QuickPay")
+    @DisplayName("-DE- / PAYMENT METHOD / QuickPay / Guest")
     void quickPayGuestDE() {
-        String phpSessIdCookie = PhpSessIdCookieGetter(url);
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
+        configureUrlsDE();
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
 //        acceptCookies();
-        fillShippingForm(url);
+        fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
@@ -28,13 +35,14 @@ public class CheckoutTestsDE extends TestBase {
     }
 
     @Test
-    @DisplayName("-DE- / PAYMENT METHOD / GUEST / BankTransfer")
+    @DisplayName("-DE- / PAYMENT METHOD / BankTransfer / Guest")
     void bankPayTestGuestDE() {
-        String phpSessIdCookie = PhpSessIdCookieGetter(url);
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
+        configureUrlsDE();
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
 //        acceptCookies();
-        fillShippingForm(url);
+        fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(bankPay);
         checkOrderSuccess(firstName, bankPay);

@@ -11,18 +11,21 @@ import static tests.checkout.CheckoutData.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
 
-@Disabled
 @DisplayName("-NO- / PAYMENT METHODS TEST SUITE / GUEST")
 public class CheckoutTestsNO extends TestBase {
-    static String url = urlNO;
+    void configureUrlsNO() {
+        Configuration.baseUrl = urlNO;
+        baseURI = urlNO;
+    }
 
     @Test
-    @DisplayName("-NO- / PAYMENT METHOD / GUEST / Klarna")
+    @DisplayName("-NO- / PAYMENT METHOD / Klarna / Guest")
     void klarnaPayTestGuestNO() {
-        String phpSessIdCookie = PhpSessIdCookieGetter(url);
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm(url);
+        configureUrlsNO();
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(klarnaPay);
         CheckoutWebSteps.fillKlarnaPay();
@@ -30,12 +33,13 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-NO- / PAYMENT METHOD / GUEST / QuickPay")
+    @DisplayName("-NO- / PAYMENT METHOD / QuickPay / Guest")
     void quickPayTestGuestNO() {
-        String phpSessIdCookie = PhpSessIdCookieGetter(url);
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm(url);
+        configureUrlsNO();
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
@@ -43,12 +47,13 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-NO- / PAYMENT METHOD / GUEST / Bank Transfer")
+    @DisplayName("-NO- / PAYMENT METHOD / Bank Transfer / Guest")
     void bankPayTestGuestNO() {
-        String phpSessIdCookie = PhpSessIdCookieGetter(url);
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm(url);
+        configureUrlsNO();
+        String phpSessIdCookie = PhpSessIdCookieGetter();
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(bankPay);
         checkOrderSuccess(TestData.firstName, bankPay);
