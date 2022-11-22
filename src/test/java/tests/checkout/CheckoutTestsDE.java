@@ -3,6 +3,7 @@ package tests.checkout;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Configuration.*;
@@ -15,16 +16,15 @@ import static tests.user.TestData.*;
 @DisplayName("-DE- / GUEST / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDE extends TestBase {
     void configureUrlsDE() {
+        mainUrl = urlDE;
         baseUrl = urlDE;
-        baseURI = urlDE;
     }
 
     @Disabled
     @Test
     @DisplayName("-DE- / GUEST / PAYMENT METHOD / QuickPay")
     void quickPayGuestDE() {
-        baseUrl = urlDE;
-        baseURI = urlDE;
+        configureUrlsDE();
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -37,10 +37,10 @@ public class CheckoutTestsDE extends TestBase {
     }
 
     @Test
+    @Tag("Debug")
     @DisplayName("-DE- / GUEST / PAYMENT METHOD / BankTransfer")
     void bankPayTestGuestDE() {
-        baseUrl = urlDE;
-        baseURI = urlDE;
+        configureUrlsDE()
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");

@@ -17,15 +17,14 @@ import static tests.checkout.CheckoutWebSteps.*;
 public class CheckoutTestsIS extends TestBase {
     void configureUrlsIS() {
         baseUrl = urlIS;
-        baseURI = urlIS;
+        mainUrl = urlIS;
     }
 
     @Disabled
     @Test
     @DisplayName("-IS- / GUEST / PAYMENT METHOD / Netgiro")
     void netgiroTestGuestIS() {
-        baseUrl = urlIS;
-        baseURI = urlIS;
+        configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -39,8 +38,7 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     @DisplayName("-IS- / GUEST / PAYMENT METHOD / Valitor")
     void valitorPayTestGuestIS() {
-        baseUrl = urlIS;
-        baseURI = urlIS;
+        configureUrlsIS()
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -54,8 +52,7 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     @DisplayName("-IS- / GUEST / PAYMENT METHOD / Bank Transfer")
     void bankPayTestGuestIS() {
-        baseUrl = urlIS;
-        baseURI = urlIS;
+        configureUrlsIS()
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -69,8 +66,7 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     @DisplayName("-IS- / GUEST / PAYMENT METHOD / SparkXpress")
     void sparkXpressPayTestGuestIS() {
-        baseUrl = urlIS;
-        baseURI = urlIS;
+        configureUrlsIS()
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");

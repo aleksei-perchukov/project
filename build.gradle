@@ -31,7 +31,7 @@ allure {
 }
 
 dependencies {
-    testImplementation (
+    testImplementation(
             'org.projectlombok:lombok:1.18.22',
             "io.rest-assured:rest-assured:$restAssuredVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
@@ -65,5 +65,11 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task Debug(type: Test) {
+    useJUnitPlatform {
+        includeTags 'Debug'
     }
 }

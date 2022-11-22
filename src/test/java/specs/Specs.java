@@ -5,8 +5,11 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
+import java.lang.module.Configuration;
+
 import static helpers.APIListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
+import static tests.checkout.CheckoutData.mainUrl;
 import static tests.user.Components.basicAuthLogin;
 import static tests.user.Components.basicAuthPassword;
 
@@ -18,6 +21,7 @@ public class Specs {
             .header("x-requested-with", "XMLHttpRequest")
             .header("Connection", "keep-alive")
             .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36")
+            .baseUri(mainUrl)
             .filter(withCustomTemplates())
             .log().uri()
             .log().cookies();

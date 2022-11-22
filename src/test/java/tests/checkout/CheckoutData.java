@@ -17,6 +17,7 @@ public class CheckoutData {
     static String netgiroPay = "#netgiro";
     static String valitorPay = "#valitor";
 
+    public static String mainUrl;
     public static String urlDK = "https://skanva.dk";
     public static String urlNO = "https://no.skanva.dk";
     public static String urlIS = "https://is.skanva.dk";

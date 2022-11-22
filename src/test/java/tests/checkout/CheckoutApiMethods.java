@@ -207,7 +207,7 @@ public class CheckoutApiMethods {
                 .cookie("form_key", formKeyCookie)
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body(getAddToCartBody()).when()
-                .post("/checkout/cart/add/product/" + productId + "/")
+                .post(mainUrl + "/checkout/cart/add/product/" + productId + "/")
                 .then()
                 .spec(responseSpecification1)
                 .log().status()
