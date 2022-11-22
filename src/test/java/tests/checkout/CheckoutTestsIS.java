@@ -21,7 +21,7 @@ public class CheckoutTestsIS extends TestBase {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm();
+        fillShippingForm(url);
         fillShippingMethod();
         fillPaymentMethod(netgiroPay);
         fillNetgiroPay();
@@ -34,7 +34,7 @@ public class CheckoutTestsIS extends TestBase {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm();
+        fillShippingForm(url);
         fillShippingMethod();
         fillPaymentMethod(valitorPay);
         fillValitorPay();
@@ -47,7 +47,7 @@ public class CheckoutTestsIS extends TestBase {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm();
+        fillShippingForm(url);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
         checkOrderSuccess(TestData.firstName, bankPay);
@@ -61,7 +61,7 @@ public class CheckoutTestsIS extends TestBase {
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
         //       acceptCookies();
-        fillShippingForm();
+        fillShippingForm(url);
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
         checkOrderSuccess(TestData.firstName, sparkXpressPay);

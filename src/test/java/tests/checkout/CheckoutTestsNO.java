@@ -22,7 +22,7 @@ public class CheckoutTestsNO extends TestBase {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm();
+        fillShippingForm(url);
         fillShippingMethod();
         fillPaymentMethod(klarnaPay);
         CheckoutWebSteps.fillKlarnaPay();
@@ -35,7 +35,7 @@ public class CheckoutTestsNO extends TestBase {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm();
+        fillShippingForm(url);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
@@ -48,7 +48,7 @@ public class CheckoutTestsNO extends TestBase {
         String phpSessIdCookie = PhpSessIdCookieGetter(url);
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
-        fillShippingForm();
+        fillShippingForm(url);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
         checkOrderSuccess(TestData.firstName, bankPay);

@@ -49,7 +49,7 @@ public class CheckoutTestsDEUser extends TestBase {
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKey, url + "/checkout");
 //        acceptCookies();
-        fillShippingForm();
+        fillShippingForm(url);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
@@ -70,7 +70,7 @@ public class CheckoutTestsDEUser extends TestBase {
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKey, url + "/checkout");
 //        acceptCookies();
-        fillShippingForm();
+        fillShippingForm(url);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
         checkOrderSuccess(firstName, bankPay);
