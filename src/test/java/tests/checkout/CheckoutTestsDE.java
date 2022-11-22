@@ -1,32 +1,24 @@
 package tests.checkout;
 
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutWebSteps.*;
-import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
 
 @DisplayName("-DE- / PAYMENT METHODS TEST SUITE - GUEST")
 public class CheckoutTestsDE extends TestBase {
-    void configureUrlsDE() {
-        baseUrl = urlDE;
-        baseURI = urlDE;
-    }
+    static String url = urlDE;
 
-    @Disabled
     @Test
     @DisplayName("-DE- / PAYMENT METHOD / QuickPay / Guest")
     void quickPayGuestDE() {
-        configureUrlsDE();
-        String phpSessIdCookie = PhpSessIdCookieGetter();
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        String phpSessIdCookie = PhpSessIdCookieGetter(url);
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
 //        acceptCookies();
         fillShippingForm();
         fillShippingMethod();
@@ -38,10 +30,9 @@ public class CheckoutTestsDE extends TestBase {
     @Test
     @DisplayName("-DE- / PAYMENT METHOD / BankTransfer / Guest")
     void bankPayTestGuestDE() {
-        configureUrlsDE();
-        String phpSessIdCookie = PhpSessIdCookieGetter();
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        String phpSessIdCookie = PhpSessIdCookieGetter(url);
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, url + "/checkout");
 //        acceptCookies();
         fillShippingForm();
         fillShippingMethod();

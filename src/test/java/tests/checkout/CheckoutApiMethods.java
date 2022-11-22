@@ -128,13 +128,13 @@ public class CheckoutApiMethods {
     }
 
     @Step("Getting PHPSESSID cookie via API")
-    static String PhpSessIdCookieGetter() {
+    static String PhpSessIdCookieGetter(String url) {
         String phpSessIdCookie = null;
         if (Configuration.baseUrl.equals(urlDK)) {
             phpSessIdCookie = given()
                     .spec(requestSpecification1)
                     .contentType("text/html; charset=UTF-8")
-                    .get("/tr/topstyret-vindue-2-fags")
+                    .get(url + "/tr/topstyret-vindue-2-fags")
                     .then()
                     .spec(responseSpecification1)
                     .log().headers()
@@ -162,21 +162,21 @@ public class CheckoutApiMethods {
         return phpSessIdCookie;
     }
 
-    static String form_keyCookieGetter() {
-        String form_keyCookie = given()
-                .spec(requestSpecification1)
-                .cookie("PHPSESSID", PhpSessIdCookieGetter())
-                .body("url=https%3A%2F%2Fskanva.dk%2Fbelvg_raptor%2Fproducts%2Fdata%2FisAjax%2F1%2F&raptor_type=GetUserRecommendations&raptor_qty=5&raptor_user_dependent=1&raptor_category=&product_id=&cart_items_ids=")
-                .get("/")
-                .then()
-                .spec(responseSpecification1)
-                .extract().cookie("form_key");
-        return form_keyCookie;
-    }
+//    static String form_keyCookieGetter() {
+//        String form_keyCookie = given()
+//                .spec(requestSpecification1)
+//                .cookie("PHPSESSID", PhpSessIdCookieGetter())
+//                .body("url=https%3A%2F%2Fskanva.dk%2Fbelvg_raptor%2Fproducts%2Fdata%2FisAjax%2F1%2F&raptor_type=GetUserRecommendations&raptor_qty=5&raptor_user_dependent=1&raptor_category=&product_id=&cart_items_ids=")
+//                .get("/")
+//                .then()
+//                .spec(responseSpecification1)
+//                .extract().cookie("form_key");
+//        return form_keyCookie;
+//    }
 
     @Step("Opening browser with session cookies (PHPSESSID & form_key)")
     static void openBrowserWithCookies(String phpSessIdCookie, String cookieFormKey, String url) {
-        openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
+        openPage(url + "/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Selenide.sleep(1000);
         Cookie authCookie = new Cookie("PHPSESSID", phpSessIdCookie);
         Cookie form_keyCookie = new Cookie("form_key", cookieFormKey);
@@ -186,7 +186,7 @@ public class CheckoutApiMethods {
     }
 
     @Step("Adding product to cart by API")
-    static ResponseBodyExtractionOptions apiAddToCart(String phpSessIdCookie, String formKeyCookie) {
+    static ResponseBodyExtractionOptions apiAddToCart(String phpSessIdCookie, String formKeyCookie, String url) {
         String productId = null;
         Selenide.sleep(2000);
         if (Configuration.baseUrl.equals(urlDK)) {
@@ -207,7 +207,7 @@ public class CheckoutApiMethods {
                 .cookie("form_key", formKeyCookie)
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body(getAddToCartBody()).when()
-                .post("/checkout/cart/add/product/" + productId + "/")
+                .post(url + "/checkout/cart/add/product/" + productId + "/")
                 .then()
                 .spec(responseSpecification1)
                 .log().status()
@@ -219,7 +219,7 @@ public class CheckoutApiMethods {
     }
 
     @Step("Checking cart number increased")
-    static ResponseBodyExtractionOptions apiCheckCartNumberUpdate(String phpSessIdCookie) {
+    static ResponseBodyExtractionOptions apiCheckCartNumberUpdate(String phpSessIdCookie, String url) {
         ResponseBodyExtractionOptions cart_update_json = given().spec(requestSpecification1)
                 .cookie("PHPSESSID", phpSessIdCookie)
                 .cookie("form_key", "x2OdeHWwSION73Xc")
@@ -227,7 +227,7 @@ public class CheckoutApiMethods {
                 .header("x-requested-with", "XMLHttpRequest")
                 .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36")
                 .when()
-                .get("customer/section/load/?sections=cart&force_new_section_timestamp=true")
+                .get(url +"customer/section/load/?sections=cart&force_new_section_timestamp=true")
                 .then()
                 .spec(responseSpecification1)
                 .statusCode(200)

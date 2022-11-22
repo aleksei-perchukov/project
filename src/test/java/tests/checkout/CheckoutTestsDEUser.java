@@ -18,11 +18,7 @@ import static tests.checkout.CheckoutWebSteps.*;
 @Disabled
 @DisplayName("-DE- / PAYMENT METHODS TEST SUITE / USER")
 public class CheckoutTestsDEUser extends TestBase {
-    void configureUrls() {
-        Configuration.baseUrl = urlDE;
-        baseURI = urlDE;
-
-    }
+    static String url = urlDE;
 
     @Test
     void usertest() {
@@ -33,7 +29,6 @@ public class CheckoutTestsDEUser extends TestBase {
     @Test
     @DisplayName("-DE- / PAYMENT METHOD / QuickPay / User")
     void quickPayUserDE() {
-        configureUrls();
         Map map = createUserAndLoginAPI();
         String firstName = getFromResponseFirstName(map);
         String lastName = getFromResponseLastName(map);
@@ -51,8 +46,8 @@ public class CheckoutTestsDEUser extends TestBase {
         $("#pass").setValue(password);
         $("#send2").click();
 
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKey, "/checkout");
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKey, url + "/checkout");
 //        acceptCookies();
         fillShippingForm();
         fillShippingMethod();
@@ -64,7 +59,6 @@ public class CheckoutTestsDEUser extends TestBase {
     @Test
     @DisplayName("-DE- / PAYMENT METHOD / BankTransfer / User")
     void bankPayTestGuestDE() {
-        configureUrls();
         Map map = createUserAndLoginAPI();
         String firstName = getFromResponseFirstName(map);
         String lastName = getFromResponseLastName(map);
@@ -73,8 +67,8 @@ public class CheckoutTestsDEUser extends TestBase {
         Response response = getFromResponseResponse(map);
         String cookieFormKey = response.getCookie("form_key");
         String phpSessIdCookie = response.getCookie("PHPSESSID");
-        apiAddToCart(phpSessIdCookie, cookieFormKey);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKey, "/checkout");
+        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic, url);
+        openBrowserWithCookies(phpSessIdCookie, cookieFormKey, url + "/checkout");
 //        acceptCookies();
         fillShippingForm();
         fillShippingMethod();
