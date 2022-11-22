@@ -206,7 +206,7 @@ public class CheckoutApiMethods {
                 .cookie("PHPSESSID", phpSessIdCookie)
                 .cookie("form_key", formKeyCookie)
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-                .body(getAddToCartBody()).when()
+                .body(getAddToCartBody(url)).when()
                 .post(url + "/checkout/cart/add/product/" + productId + "/")
                 .then()
                 .spec(responseSpecification1)
