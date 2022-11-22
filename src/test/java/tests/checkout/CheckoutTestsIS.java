@@ -13,7 +13,7 @@ import static tests.checkout.CheckoutData.bankPay;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
 
-@DisplayName("-IS- / PAYMENT METHODS TEST SUITE / GUEST")
+@DisplayName("-IS- / GUEST / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsIS extends TestBase {
     void configureUrlsIS() {
         baseUrl = urlIS;
@@ -22,7 +22,7 @@ public class CheckoutTestsIS extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / Netgiro / Guest")
+    @DisplayName("-IS- / GUEST / PAYMENT METHOD / Netgiro")
     void netgiroTestGuestIS() {
         baseUrl = urlIS;
         baseURI = urlIS;
@@ -37,7 +37,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / Valitor / Guest")
+    @DisplayName("-IS- / GUEST / PAYMENT METHOD / Valitor")
     void valitorPayTestGuestIS() {
         baseUrl = urlIS;
         baseURI = urlIS;
@@ -52,7 +52,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / Bank Transfer / Guest")
+    @DisplayName("-IS- / GUEST / PAYMENT METHOD / Bank Transfer")
     void bankPayTestGuestIS() {
         baseUrl = urlIS;
         baseURI = urlIS;
@@ -67,7 +67,7 @@ public class CheckoutTestsIS extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-IS- / PAYMENT METHOD / SparkXpress / Guest")
+    @DisplayName("-IS- / GUEST / PAYMENT METHOD / SparkXpress")
     void sparkXpressPayTestGuestIS() {
         baseUrl = urlIS;
         baseURI = urlIS;

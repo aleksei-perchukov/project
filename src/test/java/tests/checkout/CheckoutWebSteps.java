@@ -23,8 +23,9 @@ public class CheckoutWebSteps {
         String zipCode = getZipCode();
         if (Configuration.baseUrl.equals(urlIS)) {
             step("Shipping form -> Kennitala = '1234567890'", () ->
-            $$(".field._required.full-width").first().$(".input-text").setValue("1234567890")
-            );}
+                    $$(".field._required.full-width").first().$(".input-text").setValue("1234567890")
+            );
+        }
         step("Shipping form -> First name = " + TestData.firstName, () -> {
             $("[name=firstname]").setValue(TestData.firstName);
         });
@@ -40,19 +41,20 @@ public class CheckoutWebSteps {
         step("Shipping form -> Postnummer = '" + zipCode + "'", () -> {
             $("[name=postcode]").setValue(zipCode);
         });
-        if (Configuration.baseUrl.equals(urlNO) || Configuration.baseUrl.equals(urlIS)  || Configuration.baseUrl.equals(urlDE)) {
+        if (Configuration.baseUrl.equals(urlNO) || Configuration.baseUrl.equals(urlIS) || Configuration.baseUrl.equals(urlDE)) {
             $("[name=city]").setValue("Test City");
         }
         step("Shipping form -> Telefonnummer = " + TestData.mobileNumber + " in mobile phone field", () -> {
             $(".telephone-input__telephone.input-text").setValue(TestData.mobileNumber);
         });
-        if (!$(".customer-name").exists()){
-        if (!$("#customer-email").exists()) {
-            refresh();
+        if (!$(".customer-name").exists()) {
+            if (!$("#customer-email").exists()) {
+                refresh();
+            }
+            step("Shipping form -> E-mail = " + TestData.email, () -> {
+                $("#customer-email").setValue(TestData.email);
+            });
         }
-        step("Shipping form -> E-mail = " + TestData.email, () -> {
-            $("#customer-email").setValue(TestData.email);
-        });}
         step("Click on 'Proceed to shipping method' button", () -> {
             $("#shipping-address-step").submit();
         });
@@ -61,10 +63,11 @@ public class CheckoutWebSteps {
     @Step("-=SHIPPING METHOD=-")
     static void fillShippingMethod() {
         step("Clicking on the first shipping method", () -> {
-            if ($(byText("Desværre, ingen produkter er tilgængelige for denne ordre på nuværende tidspunkt.")).exists() ||
-                    $(byText("Beklager, ingen tilbud er tilgjengelige for denne ordren i øyeblikket.")).exists()) {
-                refresh();
-            }
+
+//            if ($(byText("Desværre, ingen produkter er tilgængelige for denne ordre på nuværende tidspunkt.")).exists() ||
+            //                   $(byText("Beklager, ingen tilbud er tilgjengelige for denne ordren i øyeblikket.")).exists()) {
+            refresh();
+            //           }
             $(".shipping-method-item").click();
         });
         step("Clicking on 'confirm the selected shipping method' checkbox", () -> {
@@ -194,15 +197,15 @@ public class CheckoutWebSteps {
             });
         } else if (paymentMethod.equals(sparkXpressPay)) {
             step("Clicking on 'Accept terms of conditions' checkbox", () -> {
-                if(Configuration.baseUrl.equals(urlDK)) {
+                if (Configuration.baseUrl.equals(urlDK)) {
                     $("[for=agreement_sparxpres_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
-                } else if(Configuration.baseUrl.equals(urlNO)) {
+                } else if (Configuration.baseUrl.equals(urlNO)) {
 
-                } else if(Configuration.baseUrl.equals(urlIS)) {
+                } else if (Configuration.baseUrl.equals(urlIS)) {
                     $("[for=agreement_sparxpres_6]").click(ClickOptions.usingJavaScript().offsetX(-100));
-                } else if(Configuration.baseUrl.equals(urlDE)) {
+                } else if (Configuration.baseUrl.equals(urlDE)) {
 
-                } else if(Configuration.baseUrl.equals(urlSE)) {
+                } else if (Configuration.baseUrl.equals(urlSE)) {
 
                 }
             });
@@ -257,12 +260,12 @@ public class CheckoutWebSteps {
                 }
             });
         } else if (paymentMethod.equals(valitorPay)) {
-                    step("Clicking on 'Accept terms of conditions' checkbox", () -> {
-                        $("[for=agreement_valitor_6]").click(ClickOptions.usingJavaScript().offsetX(-100));
-                    });
-                }
-                Selenide.sleep(3000);
+            step("Clicking on 'Accept terms of conditions' checkbox", () -> {
+                $("[for=agreement_valitor_6]").click(ClickOptions.usingJavaScript().offsetX(-100));
+            });
         }
+        Selenide.sleep(3000);
+    }
 
     @Step("-=QUICK PAY FORM=-")
     static void fillQuickPay() {

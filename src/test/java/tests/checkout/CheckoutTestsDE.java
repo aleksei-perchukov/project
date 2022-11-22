@@ -12,7 +12,7 @@ import static tests.checkout.CheckoutWebSteps.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
 
-@DisplayName("-DE- / PAYMENT METHODS TEST SUITE - GUEST")
+@DisplayName("-DE- / GUEST / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDE extends TestBase {
     void configureUrlsDE() {
         baseUrl = urlDE;
@@ -21,7 +21,7 @@ public class CheckoutTestsDE extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-DE- / PAYMENT METHOD / QuickPay / Guest")
+    @DisplayName("-DE- / GUEST / PAYMENT METHOD / QuickPay")
     void quickPayGuestDE() {
         baseUrl = urlDE;
         baseURI = urlDE;
@@ -37,7 +37,7 @@ public class CheckoutTestsDE extends TestBase {
     }
 
     @Test
-    @DisplayName("-DE- / PAYMENT METHOD / BankTransfer / Guest")
+    @DisplayName("-DE- / GUEST / PAYMENT METHOD / BankTransfer")
     void bankPayTestGuestDE() {
         baseUrl = urlDE;
         baseURI = urlDE;

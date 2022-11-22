@@ -12,7 +12,7 @@ import static tests.checkout.CheckoutData.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
 
-@DisplayName("-NO- / PAYMENT METHODS TEST SUITE / GUEST")
+@DisplayName("-NO- / GUEST / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsNO extends TestBase {
     void configureUrlsNO() {
         baseUrl = urlNO;
@@ -20,7 +20,7 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-NO- / PAYMENT METHOD / Klarna / Guest")
+    @DisplayName("-NO- / GUEST / PAYMENT METHOD / Klarna")
     void klarnaPayTestGuestNO() {
         baseUrl = urlNO;
         baseURI = urlNO;
@@ -35,7 +35,7 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-NO- / PAYMENT METHOD / QuickPay / Guest")
+    @DisplayName("-NO- / GUEST / PAYMENT METHOD / QuickPay")
     void quickPayTestGuestNO() {
         baseUrl = urlNO;
         baseURI = urlNO;
@@ -50,7 +50,7 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-NO- / PAYMENT METHOD / Bank Transfer / Guest")
+    @DisplayName("-NO- / GUEST / PAYMENT METHOD / Bank Transfer")
     void bankPayTestGuestNO() {
         baseUrl = urlNO;
         baseURI = urlNO;

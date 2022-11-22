@@ -18,7 +18,7 @@ import static tests.user.TestData.*;
 
 @Tag("Checkout")
 @Tag("DK")
-@DisplayName("-DK- / PAYMENT METHODS TEST SUITE / GUEST")
+@DisplayName("-DK- / GUEST / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDK extends TestBase {
 
     void configureUrlsDK() {
@@ -28,7 +28,7 @@ public class CheckoutTestsDK extends TestBase {
 
 
     @Test
-    @DisplayName("-DK- / PAYMENT METHOD / PaypalExpress / Guest")
+    @DisplayName("-DK- / GUEST / PAYMENT METHOD / PaypalExpress")
     void paypalExpressPayTestGuest() {
         baseUrl = urlDK;
         baseURI = urlDK;
@@ -43,7 +43,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- / PAYMENT METHOD / QuickPay / Guest")
+    @DisplayName("-DK- / GUEST / PAYMENT METHOD / QuickPay")
     void quickPayTestGuest() {
         baseUrl = urlDK;
         baseURI = urlDK;
@@ -59,7 +59,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- PAYMENT METHOD / Bank Transfer / Guest")
+    @DisplayName("-DK- / GUEST / PAYMENT METHOD / Bank Transfer")
     void bankPayTestGuest() {
         baseUrl = urlDK;
         baseURI = urlDK;
@@ -75,7 +75,7 @@ public class CheckoutTestsDK extends TestBase {
 
 
     @Test
-    @DisplayName("-DK- PAYMENT METHOD / SparkXpress / Guest")
+    @DisplayName("-DK- / GUEST / PAYMENT METHOD / SparkXpress")
     void sparkXpressPayTestGuest() {
         baseUrl = urlDK;
         baseURI = urlDK;
@@ -90,7 +90,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- PAYMENT METHOD / ViaBill / Guest")
+    @DisplayName("-DK- / GUEST / PAYMENT METHOD / ViaBill")
     void viaBillPayTestGuest() {
         baseUrl = urlDK;
         baseURI = urlDK;

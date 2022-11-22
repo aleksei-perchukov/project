@@ -17,7 +17,7 @@ import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutWebSteps.*;
 
 @Disabled
-@DisplayName("-DE- / PAYMENT METHODS TEST SUITE / USER")
+@DisplayName("-DE- / USER / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDEUser extends TestBase {
     void configureUrlsDE() {
         baseUrl = urlDE;
@@ -31,7 +31,7 @@ public class CheckoutTestsDEUser extends TestBase {
 
 
     @Test
-    @DisplayName("-DE- / PAYMENT METHOD / QuickPay / User")
+    @DisplayName("-DE- / USER / PAYMENT METHOD / QuickPay")
     void quickPayUserDE() {
         baseUrl = urlDE;
         baseURI = urlDE;
@@ -63,7 +63,7 @@ public class CheckoutTestsDEUser extends TestBase {
     }
 
     @Test
-    @DisplayName("-DE- / PAYMENT METHOD / BankTransfer / User")
+    @DisplayName("-DE- / USER / PAYMENT METHOD / BankTransfer")
     void bankPayTestGuestDE() {
         baseUrl = urlDE;
         baseURI = urlDE;
