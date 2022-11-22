@@ -46,8 +46,8 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     @DisplayName("-DK- / GUEST / PAYMENT METHOD / QuickPay")
     void quickPayTestGuest() {
-        baseUrl = urlNO;
-        baseURI = urlNO;
+        baseUrl = urlDK;
+        baseURI = urlDK;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -62,8 +62,8 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     @DisplayName("-DK- / GUEST / PAYMENT METHOD / Bank Transfer")
     void bankPayTestGuest() {
-        baseUrl = urlDE;
-        baseURI = urlDE;
+        baseUrl = urlDK;
+        baseURI = urlDK;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
