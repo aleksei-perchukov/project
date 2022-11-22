@@ -11,6 +11,7 @@ import static tests.checkout.CheckoutData.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.checkout.CheckoutWebSteps.*;
 
+@Disabled
 @DisplayName("-NO- / PAYMENT METHODS TEST SUITE / GUEST")
 public class CheckoutTestsNO extends TestBase {
     void configureUrlsNO() {

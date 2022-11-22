@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutWebSteps.*;
@@ -14,7 +15,7 @@ import static tests.user.TestData.*;
 @DisplayName("-DE- / PAYMENT METHODS TEST SUITE - GUEST")
 public class CheckoutTestsDE extends TestBase {
     void configureUrlsDE() {
-        Configuration.baseUrl = urlDE;
+        baseUrl = urlDE;
         baseURI = urlDE;
     }
 

@@ -1,12 +1,10 @@
 package tests.checkout;
 
-import com.codeborne.selenide.ClickOptions;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
+
 import org.junit.jupiter.api.*;
-import tests.user.Components;
 
 
+import static com.codeborne.selenide.Configuration.*;
 import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutApiMethods.apiAddToCart;
 import static tests.checkout.CheckoutApiMethods.openBrowserWithCookies;
@@ -21,8 +19,9 @@ import static tests.user.TestData.*;
 @Tag("DK")
 @DisplayName("-DK- / PAYMENT METHODS TEST SUITE / GUEST")
 public class CheckoutTestsDK extends TestBase {
+
     void configureUrls(String URL) {
-        Configuration.baseUrl = URL;
+        baseUrl = URL;
         baseURI = URL;
     }
 
@@ -30,7 +29,9 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     @DisplayName("-DK- / PAYMENT METHOD / PaypalExpress / Guest")
     void paypalExpressPayTestGuest() {
-        configureUrls(urlDK);
+ //       configureUrls(urlDK);
+        baseUrl = urlDK;
+        baseURI = urlDK;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -44,7 +45,9 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     @DisplayName("-DK- / PAYMENT METHOD / QuickPay / Guest")
     void quickPayTestGuest() {
-        configureUrls(urlDK);
+ //       configureUrls(urlDK);
+        baseUrl = urlDK;
+        baseURI = urlDK;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -59,7 +62,9 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     @DisplayName("-DK- PAYMENT METHOD / Bank Transfer / Guest")
     void bankPayTestGuest() {
-        configureUrls(urlDK);
+ //       configureUrls(urlDK);
+        baseUrl = urlDK;
+        baseURI = urlDK;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -74,7 +79,9 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     @DisplayName("-DK- PAYMENT METHOD / SparkXpress / Guest")
     void sparkXpressPayTestGuest() {
-        configureUrls(urlDK);
+//        configureUrls(urlDK);
+        baseUrl = urlDK;
+        baseURI = urlDK;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -88,7 +95,9 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     @DisplayName("-DK- PAYMENT METHOD / ViaBill / Guest")
     void viaBillPayTestGuest() {
-        configureUrls(urlDK);
+//        configureUrls(urlDK);
+        baseUrl = urlDK;
+        baseURI = urlDK;
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
@@ -99,6 +108,4 @@ public class CheckoutTestsDK extends TestBase {
         $(byText("APPROVED")).click();
         checkOrderSuccess(firstName, viaBillPay);
     }
-
-
 }
