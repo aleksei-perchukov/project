@@ -40,7 +40,7 @@ public class CheckoutTestsDE extends TestBase {
     @Tag("Debug")
     @DisplayName("-DE- / GUEST / PAYMENT METHOD / BankTransfer")
     void bankPayTestGuestDE() {
-        configureUrlsDE()
+        configureUrlsDE();
         String phpSessIdCookie = PhpSessIdCookieGetter();
         apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
