@@ -53,7 +53,7 @@ compileJava.options.encoding = 'UTF-8'
 test {
     useJUnitPlatform()
     retry {
-        maxRetries = 2
+        maxRetries = 5
         maxFailures = 20
         failOnPassedAfterRetry = true
     }
