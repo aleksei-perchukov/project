@@ -357,6 +357,7 @@ public class CheckoutWebSteps {
         step("VALITOR PAY -> Clicking 'Buy' button", () -> {
             $$(".action.primary.checkout").get(1).click();
             $("#webform0").submit();
+            $("[name=submitBtn]").click();
         });
     }
 

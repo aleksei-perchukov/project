@@ -1,6 +1,5 @@
 package tests.checkout;
 
-import com.codeborne.selenide.Configuration;
 import io.restassured.authentication.FormAuthConfig;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Disabled;
