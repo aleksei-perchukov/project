@@ -395,7 +395,7 @@ public class CheckoutWebSteps {
             }
         } else if (paymentMethod.equals(viaBillPay)) {
             if (Configuration.baseUrl.equals(urlDK)) {
-                $(".base").shouldHave(text("Indkøbskurv"));
+                $("#success-page-custom").shouldHave(text("Mange tak for din ordre, "));
             } else if (Configuration.baseUrl.equals(urlNO)) {
 
             } else if (Configuration.baseUrl.equals(urlIS)) {
@@ -408,7 +408,7 @@ public class CheckoutWebSteps {
 
         } else if (paymentMethod.equals(sparkXpressPay)) {
             if (Configuration.baseUrl.equals(urlDK)) {
-                $(byText(".col-sm-12 .fieldBox")).shouldHave(text("Er du registreret i RKI, Debitor Registret eller har du lønindhold?"));
+                $(".col-sm-12 .fieldBox").shouldHave(text("Er du registreret i RKI, Debitor Registret eller har du lønindhold?"));
             } else if (Configuration.baseUrl.equals(urlNO)) {
 
             } else if (Configuration.baseUrl.equals(urlIS)) {
