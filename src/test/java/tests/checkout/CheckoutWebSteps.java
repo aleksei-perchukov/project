@@ -18,7 +18,7 @@ public class CheckoutWebSteps {
         $(".coi-banner__accept").click();
     }
 
-    @Step("-SHIPING FORM-")
+    @Step("-SHIPPING FORM-")
     static void fillShippingForm() {
         String zipCode = getZipCode();
         if (Configuration.baseUrl.equals(urlIS)) {
@@ -82,7 +82,27 @@ public class CheckoutWebSteps {
     @Step("-PAYMENT METHOD FORM-")
     static void fillPaymentMethod(String paymentMethod) {
         step("Clicking on " + paymentMethod + " payment method'", () -> {
-            $(paymentMethod).click();
+            if(paymentMethod.equals("paypalExpressPay")) {
+                $("[for=paypal_express]").click();
+            } else if(paymentMethod.equals(quickPay)) {
+                $("[for=quickpay").click();
+            } else if(paymentMethod.equals(bankPay)) {
+                $("[for=banktransfer]").click();
+            } else if(paymentMethod.equals(viaBillPay)) {
+                $("[for=viabill]").click();
+            } else if(paymentMethod.equals(sparkXpressPay)) {
+                $("[for=sparxpres]").click();
+            } else if(paymentMethod.equals(klarnaPay)) {
+                $("[for=klarna_pay_later]").click();
+            } else if(paymentMethod.equals(netgiroPay)) {
+                $("#netgiro").click();
+            } else if(paymentMethod.equals(valitorPay)) {
+                $("#valitor").click();
+            } else if(paymentMethod.equals("")) {
+                $(paymentMethod).click();
+            } else if(paymentMethod.equals("")) {
+                $(paymentMethod).click();
+            }
         });
         step("Submitting payment form", () -> {
             $("#co-payment-form").submit();
@@ -343,7 +363,7 @@ public class CheckoutWebSteps {
     @Step("Check order success")
     static void checkOrderSuccess(String firstName, String paymentMethod) {
         if (paymentMethod.equals(paypalExpressPay)) {
-            $("#headerText").shouldHave(text("Pay with PayPal"));
+            $("#headerText").shouldHave(text("Bei PayPal einloggen"));
         } else if (paymentMethod.equals(quickPay) || paymentMethod.equals(bankPay)) {
             if (Configuration.baseUrl.equals(urlDK)) {
                 $("#success-page-custom").shouldHave(text("Mange tak for din ordre, " + firstName));
@@ -374,7 +394,7 @@ public class CheckoutWebSteps {
             }
         } else if (paymentMethod.equals(viaBillPay)) {
             if (Configuration.baseUrl.equals(urlDK)) {
-                $(byText("Indkøbskurv")).shouldBe(exist);
+                $(".base").shouldHave(text("Indkøbskurv"));
             } else if (Configuration.baseUrl.equals(urlNO)) {
 
             } else if (Configuration.baseUrl.equals(urlIS)) {
@@ -387,7 +407,7 @@ public class CheckoutWebSteps {
 
         } else if (paymentMethod.equals(sparkXpressPay)) {
             if (Configuration.baseUrl.equals(urlDK)) {
-                $(byText("sparxpres.dk")).shouldBe(exist);
+                $(byText("#headerText")).shouldHave(text("Start din ansøgning nu!"));
             } else if (Configuration.baseUrl.equals(urlNO)) {
 
             } else if (Configuration.baseUrl.equals(urlIS)) {

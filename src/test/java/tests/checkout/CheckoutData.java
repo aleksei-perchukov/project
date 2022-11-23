@@ -8,14 +8,14 @@ public class CheckoutData {
     //PAYMENT METHODS LOCATORS
     //    static String cookieFormKeyStatic = "2BBExp9Om9X3VF2x";
     static String cookieFormKeyStatic = "x2OdeHWwSION73Xc";
-    static String paypalExpressPay = "[for=paypal_express]";
-    static String quickPay = "[for=quickpay]";
-    static String bankPay = "[for=banktransfer]";
-    static String viaBillPay = "[for=viabill]";
-    static String sparkXpressPay = "[for=sparxpres]";
-    static String klarnaPay = "[for=klarna_pay_later]";
-    static String netgiroPay = "#netgiro";
-    static String valitorPay = "#valitor";
+    static String paypalExpressPay = "PayPal Express";
+    static String quickPay = "Quick Pay";
+    static String bankPay = "Bank Transfer";
+    static String viaBillPay = "ViaBill";
+    static String sparkXpressPay = "SparkXpress Pay";
+    static String klarnaPay = "Klarna";
+    static String netgiroPay = "Netgiro";
+    static String valitorPay = "Valitor";
 
     public static String mainUrl;
     public static String urlDK = "https://skanva.dk";
