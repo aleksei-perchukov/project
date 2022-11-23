@@ -92,7 +92,6 @@ public class CheckoutTestsDK extends TestBase {
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(viaBillPay);
-        $(byText("APPROVED")).click();
         checkOrderSuccess(firstName, viaBillPay);
     }
 }

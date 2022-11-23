@@ -173,7 +173,7 @@ public class CheckoutApiMethods {
     @Step("Opening browser with session cookies (PHPSESSID & form_key)")
     static void openBrowserWithCookies(String phpSessIdCookie, String cookieFormKey, String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
-        Selenide.sleep(1000);
+        Selenide.sleep(2000);
         Cookie authCookie = new Cookie("PHPSESSID", phpSessIdCookie);
         Cookie form_keyCookie = new Cookie("form_key", cookieFormKey);
         WebDriverRunner.getWebDriver().manage().addCookie(authCookie);

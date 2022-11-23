@@ -408,7 +408,7 @@ public class CheckoutWebSteps {
 
         } else if (paymentMethod.equals(sparkXpressPay)) {
             if (Configuration.baseUrl.equals(urlDK)) {
-                $(byText("#headerText")).shouldHave(text("Start din ansøgning nu!"));
+                $(byText(".col-sm-12 .fieldBox")).shouldHave(text("Er du registreret i RKI, Debitor Registret eller har du lønindhold?"));
             } else if (Configuration.baseUrl.equals(urlNO)) {
 
             } else if (Configuration.baseUrl.equals(urlIS)) {
