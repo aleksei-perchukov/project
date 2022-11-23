@@ -65,6 +65,11 @@ tasks.withType(Test) {
     systemProperties(System.getProperties())
 
     useJUnitPlatform()
+    retry {
+        maxRetries = 5
+        maxFailures = 20
+        failOnPassedAfterRetry = true
+    }
     systemProperty "file.encoding", "utf-8"
     testLogging {
         lifecycle {
