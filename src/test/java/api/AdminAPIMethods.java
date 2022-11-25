@@ -16,7 +16,6 @@ public class AdminAPIMethods {
 
     @Step("Create user / API")
     static String createUserAPI(){
-        String[] strings = new String[];
         UserModel userBody = new UserModel();
         userBody.setPassword(password);
         UserModel.customer userBodyCustomer = new UserModel.customer();
