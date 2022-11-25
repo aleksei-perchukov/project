@@ -16,25 +16,25 @@ public class AdminAPIMethods {
 
     @Step("Create user / API")
     static String createUserAPI(){
-        UserModel userBody = new UserModel();
-        userBody.setPassword(password);
-        UserModel.customer userBodyCustomer = new UserModel.customer();
-        userBodyCustomer.setFirstname(firstName);
-        userBodyCustomer.setLastname(lastName);
-        UserModel.customer.addresses userBodyCustomerAddresses = new UserModel.customer.addresses();
-        userBodyCustomerAddresses.setFirstname(firstName);
-        userBodyCustomerAddresses.setFirstname(lastName);
-        userBodyCustomerAddresses.setDefaultBilling(true);
-        userBodyCustomerAddresses.setDefaultShipping(true);
-        userBodyCustomerAddresses.setCountryId("DK");
-        userBodyCustomerAddresses.setPostcode("8000");
-        userBodyCustomerAddresses.setCity(getCity());
-        userBodyCustomerAddresses.setTelephone(mobileNumber);
-        UserModel.customer.addresses.region userCustomerAddressesRegion = new UserModel.customer.addresses.region();
-        userCustomerAddressesRegion.setRegion("");
-        userCustomerAddressesRegion.setRegionId("");
-        userCustomerAddressesRegion.setRegionCode("");
-        UserModel.customer.addresses.street userCustomerAddressesStreet = new UserModel.customer.addresses.street();
+//        UserModel userBody = new UserModel();
+//        userBody.setPassword(password);
+//        UserModel.customer userBodyCustomer = new UserModel.customer();
+//        userBodyCustomer.setFirstname(firstName);
+//        userBodyCustomer.setLastname(lastName);
+//        UserModel.customer.addresses userBodyCustomerAddresses = new UserModel.customer.addresses();
+//        userBodyCustomerAddresses.setFirstname(firstName);
+//        userBodyCustomerAddresses.setFirstname(lastName);
+//        userBodyCustomerAddresses.setDefaultBilling(true);
+//        userBodyCustomerAddresses.setDefaultShipping(true);
+//        userBodyCustomerAddresses.setCountryId("DK");
+//        userBodyCustomerAddresses.setPostcode("8000");
+//        userBodyCustomerAddresses.setCity(getCity());
+//        userBodyCustomerAddresses.setTelephone(mobileNumber);
+//        UserModel.customer.addresses.region userCustomerAddressesRegion = new UserModel.customer.addresses.region();
+//        userCustomerAddressesRegion.setRegion("");
+//        userCustomerAddressesRegion.setRegionId("");
+//        userCustomerAddressesRegion.setRegionCode("");
+//        UserModel.customer.addresses.street userCustomerAddressesStreet = new UserModel.customer.addresses.street();
  //       userCustomerAddressesStreet.setStrings(String[""] streetStringsArray = new String[]);
 
 
