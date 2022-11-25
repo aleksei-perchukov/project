@@ -26,7 +26,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- / GUEST / PAYMENT METHOD / PaypalExpress")
+    @DisplayName("PaypalExpress")
     void paypalExpressPayTestGuest() {
         configureUrlsDK();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -40,7 +40,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- / GUEST / PAYMENT METHOD / QuickPay")
+    @DisplayName("QuickPay")
     void quickPayTestGuest() {
         configureUrlsDK();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -55,7 +55,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- / GUEST / PAYMENT METHOD / Bank Transfer")
+    @DisplayName("Bank Transfer")
     void bankPayTestGuest() {
         configureUrlsDK();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -69,7 +69,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- / GUEST / PAYMENT METHOD / SparkXpress")
+    @DisplayName("SparkXpress")
     void sparkXpressPayTestGuest() {
         configureUrlsDK();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -83,7 +83,7 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Test
-    @DisplayName("-DK- / GUEST / PAYMENT METHOD / ViaBill")
+    @DisplayName("ViaBill")
     void viaBillPayTestGuest() {
         configureUrlsDK();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -94,11 +94,5 @@ public class CheckoutTestsDK extends TestBase {
         fillShippingMethod();
         fillPaymentMethod(viaBillPay);
         checkOrderSuccess(firstName, viaBillPay);
-    }
-    @Test
-    void testTest(){
-        String address = getRandomAddress();
-        System.out.println(address);
-        System.out.println(address);
     }
 }

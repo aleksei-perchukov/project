@@ -30,4 +30,21 @@ public class Specs {
             .log(LogDetail.HEADERS)
             .log(LogDetail.COOKIES)
             .build();
+
+    public static RequestSpecification adminRequestSpecification = with()
+            .auth()
+            .basic(basicAuthLogin, basicAuthPassword)
+            .contentType("application/json")
+            .baseUri(mainUrl)
+            .filter(withCustomTemplates())
+            .log().uri()
+            .log().cookies();
+
+    public static ResponseSpecification adminResponseSpecification = new ResponseSpecBuilder()
+            .log(LogDetail.STATUS)
+            .log(LogDetail.COOKIES)
+            .log(LogDetail.HEADERS)
+            .log(LogDetail.BODY)
+            .build();
+
 }

@@ -21,7 +21,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-IS- / GUEST / PAYMENT METHOD / Netgiro")
+    @DisplayName("Netgiro")
     void netgiroTestGuestIS() {
         configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -35,7 +35,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-IS- / GUEST / PAYMENT METHOD / Valitor")
+    @DisplayName("Valitor")
     void valitorPayTestGuestIS() {
         configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -49,7 +49,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
-    @DisplayName("-IS- / GUEST / PAYMENT METHOD / Bank Transfer")
+    @DisplayName("Bank Transfer")
     void bankPayTestGuestIS() {
         configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -63,7 +63,7 @@ public class CheckoutTestsIS extends TestBase {
 
     @Disabled
     @Test
-    @DisplayName("-IS- / GUEST / PAYMENT METHOD / SparkXpress")
+    @DisplayName("SparkXpress")
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
         String phpSessIdCookie = PhpSessIdCookieGetter();

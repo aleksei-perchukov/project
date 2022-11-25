@@ -233,51 +233,5 @@ public class CheckoutApiMethods {
                 .extract().body();
         return cart_update_json;
     }
-    @Step("Get admin token")
-    static String getAdminTokenAPI(){
-        Response response = given().spec(requestSpecification1)
-                .contentType("application/json")
-                .body("'{\"username\":\"" + adminLogin + "\", \"password\":\"" + adminPassword + "}'")
-                .post("https://skanva.dk/index.php/rest/V1/integration/customer/token/")
-                .then()
-                .spec(responseSpecification1)
-                .extract()
-                .response();
-        String cookie = response.cookie("admin");
-        return cookie;
-    }
 
-    @Step("Login in admin panel by API")
-    static Cookies loginAdminPanelAPI() {
-        Response response = given()
-                .spec(requestSpecification1)
-                .body("form_key=" + cookieFormKeyStatic + "&login%5Busername%5D=" + adminLogin +"&login%5Bpassword%5D=" + adminPassword)
-                .post("https://skanva.dk/skanvacms")
-                .then()
-                .spec(responseSpecification1)
-                .extract()
-                .response();
-        Cookies cookies = response.getDetailedCookies();
-        return cookies;
-    }
-
-    @Step("Deleting test user from database")
-    static void deleteUserFromDB() {
-        Cookies adminCookies = loginAdminPanelAPI();
-        given()
-                .spec(requestSpecification1)
-                .cookies(adminCookies)
-                .body("")
-                .delete("/")
-                .then()
-                .spec(responseSpecification1)
-                .statusCode(204);
-        System.out.println(email +" user is deleted successfully");
-    }
-
-    @Step("Deleting test order from database")
-    static void deleteOrderFromDB() {
-        Cookies adminCookies = loginAdminPanelAPI();
-
-    }
 }

@@ -22,7 +22,7 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
-    @DisplayName("-NO- / GUEST / PAYMENT METHOD / Klarna")
+    @DisplayName("Klarna")
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -37,7 +37,7 @@ public class CheckoutTestsNO extends TestBase {
 
     @Test
     @Tag("Debug")
-    @DisplayName("-NO- / GUEST / PAYMENT METHOD / QuickPay")
+    @DisplayName("QuickPay")
     void quickPayTestGuestNO() {
         configureUrlsNO();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -51,7 +51,7 @@ public class CheckoutTestsNO extends TestBase {
     }
     
     @Test
-    @DisplayName("-NO- / GUEST / PAYMENT METHOD / Bank Transfer")
+    @DisplayName("Bank Transfer")
     void bankPayTestGuestNO() {
         configureUrlsNO();
         String phpSessIdCookie = PhpSessIdCookieGetter();

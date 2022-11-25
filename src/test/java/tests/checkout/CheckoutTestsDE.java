@@ -21,7 +21,7 @@ public class CheckoutTestsDE extends TestBase {
     }
 
     @Test
-    @DisplayName("-DE- / GUEST / PAYMENT METHOD / QuickPay")
+    @DisplayName("QuickPay")
     void quickPayGuestDE() {
         configureUrlsDE();
         String phpSessIdCookie = PhpSessIdCookieGetter();
@@ -36,7 +36,7 @@ public class CheckoutTestsDE extends TestBase {
     }
 
     @Test
-    @DisplayName("-DE- / GUEST / PAYMENT METHOD / BankTransfer")
+    @DisplayName("BankTransfer")
     void bankPayTestGuestDE() {
         configureUrlsDE();
         String phpSessIdCookie = PhpSessIdCookieGetter();

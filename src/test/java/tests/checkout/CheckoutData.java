@@ -7,7 +7,7 @@ import static utils.RandomUtils.generateRegexSymbolsNumbers;
 
 public class CheckoutData {
 
-    static String cookieFormKeyStatic = generateRegexSymbolsNumbers(16);
+    public static String cookieFormKeyStatic = generateRegexSymbolsNumbers(16);
     static String paypalExpressPay = "PayPal Express";
     static String quickPay = "Quick Pay";
     static String bankPay = "Bank Transfer";
