@@ -1,5 +1,7 @@
 package utils;
 
+import com.github.javafaker.Faker;
+import com.mifmif.common.regex.Generex;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.Calendar;
@@ -20,6 +22,17 @@ public class RandomUtils {
         return result.toString();
     }
 
+    public static String getRandomAddress(){
+        Faker faker = new Faker();
+        String fullAddress = faker.address().streetAddress();
+        return fullAddress;
+    }
+    public static String getRandomCity(){
+        Faker faker = new Faker();
+        String fullAddress = faker.address().city();
+        return fullAddress;
+    }
+
     public static String getRandomString1(int length) {
         return RandomStringUtils.randomAlphabetic(length);
     }
@@ -35,6 +48,12 @@ public class RandomUtils {
     public static String getRandomPhone() {
         return "+382" + getRandomLong(1111111111L, 9999999999L).toString();
     }
+    public static String generateRegexSymbolsNumbers(int symbolsNumber){
+        Generex generex = new Generex("[A-Za-z0-9]{" + symbolsNumber + "}");
+        String string = generex.random();
+        return string;
+    }
+
 
     public static Date getCookieExpirationDate() {
         Date date = new Date();

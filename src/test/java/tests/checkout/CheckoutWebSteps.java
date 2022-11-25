@@ -81,11 +81,11 @@ public class CheckoutWebSteps {
 
     @Step("-PAYMENT METHOD FORM-")
     static void fillPaymentMethod(String paymentMethod) {
-        step("Clicking on " + paymentMethod + " payment method'", () -> {
+        step("Clicking on " + paymentMethod + " payment method", () -> {
             if(paymentMethod.equals("paypalExpressPay")) {
-                $("[for=paypal_express]").click();
+                $(byText("PayPal Express Checkout")).click();
             } else if(paymentMethod.equals(quickPay)) {
-                $("[for=quickpay").click();
+                $("[for=quickpay]").click();
             } else if(paymentMethod.equals(bankPay)) {
                 $("[for=banktransfer]").click();
             } else if(paymentMethod.equals(viaBillPay)) {
@@ -357,7 +357,7 @@ public class CheckoutWebSteps {
         step("VALITOR PAY -> Clicking 'Buy' button", () -> {
             $$(".action.primary.checkout").get(1).click();
             $("#webform0").submit();
-            $("[name=submitBtn]").click();
+            $("[name=submitBtn]").submit();
         });
     }
 
@@ -408,7 +408,7 @@ public class CheckoutWebSteps {
 
         } else if (paymentMethod.equals(sparkXpressPay)) {
             if (Configuration.baseUrl.equals(urlDK)) {
-                $(".col-sm-12 .fieldBox").shouldHave(text("Er du registreret i RKI, Debitor Registret eller har du lønindhold?"));
+                $$("h4").get(0).shouldHave(text("Er du registreret i RKI, Debitor Registret eller har du lønindhold?"));
             } else if (Configuration.baseUrl.equals(urlNO)) {
 
             } else if (Configuration.baseUrl.equals(urlIS)) {

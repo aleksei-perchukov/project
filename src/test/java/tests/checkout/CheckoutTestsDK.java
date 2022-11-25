@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.baseURI;
 import static tests.user.TestData.*;
+import static utils.RandomUtils.getRandomAddress;
 
 @Tag("Checkout")
 @Tag("DK")
@@ -93,5 +94,11 @@ public class CheckoutTestsDK extends TestBase {
         fillShippingMethod();
         fillPaymentMethod(viaBillPay);
         checkOrderSuccess(firstName, viaBillPay);
+    }
+    @Test
+    void testTest(){
+        String address = getRandomAddress();
+        System.out.println(address);
+        System.out.println(address);
     }
 }

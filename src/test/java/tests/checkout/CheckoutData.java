@@ -2,12 +2,12 @@ package tests.checkout;
 
 import com.codeborne.selenide.Configuration;
 
-import static com.codeborne.selenide.Selenide.$;
+import static utils.RandomUtils.generateRegexSymbolsNumbers;
+
 
 public class CheckoutData {
-    //PAYMENT METHODS LOCATORS
-    //    static String cookieFormKeyStatic = "2BBExp9Om9X3VF2x";
-    static String cookieFormKeyStatic = "x2OdeHWwSION73Xc";
+
+    static String cookieFormKeyStatic = generateRegexSymbolsNumbers(16);
     static String paypalExpressPay = "PayPal Express";
     static String quickPay = "Quick Pay";
     static String bankPay = "Bank Transfer";

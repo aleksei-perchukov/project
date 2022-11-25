@@ -9,6 +9,7 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    google()
 }
 
 def allureVersion = "2.19.0",
@@ -44,7 +45,10 @@ dependencies {
             'com.github.javafaker:javafaker:1.0.2',
             'com.codeborne:selenide:6.9.0',
             "org.assertj:assertj-core:$assertJVersion",
-            'org.seleniumhq.selenium:selenium-java:4.6.0'
+            'org.seleniumhq.selenium:selenium-java:4.6.0',
+            'nl.flotsam:xeger:1.0.0-lorislab-1',
+
+
     )
     testRuntimeOnly('org.aspectj:aspectjweaver:1.9.9.1')
 }

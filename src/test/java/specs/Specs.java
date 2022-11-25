@@ -20,7 +20,6 @@ public class Specs {
             .header("authorization", "Basic YWRtaW46QmlsYXJJc2dyZWFUMjAyMCEj")
             .header("x-requested-with", "XMLHttpRequest")
             .header("Connection", "keep-alive")
-            .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36")
             .baseUri(mainUrl)
             .filter(withCustomTemplates())
             .log().uri()
