@@ -2,12 +2,11 @@ package tests.checkout;
 
 import com.codeborne.selenide.Configuration;
 
-import static utils.RandomUtils.generateRegexSymbolsNumbers;
-
+import static utils.StaticData.*;
 
 public class CheckoutData {
 
-    public static String cookieFormKeyStatic = generateRegexSymbolsNumbers(16);
+
     static String paypalExpressPay = "PayPal Express";
     static String quickPay = "Quick Pay";
     static String bankPay = "Bank Transfer";
@@ -17,12 +16,7 @@ public class CheckoutData {
     static String netgiroPay = "Netgiro";
     static String valitorPay = "Valitor";
 
-    public static String mainUrl;
-    public static String urlDK = "https://skanva.dk";
-    public static String urlNO = "https://no.skanva.dk";
-    public static String urlIS = "https://is.skanva.dk";
-    public static String urlDE = "https://de.skanva.dk";
-    public static String urlSE = "https://se.skanva.dk";
+
 
     //ADD PRODUCT BODY
     public static String getAddToCartBody() {

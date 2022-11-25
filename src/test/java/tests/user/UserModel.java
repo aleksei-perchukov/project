@@ -5,19 +5,19 @@ import lombok.Data;
 @Data
 public class UserModel {
     @Data
-    class customer {
+    public static class customer {
         String firstname;
         String lastname;
 
         @Data
-        class addresses {
-            String defaultShipping;
-            String defaultBilling;
+        public static class addresses {
+            Boolean defaultShipping;
+            Boolean defaultBilling;
             String firstname;
             String lastname;
 
             @Data
-            class region {
+            public static class region {
                 String regionCode;
                 String region;
                 String regionId;
@@ -25,7 +25,7 @@ public class UserModel {
 
             String postcode;
             @Data
-            class street {
+            public static class street {
                 String[] strings;
             }
 

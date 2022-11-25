@@ -16,7 +16,7 @@
 //import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 //import static specs.Specs.requestSpecification1;
 //import static specs.Specs.responseSpecification1;
-//import static tests.checkout.CheckoutApiMethods.PhpSessIdCookieGetter;
+//import static tests.checkout.CheckoutApiMethods.phpSessIdGetter;
 //import static tests.checkout.CheckoutApiMethods.openBrowserWithCookies;
 //import static tests.user.TestData.*;
 //import static utils.RandomUtils.getRandomLong;
@@ -69,14 +69,14 @@
 //
 //    @Test
 //    void checkUpdateCartNumber() {
-//        String phpSessIdCookie = PhpSessIdCookieGetter();
-//        ResponseBodyExtractionOptions cart_id_json = apiAddToCart(phpSessIdCookie);
+//        
+//        ResponseBodyExtractionOptions cart_id_json = apiAddToCart(phpSessId);
 //        assertThat(cart_id_json.jsonPath().get("messages.type").equals("success"));
-//        openBrowserWithCookies(phpSessIdCookie, formKeyCookieStatic, "");
+//        openBrowserWithCookies(phpSessId, formKeyCookieStatic, "");
 //
 //        step("Checking cart number increased", () -> {
 //            ResponseBodyExtractionOptions cart_update_json = given().spec(requestSpecification1)
-//                    .cookie("PHPSESSID", phpSessIdCookie)
+//                    .cookie("PHPSESSID", phpSessId)
 //                    .cookie("form_key", "x2OdeHWwSION73Xc")
 //                    .contentType("application/x-www-form-urlencoded; charset=UTF-8")
 //                    .header("x-requested-with", "XMLHttpRequest")
@@ -94,7 +94,7 @@
 //        step("Adding product to cart & getting PHPSESSID cookie by API", () -> {
 //            cart_id_json = given()
 //                    .spec(requestSpecification1)
-//                    .cookie("PHPSESSID", phpSessIdCookie)
+//                    .cookie("PHPSESSID", phpSessId)
 //                    .cookie("form_key", "x2OdeHWwSION73Xc")
 //                    .contentType("application/x-www-form-urlencoded; charset=UTF-8")
 //                    .header("x-requested-with", "XMLHttpRequest")
@@ -116,7 +116,7 @@
 //
 //        step("Checking cart number increased", () -> {
 //            ResponseBodyExtractionOptions cart_update_json = given().spec(requestSpecification1)
-//                    .cookie("PHPSESSID", phpSessIdCookie)
+//                    .cookie("PHPSESSID", phpSessId)
 //                    .cookie("form_key", "x2OdeHWwSION73Xc")
 //                    .contentType("application/x-www-form-urlencoded; charset=UTF-8")
 //                    .header("x-requested-with", "XMLHttpRequest")
@@ -134,7 +134,7 @@
 //        step("Adding product to cart & getting PHPSESSID cookie by API", () -> {
 //            ResponseBodyExtractionOptions cart_id_json = given()
 //                    .spec(requestSpecification1)
-//                    .cookie("PHPSESSID", phpSessIdCookie)
+//                    .cookie("PHPSESSID", phpSessId)
 //                    .cookie("form_key", "x2OdeHWwSION73Xc")
 //                    .contentType("application/x-www-form-urlencoded; charset=UTF-8")
 //                    .header("x-requested-with", "XMLHttpRequest")
@@ -156,7 +156,7 @@
 //
 //        step("Checking cart number increased", () -> {
 //            ResponseBodyExtractionOptions cart_update_json = given().spec(requestSpecification1)
-//                    .cookie("PHPSESSID", phpSessIdCookie)
+//                    .cookie("PHPSESSID", phpSessId)
 //                    .cookie("form_key", "x2OdeHWwSION73Xc")
 //                    .contentType("application/x-www-form-urlencoded; charset=UTF-8")
 //                    .header("x-requested-with", "XMLHttpRequest")

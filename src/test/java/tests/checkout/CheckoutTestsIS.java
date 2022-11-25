@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Configuration.*;
 import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutData.bankPay;
-import static io.restassured.RestAssured.baseURI;
+import static utils.StaticData.*;
 import static tests.checkout.CheckoutWebSteps.*;
 
 @DisplayName("-IS- / GUEST / PAYMENT METHODS TEST SUITE")
@@ -24,9 +24,8 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("Netgiro")
     void netgiroTestGuestIS() {
         configureUrlsIS();
-        String phpSessIdCookie = PhpSessIdCookieGetter();
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        apiAddToCart(phpSessId, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(netgiroPay);
@@ -38,9 +37,8 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("Valitor")
     void valitorPayTestGuestIS() {
         configureUrlsIS();
-        String phpSessIdCookie = PhpSessIdCookieGetter();
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        apiAddToCart(phpSessId, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(valitorPay);
@@ -52,9 +50,8 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("Bank Transfer")
     void bankPayTestGuestIS() {
         configureUrlsIS();
-        String phpSessIdCookie = PhpSessIdCookieGetter();
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        apiAddToCart(phpSessId, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(bankPay);
@@ -66,9 +63,8 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("SparkXpress")
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
-        String phpSessIdCookie = PhpSessIdCookieGetter();
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        apiAddToCart(phpSessId, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         //       acceptCookies();
         fillShippingForm();
         fillShippingMethod();

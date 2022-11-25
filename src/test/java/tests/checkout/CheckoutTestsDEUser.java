@@ -14,6 +14,7 @@ import static io.restassured.RestAssured.*;
 import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutWebSteps.*;
+import static utils.StaticData.*;
 
 @Disabled
 @DisplayName("-DE- / USER / PAYMENT METHODS TEST SUITE")
@@ -40,18 +41,18 @@ public class CheckoutTestsDEUser extends TestBase {
         String password = getFromResponsePassword(map);
         Response response = getFromResponseResponse(map);
         String cookieFormKey = response.getCookie("form_key");
-        String phpSessIdCookie = response.getCookie("PHPSESSID");
+        String phpSessId = response.getCookie("PHPSESSID");
         String privateContentVersionCookie = response.getCookie("private_content_version");
         given()
                 .formParam("a.perchukov@belvg.com", "Mambas123", new FormAuthConfig("/authentication", "a.perchukov@belvg.com", "Mambas123"))
                 .formParam("");
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKey, "/customer/account/login");
+        openBrowserWithCookies(phpSessId, cookieFormKey, "/customer/account/login");
         $("#email").setValue(email);
         $("#pass").setValue(password);
         $("#send2").click();
 
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKey, "/checkout");
+        apiAddToCart(phpSessId, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessId, cookieFormKey, "/checkout");
 //        acceptCookies();
         fillShippingForm();
         fillShippingMethod();
@@ -71,9 +72,9 @@ public class CheckoutTestsDEUser extends TestBase {
         String password = getFromResponsePassword(map);
         Response response = getFromResponseResponse(map);
         String cookieFormKey = response.getCookie("form_key");
-        String phpSessIdCookie = response.getCookie("PHPSESSID");
-        apiAddToCart(phpSessIdCookie, cookieFormKey);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKey, "/checkout");
+        String phpSessId = response.getCookie("PHPSESSID");
+        apiAddToCart(phpSessId, cookieFormKey);
+        openBrowserWithCookies(phpSessId, cookieFormKey, "/checkout");
 //        acceptCookies();
         fillShippingForm();
         fillShippingMethod();

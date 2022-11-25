@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Configuration.*;
 import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutWebSteps.*;
-import static io.restassured.RestAssured.baseURI;
+import static utils.StaticData.*;
 import static tests.user.TestData.*;
 
 @DisplayName("-DE- / GUEST / PAYMENT METHODS TEST SUITE")
@@ -24,9 +24,8 @@ public class CheckoutTestsDE extends TestBase {
     @DisplayName("QuickPay")
     void quickPayGuestDE() {
         configureUrlsDE();
-        String phpSessIdCookie = PhpSessIdCookieGetter();
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        apiAddToCart(phpSessId, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
 //        acceptCookies();
         fillShippingForm();
         fillShippingMethod();
@@ -39,9 +38,8 @@ public class CheckoutTestsDE extends TestBase {
     @DisplayName("BankTransfer")
     void bankPayTestGuestDE() {
         configureUrlsDE();
-        String phpSessIdCookie = PhpSessIdCookieGetter();
-        apiAddToCart(phpSessIdCookie, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessIdCookie, cookieFormKeyStatic, "/checkout");
+        apiAddToCart(phpSessId, cookieFormKeyStatic);
+        openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
 //        acceptCookies();
         fillShippingForm();
         fillShippingMethod();

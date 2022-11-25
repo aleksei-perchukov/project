@@ -3,9 +3,8 @@ package tests.checkout;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import io.qameta.allure.Step;
-import io.restassured.http.Cookies;
+import static utils.StaticData.*;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import models.CreateUserPojoModel;
@@ -127,10 +126,10 @@ public class CheckoutApiMethods {
     }
 
     @Step("Getting PHPSESSID cookie via API")
-    static String PhpSessIdCookieGetter() {
-        String phpSessIdCookie = null;
+    static String phpSessIdGetter() {
+        String phpSessId = null;
         if (Configuration.baseUrl.equals(urlDK)) {
-            phpSessIdCookie = given()
+            phpSessId = given()
                     .spec(requestSpecification1)
                     .contentType("text/html; charset=UTF-8")
                     .get(mainUrl + "/tr/topstyret-vindue-2-fags")
@@ -155,16 +154,16 @@ public class CheckoutApiMethods {
             $("#height").setValue("100");
             $(".item.home").click();
             Selenide.sleep(5000);
-            phpSessIdCookie = WebDriverRunner.getWebDriver().manage().getCookieNamed("PHPSESSID").getValue();
+            phpSessId = WebDriverRunner.getWebDriver().manage().getCookieNamed("PHPSESSID").getValue();
         }
 
-        return phpSessIdCookie;
+        return phpSessId;
     }
 
     static String form_keyCookieGetter() {
         String form_keyCookie = given()
                 .spec(requestSpecification1)
-                .cookie("PHPSESSID", PhpSessIdCookieGetter())
+                .cookie("PHPSESSID", phpSessIdGetter())
                 .body("url=https%3A%2F%2Fskanva.dk%2Fbelvg_raptor%2Fproducts%2Fdata%2FisAjax%2F1%2F&raptor_type=GetUserRecommendations&raptor_qty=5&raptor_user_dependent=1&raptor_category=&product_id=&cart_items_ids=")
                 .get("/")
                 .then()
@@ -174,10 +173,10 @@ public class CheckoutApiMethods {
     }
 
     @Step("Opening browser with session cookies (PHPSESSID & form_key)")
-    static void openBrowserWithCookies(String phpSessIdCookie, String cookieFormKey, String url) {
+    static void openBrowserWithCookies(String phpSessId, String cookieFormKey, String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Selenide.sleep(2000);
-        Cookie authCookie = new Cookie("PHPSESSID", phpSessIdCookie);
+        Cookie authCookie = new Cookie("PHPSESSID", phpSessId);
         Cookie form_keyCookie = new Cookie("form_key", cookieFormKey);
         WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
         WebDriverRunner.getWebDriver().manage().addCookie(form_keyCookie);
@@ -185,7 +184,7 @@ public class CheckoutApiMethods {
     }
 
     @Step("Adding product to cart by API")
-    static ResponseBodyExtractionOptions apiAddToCart(String phpSessIdCookie, String formKeyCookie) {
+    static ResponseBodyExtractionOptions apiAddToCart(String phpSessId, String formKeyCookie) {
         String productId = null;
         Selenide.sleep(2000);
         if (Configuration.baseUrl.equals(urlDK)) {
@@ -202,7 +201,7 @@ public class CheckoutApiMethods {
 
         ResponseBodyExtractionOptions cart_id_json = given()
                 .spec(requestSpecification1)
-                .cookie("PHPSESSID", phpSessIdCookie)
+                .cookie("PHPSESSID", phpSessId)
                 .cookie("form_key", formKeyCookie)
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body(getAddToCartBody()).when()
@@ -218,9 +217,9 @@ public class CheckoutApiMethods {
     }
 
     @Step("Checking cart number increased")
-    static ResponseBodyExtractionOptions apiCheckCartNumberUpdate(String phpSessIdCookie) {
+    static ResponseBodyExtractionOptions apiCheckCartNumberUpdate(String phpSessId) {
         ResponseBodyExtractionOptions cart_update_json = given().spec(requestSpecification1)
-                .cookie("PHPSESSID", phpSessIdCookie)
+                .cookie("PHPSESSID", phpSessId)
                 .cookie("form_key", "x2OdeHWwSION73Xc")
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .header("x-requested-with", "XMLHttpRequest")

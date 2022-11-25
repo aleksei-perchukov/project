@@ -5,13 +5,12 @@ import io.restassured.filter.log.LogDetail;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-import java.lang.module.Configuration;
-
 import static helpers.APIListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
-import static tests.checkout.CheckoutData.mainUrl;
+        ;
 import static tests.user.Components.basicAuthLogin;
 import static tests.user.Components.basicAuthPassword;
+import static utils.StaticData.*;
 
 public class Specs {
     public static RequestSpecification requestSpecification1 = with()

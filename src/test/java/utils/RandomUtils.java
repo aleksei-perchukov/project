@@ -21,6 +21,11 @@ public class RandomUtils {
 
         return result.toString();
     }
+    public static String getCity(){
+        Faker faker = new Faker();
+        String city = faker.address().city();
+        return city;
+    }
 
     public static String getRandomAddress(){
         Faker faker = new Faker();

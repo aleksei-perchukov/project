@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
+import static utils.StaticData.*;
 
 public class CheckoutWebSteps {
     @Step("Clicking 'Accept all cookies' button")
