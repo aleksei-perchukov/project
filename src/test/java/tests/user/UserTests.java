@@ -76,7 +76,7 @@ public class UserTests extends TestBase {
     void createUserAPI() {
         configureUrlsDK();
         CreateUserPojoModel request = new CreateUserPojoModel();
-        request.setForm_key("2BBExp9Om9X3VF2x");
+        request.setForm_key(cookieFormKeyStatic);
         request.setSuccess_url("");
         request.setError_url("");
         request.setFirstname(firstName);

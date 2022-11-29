@@ -40,7 +40,7 @@ public class AdminAPIMethods {
 
         Response response = given().spec(requestSpecification1)
                 .contentType("application/json")
-                .header("Authorizetion", "Bearer " + getAdminTokenAPI())
+                .header("Authorization", "Bearer " + getAdminTokenAPI())
                 .body("'{\"username\":\"" + adminLogin + "\", \"password\":\"" + adminPassword + "}'")
                 .post("https://skanva.dk/index.php/rest/V1/integration/customer/token/")
                 .then()
