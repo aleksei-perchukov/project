@@ -6,7 +6,6 @@ import utils.StaticData;
 
 import static utils.StaticData.*;
 import static com.codeborne.selenide.Configuration.*;
-import static tests.checkout.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutApiMethods.apiAddToCart;
 import static tests.checkout.CheckoutApiMethods.openBrowserWithCookies;
 import static tests.checkout.CheckoutData.*;
@@ -36,12 +35,11 @@ public class CheckoutTestsDK extends TestBase {
         fillPaymentMethod(paypalExpressPay);
         checkOrderSuccess(firstName, paypalExpressPay);
     }
-
+    @Tag("Debug")
     @Test
     @DisplayName("QuickPay")
     void quickPayTestGuest() {
         configureUrlsDK();
-        
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         acceptCookies();

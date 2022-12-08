@@ -48,6 +48,8 @@ dependencies {
             'org.seleniumhq.selenium:selenium-java:4.6.0'
     )
     testRuntimeOnly('org.aspectj:aspectjweaver:1.9.9.1')
+    annotationProcessor "org.projectlombok:lombok:1.18.22"
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.22")
 }
 compileJava.options.encoding = 'UTF-8'
 
@@ -84,4 +86,14 @@ task Debug(type: Test) {
     useJUnitPlatform {
         includeTags 'Debug'
     }
+    retry {
+        maxRetries = 5
+        maxFailures = 20
+        failOnPassedAfterRetry = true
+    }
+    System.setProperty("basicAuthLogin", "admin")
+    System.setProperty("basicAuthPassword", "BilarIsgreaT2020!%23")
+    System.setProperty("adminLogin", "n.brevnov%40belvg.com")
+    System.setProperty("adminPassword", "n.brevnovBelVG%24ecuRiTy2021")
+    System.setProperty("authHeaderValue", "Basic YWRtaW46QmlsYXJJc2dyZWFUMjAyMCEj")
 }

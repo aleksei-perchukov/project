@@ -11,9 +11,17 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
+import static tests.user.TestData.*;
 import static utils.StaticData.*;
 
 public class CheckoutWebSteps {
+    @Step("Login")
+    static void login(){
+        $("#email").setValue(email);
+        $("#pass").setValue(password);
+        $("[for=show-password]").click();
+        $("#login-form").submit();
+    }
     @Step("Clicking 'Accept all cookies' button")
     static void acceptCookies() {
         $(".coi-banner__accept").click();
@@ -52,9 +60,11 @@ public class CheckoutWebSteps {
             if (!$("#customer-email").exists()) {
                 refresh();
             }
-            step("Shipping form -> E-mail = " + TestData.email, () -> {
-                $("#customer-email").setValue(TestData.email);
-            });
+            if (!$("#customer-email").exists()) {
+                step("Shipping form -> E-mail = " + email, () -> {
+                    $("#customer-email").setValue(email);
+                });
+            }
         }
         step("Click on 'Proceed to shipping method' button", () -> {
             $("#shipping-address-step").submit();
@@ -66,10 +76,7 @@ public class CheckoutWebSteps {
         step("Clicking on the first shipping method", () -> {
             Selenide.sleep(2000);
 
-//            if ($(byText("Desværre, ingen produkter er tilgængelige for denne ordre på nuværende tidspunkt.")).exists() ||
-            //                   $(byText("Beklager, ingen tilbud er tilgjengelige for denne ordren i øyeblikket.")).exists()) {
             refresh();
-            //           }
             $(".shipping-method-item").click();
         });
         step("Clicking on 'confirm the selected shipping method' checkbox", () -> {
@@ -84,7 +91,7 @@ public class CheckoutWebSteps {
     static void fillPaymentMethod(String paymentMethod) {
         step("Clicking on " + paymentMethod + " payment method", () -> {
             if(paymentMethod.equals("paypalExpressPay")) {
-                $(byText("PayPal Express Checkout")).click();
+                $("[for=paypal_express]").click();
             } else if(paymentMethod.equals(quickPay)) {
                 $("[for=quickpay]").click();
             } else if(paymentMethod.equals(bankPay)) {
@@ -108,7 +115,6 @@ public class CheckoutWebSteps {
         step("Submitting payment form", () -> {
             $("#co-payment-form").submit();
         });
-        //           $(".action.primary.checkout").shouldBe(enabled);
         Selenide.sleep(10000);
         if (paymentMethod.equals(paypalExpressPay)) {
             step("Clicking on 'Accept terms of conditions' checkbox", () -> {
@@ -333,7 +339,7 @@ public class CheckoutWebSteps {
             $("#customerSSN").setValue("1234567890");
         });
         step("NETGIRO PAY -> Entering password", () -> {
-            $("#customerPassword").setValue(TestData.password);
+            $("#customerPassword").setValue(password);
         });
         step("NETGIRO PAY -> Clicking 'Buy' button", () -> {
             $(".tab-header.custom-link.payment-request-tab").click();
@@ -424,7 +430,7 @@ public class CheckoutWebSteps {
             if (Configuration.baseUrl.equals(urlDK)) {
 
             } else if (Configuration.baseUrl.equals(urlNO)) {
-                $(".checkout-success__agreement").shouldHave(text("Bestillingen din er nå registrert, og du vil snart motta en e-post med bestillingsbekreftelsen på: " + TestData.email));
+                $(".checkout-success__agreement").shouldHave(text("Bestillingen din er nå registrert, og du vil snart motta en e-post med bestillingsbekreftelsen på: " + email));
 
             } else if (Configuration.baseUrl.equals(urlIS)) {
 
@@ -439,7 +445,7 @@ public class CheckoutWebSteps {
             } else if (Configuration.baseUrl.equals(urlNO)) {
 
             } else if (Configuration.baseUrl.equals(urlIS)) {
-                $(".checkout-success__agreement").shouldHave(text("" + TestData.email));
+                $(".checkout-success__agreement").shouldHave(text("" + email));
             } else if (Configuration.baseUrl.equals(urlDE)) {
 
             } else if (Configuration.baseUrl.equals(urlSE)) {

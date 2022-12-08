@@ -1,38 +1,51 @@
 package tests.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserModel {
+    public Customer customer;
     @Data
-    public static class customer {
-        String firstname;
-        String lastname;
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class Customer {
+        public String firstname;
+        public String lastname;
+        public String email;
+        public int website_id;
+        public Addresses addresses;
 
         @Data
-        public static class addresses {
-            Boolean defaultShipping;
-            Boolean defaultBilling;
-            String firstname;
-            String lastname;
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        public class Addresses {
+            public Boolean defaultShipping;
+            public Boolean defaultBilling;
+            public String firstname;
+            public String lastname;
+            public Region region;
 
             @Data
-            public static class region {
-                String regionCode;
-                String region;
-                String regionId;
+            @JsonIgnoreProperties(ignoreUnknown = true)
+            public class Region {
+                public String regionCode;
+                public String region;
+                public String regionId;
             }
 
-            String postcode;
+            private String postcode;
+            private Street street;
+
             @Data
-            public static class street {
-                String[] strings;
+            @JsonIgnoreProperties(ignoreUnknown = true)
+            public class Street {
+                public String[] strings;
             }
 
-            String city;
-            String telephone;
-            String countryId;
+            public String city;
+            public String telephone;
+            public String countryId;
         }
     }
-    String password;
+    public String password;
 }

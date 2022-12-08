@@ -14,7 +14,6 @@ import tests.user.TestData;
 import java.util.HashMap;
 import java.util.Map;
 
-import static io.restassured.RestAssured.responseSpecification;
 import static tests.checkout.CheckoutData.*;
 import static com.codeborne.selenide.Selenide.$;
 import static io.restassured.RestAssured.given;
@@ -176,7 +175,18 @@ public class CheckoutApiMethods {
     static void openBrowserWithCookies(String phpSessId, String cookieFormKey, String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Selenide.sleep(2000);
-        Cookie authCookie = new Cookie("PHPSESSID", phpSessId);
+        Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + mainUrl,"/", null);
+        Cookie form_keyCookie = new Cookie("form_key", cookieFormKey);
+        WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
+        WebDriverRunner.getWebDriver().manage().addCookie(form_keyCookie);
+        openPage(url);
+    }
+
+    @Step("Opening browser with 'form_key' session cookie")
+    static void openBrowserWithCookiesLogin(String cookieFormKey, String url) {
+        openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
+        Selenide.sleep(2000);
+        Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + mainUrl.substring(8),"/", null);
         Cookie form_keyCookie = new Cookie("form_key", cookieFormKey);
         WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
         WebDriverRunner.getWebDriver().manage().addCookie(form_keyCookie);
@@ -199,9 +209,10 @@ public class CheckoutApiMethods {
             productId = "";
         }
 
+        io.restassured.http.Cookie phpSessIdDomain = new io.restassured.http.Cookie.Builder("PHPSESSID", phpSessId).setDomain("." + mainUrl.substring(8)).build();
         ResponseBodyExtractionOptions cart_id_json = given()
                 .spec(requestSpecification1)
-                .cookie("PHPSESSID", phpSessId)
+                .cookie(phpSessIdDomain)
                 .cookie("form_key", formKeyCookie)
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body(getAddToCartBody()).when()

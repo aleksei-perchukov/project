@@ -8,15 +8,13 @@ import io.restassured.specification.ResponseSpecification;
 import static helpers.APIListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
         ;
-import static tests.user.Components.basicAuthLogin;
-import static tests.user.Components.basicAuthPassword;
 import static utils.StaticData.*;
 
 public class Specs {
     public static RequestSpecification requestSpecification1 = with()
             .auth()
-            .basic(basicAuthLogin, basicAuthPassword)
-            .header("authorization", "Basic YWRtaW46QmlsYXJJc2dyZWFUMjAyMCEj")
+            .basic("admin", "BilarIsgreaT2020!%23")
+  //          .header("authorization", authHeaderValue)
             .header("x-requested-with", "XMLHttpRequest")
             .header("Connection", "keep-alive")
             .baseUri(mainUrl)
@@ -32,7 +30,8 @@ public class Specs {
 
     public static RequestSpecification adminRequestSpecification = with()
             .auth()
-            .basic(basicAuthLogin, basicAuthPassword)
+            .basic("admin", "BilarIsgreaT2020!%23")
+            .header("Authorization", "Basic YWRtaW46QmlsYXJJc2dyZWFUMjAyMCEj")
             .contentType("application/json")
             .baseUri(mainUrl)
             .filter(withCustomTemplates())
@@ -44,6 +43,4 @@ public class Specs {
             .log(LogDetail.COOKIES)
             .log(LogDetail.HEADERS)
             .log(LogDetail.BODY)
-            .build();
-
-}
+            .build();}

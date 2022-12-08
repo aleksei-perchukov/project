@@ -1,9 +1,6 @@
 package tests.user;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
-import io.restassured.response.Response;
-import models.CreateUserPojoModel;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -14,8 +11,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.given;
-import static specs.Specs.requestSpecification1;
-import static specs.Specs.responseSpecification1;
+//import static specs.Specs.requestSpecification1;
 import static utils.StaticData.*;
 import static tests.user.Components.openPage;
 import static tests.user.TestData.*;
@@ -69,36 +65,36 @@ public class UserTests extends TestBase {
 //        step("", () -> {;});
     }
 
-    @Disabled
-    @Tag("API")
-    @DisplayName("Test: create user by API, check by UI")
-    @Test
-    void createUserAPI() {
-        configureUrlsDK();
-        CreateUserPojoModel request = new CreateUserPojoModel();
-        request.setForm_key(cookieFormKeyStatic);
-        request.setSuccess_url("");
-        request.setError_url("");
-        request.setFirstname(firstName);
-        request.setLastname(lastName);
-        request.setEmail(email + "@test.com");
-        request.setPassword(password);
-        request.setPassword_confirmation(password);
-        Response response = given()
-                .spec(requestSpecification1)
-                .log().all()
-                .body(request)
-                .post(createUserPage)
-                .then()
-                .spec(responseSpecification1)
-                .statusCode(200)
-                .extract()
-                .response();
-        String cookieFormKey = response.getDetailedCookie("form_key").toString();
-        String cookiePHPSESSID = response.getDetailedCookie("PHPSESSID").toString();
-        System.out.println(cookieFormKey);
-        System.out.println(cookiePHPSESSID);
-    }
+//    @Disabled
+//    @Tag("API")
+//    @DisplayName("Test: create user by API, check by UI")
+//    @Test
+//    void createUserAPI() {
+//        configureUrlsDK();
+//        CreateUserPojoModel request = new CreateUserPojoModel();
+//        request.setForm_key(cookieFormKeyStatic);
+//        request.setSuccess_url("");
+//        request.setError_url("");
+//        request.setFirstname(firstName);
+//        request.setLastname(lastName);
+//        request.setEmail(email + "@test.com");
+//        request.setPassword(password);
+//        request.setPassword_confirmation(password);
+//        Response response = given()
+//                .spec(requestSpecification1)
+//                .log().all()
+//                .body(request)
+//                .post(createUserPage)
+//                .then()
+//                .spec(responseSpecification1)
+//                .statusCode(200)
+//                .extract()
+//                .response();
+//        String cookieFormKey = response.getDetailedCookie("form_key").toString();
+//        String cookiePHPSESSID = response.getDetailedCookie("PHPSESSID").toString();
+//        System.out.println(cookieFormKey);
+//        System.out.println(cookiePHPSESSID);
+//    }
 
     @Disabled
     @Test

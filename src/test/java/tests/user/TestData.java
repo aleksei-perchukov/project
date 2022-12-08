@@ -8,8 +8,8 @@ import static utils.RandomUtils.*;
 
 public class TestData {
     //ADMIN CREDS
-    public static String adminLogin = "n.brevnov@belvg.com";
-    public static String adminPassword = "n.brevnovBelVG$ecuRiTy2021";
+//    public static String adminLogin = "n.brevnov@belvg.com";
+//    public static String adminPassword = "n.brevnovBelVG$ecuRiTy2021";
 
     //CREATE USER
     static Faker faker = new Faker();
