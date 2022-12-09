@@ -6,17 +6,14 @@ import static utils.StaticData.*;
 
 public class CheckoutData {
 
-
-    static String paypalExpressPay = "PayPal Express";
-    static String quickPay = "Quick Pay";
-    static String bankPay = "Bank Transfer";
-    static String viaBillPay = "ViaBill";
-    static String sparkXpressPay = "SparkXpress Pay";
-    static String klarnaPay = "Klarna";
-    static String netgiroPay = "Netgiro";
-    static String valitorPay = "Valitor";
-
-
+    public static String paypalExpressPay = "PayPal Express";
+    public static String quickPay = "Quick Pay";
+    public static String bankPay = "Bank Transfer";
+    public static String viaBillPay = "ViaBill";
+    public static String sparkXpressPay = "SparkXpress Pay";
+    public static String klarnaPay = "Klarna";
+    public static String netgiroPay = "Netgiro";
+    public static String valitorPay = "Valitor";
 
     //ADD PRODUCT BODY
     public static String getAddToCartBody() {

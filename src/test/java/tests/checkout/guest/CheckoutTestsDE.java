@@ -1,19 +1,17 @@
-package tests.checkout;
+package tests.checkout.guest;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import tests.checkout.TestBase;
 
 import static com.codeborne.selenide.Configuration.*;
-import static tests.checkout.CheckoutApiMethods.*;
+import static tests.checkout.websteps.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
-import static tests.checkout.CheckoutWebSteps.*;
+import static tests.checkout.websteps.CheckoutWebSteps.*;
 import static utils.StaticData.*;
 import static tests.user.TestData.*;
 
 @DisplayName("-DE- / GUEST / PAYMENT METHODS TEST SUITE")
+@Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("DE")})
 public class CheckoutTestsDE extends TestBase {
     void configureUrlsDE() {
         mainUrl = urlDE;

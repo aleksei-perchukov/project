@@ -1,15 +1,16 @@
-package tests.checkout;
+package tests.checkout.guest;
 
 
 import org.junit.jupiter.api.*;
+import tests.checkout.TestBase;
 import utils.StaticData;
 
 import static utils.StaticData.*;
 import static com.codeborne.selenide.Configuration.*;
-import static tests.checkout.CheckoutApiMethods.apiAddToCart;
-import static tests.checkout.CheckoutApiMethods.openBrowserWithCookies;
+import static tests.checkout.websteps.CheckoutApiMethods.apiAddToCart;
+import static tests.checkout.websteps.CheckoutApiMethods.openBrowserWithCookies;
 import static tests.checkout.CheckoutData.*;
-import static tests.checkout.CheckoutWebSteps.*;
+import static tests.checkout.websteps.CheckoutWebSteps.*;
 import static tests.user.TestData.*;
 
 @Tag("Checkout")
@@ -26,7 +27,6 @@ public class CheckoutTestsDK extends TestBase {
     @DisplayName("PaypalExpress")
     void paypalExpressPayTestGuest() {
         configureUrlsDK();
-        
         apiAddToCart(phpSessId, StaticData.cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         acceptCookies();

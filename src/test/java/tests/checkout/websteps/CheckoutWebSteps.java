@@ -1,4 +1,4 @@
-package tests.checkout;
+package tests.checkout.websteps;
 
 import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Configuration;
@@ -16,19 +16,19 @@ import static utils.StaticData.*;
 
 public class CheckoutWebSteps {
     @Step("Login")
-    static void login(){
+    public static void login(){
         $("#email").setValue(email);
         $("#pass").setValue(password);
         $("[for=show-password]").click();
         $("#login-form").submit();
     }
     @Step("Clicking 'Accept all cookies' button")
-    static void acceptCookies() {
+    public static void acceptCookies() {
         $(".coi-banner__accept").click();
     }
 
     @Step("-SHIPPING FORM-")
-    static void fillShippingForm() {
+    public static void fillShippingForm() {
         String zipCode = getZipCode();
         if (Configuration.baseUrl.equals(urlIS)) {
             step("Shipping form -> Kennitala = '1234567890'", () ->
@@ -72,7 +72,7 @@ public class CheckoutWebSteps {
     }
 
     @Step("-SHIPPING METHOD-")
-    static void fillShippingMethod() {
+    public static void fillShippingMethod() {
         step("Clicking on the first shipping method", () -> {
             Selenide.sleep(2000);
 
@@ -88,7 +88,7 @@ public class CheckoutWebSteps {
     }
 
     @Step("-PAYMENT METHOD FORM-")
-    static void fillPaymentMethod(String paymentMethod) {
+    public static void fillPaymentMethod(String paymentMethod) {
         step("Clicking on " + paymentMethod + " payment method", () -> {
             if(paymentMethod.equals("paypalExpressPay")) {
                 $("[for=paypal_express]").click();
@@ -296,7 +296,7 @@ public class CheckoutWebSteps {
     }
 
     @Step("-QUICK PAY FORM-")
-    static void fillQuickPay() {
+    public static void fillQuickPay() {
         step("Quick Pay -> Card number = 1000 0000 0000 0008", () -> {
             $("#cardnumber").setValue("1000000000000008");
         });
@@ -315,7 +315,7 @@ public class CheckoutWebSteps {
     }
 
     @Step("-KLARNA PAY FORM-")
-    static void fillKlarnaPay() {
+    public static void fillKlarnaPay() {
         step("KLARNA PAY -> Entering '01087000571' personal number", () -> {
             Selenide.sleep(5000);
             switchTo().innerFrame("klarna-pay-later-fullscreen");
@@ -327,7 +327,7 @@ public class CheckoutWebSteps {
     }
 
     @Step("-NETGIRO PAY FORM-")
-    static void fillNetgiroPay() {
+    public static void fillNetgiroPay() {
         step("NETGIRO PAY -> Entering '1231231' mobile number", () -> {
             Selenide.sleep(5000);
             $("#customerPaymentRequestGSM").sendKeys("1231231");
@@ -347,7 +347,7 @@ public class CheckoutWebSteps {
     }
 
     @Step("-VALITOR PAY FORM-")
-    static void fillValitorPay() {
+    public static void fillValitorPay() {
         step("VALITOR PAY -> Entering '2223000010246699' credit card number", () -> {
             Selenide.sleep(5000);
             $("#valitor_cc_number").sendKeys("2223000010246699");
@@ -369,7 +369,7 @@ public class CheckoutWebSteps {
     }
 
     @Step("Check order success")
-    static void checkOrderSuccess(String firstName, String paymentMethod) {
+    public static void checkOrderSuccess(String firstName, String paymentMethod) {
         if (paymentMethod.equals(paypalExpressPay)) {
             $("#headerText").shouldHave(text("Bei PayPal einloggen"));
         } else if (paymentMethod.equals(quickPay) || paymentMethod.equals(bankPay)) {

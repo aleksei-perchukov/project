@@ -1,4 +1,4 @@
-package tests.checkout;
+package tests.checkout.websteps;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -172,10 +172,10 @@ public class CheckoutApiMethods {
     }
 
     @Step("Opening browser with session cookies (PHPSESSID & form_key)")
-    static void openBrowserWithCookies(String phpSessId, String cookieFormKey, String url) {
+    public static void openBrowserWithCookies(String phpSessId, String cookieFormKey, String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Selenide.sleep(2000);
-        Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + mainUrl,"/", null);
+        Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + mainUrl.substring(8),"/", null);
         Cookie form_keyCookie = new Cookie("form_key", cookieFormKey);
         WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
         WebDriverRunner.getWebDriver().manage().addCookie(form_keyCookie);
@@ -183,7 +183,7 @@ public class CheckoutApiMethods {
     }
 
     @Step("Opening browser with 'form_key' session cookie")
-    static void openBrowserWithCookiesLogin(String cookieFormKey, String url) {
+    public static void openBrowserWithCookiesLogin(String cookieFormKey, String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Selenide.sleep(2000);
         Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + mainUrl.substring(8),"/", null);
@@ -194,7 +194,7 @@ public class CheckoutApiMethods {
     }
 
     @Step("Adding product to cart by API")
-    static ResponseBodyExtractionOptions apiAddToCart(String phpSessId, String formKeyCookie) {
+    public static ResponseBodyExtractionOptions apiAddToCart(String phpSessId, String formKeyCookie) {
         String productId = null;
         Selenide.sleep(2000);
         if (Configuration.baseUrl.equals(urlDK)) {

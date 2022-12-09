@@ -1,17 +1,21 @@
-package tests.checkout;
+package tests.checkout.guest;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
+import tests.checkout.websteps.CheckoutWebSteps;
+import tests.checkout.TestBase;
 import tests.user.TestData;
 
 import static com.codeborne.selenide.Configuration.*;
-import static tests.checkout.CheckoutApiMethods.*;
+import static tests.checkout.websteps.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static utils.StaticData.*;
-import static tests.checkout.CheckoutWebSteps.*;
+import static tests.checkout.websteps.CheckoutWebSteps.*;
 
 @DisplayName("-NO- / GUEST / PAYMENT METHODS TEST SUITE")
+@Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
 public class CheckoutTestsNO extends TestBase {
     void configureUrlsNO() {
         mainUrl = urlNO;
