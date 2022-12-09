@@ -28,9 +28,6 @@ public class UserTestsDE {
         step("Opening page: " + createUserPage, () -> {
             openPage(createUserPage);
         });
-        step("Clicking on 'agree with all cookies' button ", () -> {
-            $(".coi-banner__accept").click();
-        });
         step("Entering first name: " + firstName, () -> {
             $("#firstname").setValue(firstName);
         });

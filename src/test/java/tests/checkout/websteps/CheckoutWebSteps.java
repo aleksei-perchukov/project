@@ -56,16 +56,12 @@ public class CheckoutWebSteps {
         step("Shipping form -> Telefonnummer = " + TestData.mobileNumber + " in mobile phone field", () -> {
             $(".telephone-input__telephone.input-text").setValue(TestData.mobileNumber);
         });
-        if (!$(".customer-name").exists()) {
-            if (!$("#customer-email").exists()) {
+        step("Shipping form -> E-mail = " + email, () -> {
+            if ($("#customer-email").exists()) {
                 refresh();
-            }
-            if (!$("#customer-email").exists()) {
-                step("Shipping form -> E-mail = " + email, () -> {
-                    $("#customer-email").setValue(email);
-                });
-            }
+                $("#customer-email").setValue(email);
         }
+        });
         step("Click on 'Proceed to shipping method' button", () -> {
             $("#shipping-address-step").submit();
         });
