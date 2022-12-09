@@ -58,7 +58,7 @@ public class CheckoutWebSteps {
         });
         step("Shipping form -> E-mail = " + email, () -> {
             if ($("#customer-email").exists()) {
-                refresh();
+               // refresh();
                 $("#customer-email").setValue(email);
         }
         });

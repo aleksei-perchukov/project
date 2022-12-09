@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 import tests.checkout.TestBase;
 import utils.StaticData;
 
+import static com.codeborne.selenide.Selenide.open;
 import static utils.StaticData.*;
 import static com.codeborne.selenide.Configuration.*;
 import static tests.checkout.websteps.CheckoutApiMethods.apiAddToCart;
@@ -57,7 +58,6 @@ public class CheckoutTestsDK extends TestBase {
     @DisplayName("Bank Transfer")
     void bankPayTestGuest() {
         configureUrlsDK();
-        
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         acceptCookies();

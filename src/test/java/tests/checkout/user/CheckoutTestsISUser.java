@@ -6,6 +6,7 @@ import tests.user.TestData;
 
 import static api.AdminAPIMethods.createUserAPI;
 import static com.codeborne.selenide.Configuration.*;
+import static com.codeborne.selenide.Selenide.open;
 import static tests.checkout.websteps.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutData.bankPay;
@@ -29,6 +30,7 @@ public class CheckoutTestsISUser extends TestBase {
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         login();
+        open("/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(netgiroPay);
@@ -45,6 +47,7 @@ public class CheckoutTestsISUser extends TestBase {
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         login();
+        open("/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(valitorPay);
@@ -61,6 +64,7 @@ public class CheckoutTestsISUser extends TestBase {
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         login();
+        open("/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(bankPay);
@@ -77,6 +81,7 @@ public class CheckoutTestsISUser extends TestBase {
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         login();
+        open("/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);

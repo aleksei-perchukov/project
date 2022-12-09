@@ -9,6 +9,7 @@ import tests.user.TestData;
 
 import static api.AdminAPIMethods.createUserAPI;
 import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selenide.open;
 import static tests.checkout.websteps.CheckoutApiMethods.*;
 import static tests.checkout.CheckoutData.*;
 import static tests.checkout.CheckoutData.bankPay;
@@ -33,6 +34,7 @@ public class CheckoutTestsNOUser extends TestBase {
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         login();
+        open("/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(klarnaPay);
@@ -50,6 +52,7 @@ public class CheckoutTestsNOUser extends TestBase {
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         login();
+        open("/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(quickPay);
@@ -66,6 +69,7 @@ public class CheckoutTestsNOUser extends TestBase {
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         login();
+        open("/checkout");
         fillShippingForm();
         fillShippingMethod();
         fillPaymentMethod(bankPay);
