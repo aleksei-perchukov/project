@@ -12,7 +12,7 @@ import static tests.checkout.CheckoutData.bankPay;
 import static utils.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
 
-@DisplayName("-IS- / GUEST / PAYMENT METHODS TEST SUITE")
+@DisplayName("-IS- / USER / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
 public class CheckoutTestsISUser extends TestBase {
     void configureUrlsIS() {

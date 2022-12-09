@@ -16,7 +16,7 @@ import static tests.checkout.websteps.CheckoutWebSteps.*;
 import static utils.StaticData.*;
 import static utils.StaticData.cookieFormKeyStatic;
 
-@DisplayName("-NO- / GUEST / PAYMENT METHODS TEST SUITE")
+@DisplayName("-NO- / USER / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
 public class CheckoutTestsNOUser extends TestBase {
     void configureUrlsNO() {

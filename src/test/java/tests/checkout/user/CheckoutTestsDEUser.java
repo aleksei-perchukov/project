@@ -11,7 +11,7 @@ import static tests.checkout.websteps.CheckoutWebSteps.*;
 import static utils.StaticData.*;
 import static tests.user.TestData.*;
 
-@DisplayName("-DE- / GUEST / PAYMENT METHODS TEST SUITE")
+@DisplayName("-DE- / USER / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("DE")})
 public class CheckoutTestsDEUser extends TestBase {
     void configureUrlsDE() {
