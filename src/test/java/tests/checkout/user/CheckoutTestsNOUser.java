@@ -25,6 +25,7 @@ public class CheckoutTestsNOUser extends TestBase {
     }
 
     @Test
+    @Tag("Klarna")
     @DisplayName("Klarna")
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
@@ -41,6 +42,7 @@ public class CheckoutTestsNOUser extends TestBase {
 
     @Test
     @Tag("Debug")
+    @Tag("QuickPay")
     @DisplayName("QuickPay")
     void quickPayTestGuestNO() {
         configureUrlsNO();
@@ -56,6 +58,7 @@ public class CheckoutTestsNOUser extends TestBase {
     }
 
     @Test
+    @Tag("Bank Transfer")
     @DisplayName("Bank Transfer")
     void bankPayTestGuestNO() {
         configureUrlsNO();

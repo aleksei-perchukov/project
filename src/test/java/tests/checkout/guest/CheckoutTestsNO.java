@@ -23,6 +23,7 @@ public class CheckoutTestsNO extends TestBase {
     }
 
     @Test
+    @Tag("Klarna")
     @DisplayName("Klarna")
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
@@ -38,6 +39,7 @@ public class CheckoutTestsNO extends TestBase {
     @Test
     @Tag("Debug")
     @DisplayName("QuickPay")
+    @Tag("QuickPay")
     void quickPayTestGuestNO() {
         configureUrlsNO();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
@@ -50,6 +52,7 @@ public class CheckoutTestsNO extends TestBase {
     }
     
     @Test
+    @Tag("Bank Transfer")
     @DisplayName("Bank Transfer")
     void bankPayTestGuestNO() {
         configureUrlsNO();

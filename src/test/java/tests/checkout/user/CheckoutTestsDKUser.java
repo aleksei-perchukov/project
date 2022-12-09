@@ -24,6 +24,7 @@ public class CheckoutTestsDKUser extends TestBase {
 
     @Disabled
     @Test
+    @Tag("PaypalExpress")
     @DisplayName("PaypalExpress")
     void paypalExpressPayTestUser() {
         configureUrlsDK();
@@ -41,6 +42,7 @@ public class CheckoutTestsDKUser extends TestBase {
 
     @Tag("Debug")
     @Test
+    @Tag("QuickPay")
     @DisplayName("QuickPay")
     void quickPayTestUser() {
         configureUrlsDK();
@@ -58,6 +60,7 @@ public class CheckoutTestsDKUser extends TestBase {
     }
 
     @Test
+    @Tag("Bank Transfer")
     @DisplayName("Bank Transfer")
     void bankPayTestUser() {
         configureUrlsDK();
@@ -74,6 +77,7 @@ public class CheckoutTestsDKUser extends TestBase {
     }
 
     @Test
+    @Tag("SparkXpress")
     @DisplayName("SparkXpress")
     void sparkXpressPayTestUser() {
         configureUrlsDK();
@@ -90,6 +94,7 @@ public class CheckoutTestsDKUser extends TestBase {
     }
 
     @Test
+    @Tag("ViaBill")
     @DisplayName("ViaBill")
     void viaBillPayTestUser() {
         configureUrlsDK();

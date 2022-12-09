@@ -19,6 +19,7 @@ public class CheckoutTestsDE extends TestBase {
     }
 
     @Test
+    @Tag("QuickPay")
     @DisplayName("QuickPay")
     void quickPayGuestDE() {
         configureUrlsDE();
@@ -33,6 +34,7 @@ public class CheckoutTestsDE extends TestBase {
     }
 
     @Test
+    @Tag("Bank Transfer")
     @DisplayName("BankTransfer")
     void bankPayTestGuestDE() {
         configureUrlsDE();

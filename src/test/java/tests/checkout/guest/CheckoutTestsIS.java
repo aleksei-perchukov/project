@@ -20,6 +20,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
+    @Tag("Netgiro")
     @DisplayName("Netgiro")
     void netgiroTestGuestIS() {
         configureUrlsIS();
@@ -33,6 +34,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
+    @Tag("Valitor")
     @DisplayName("Valitor")
     void valitorPayTestGuestIS() {
         configureUrlsIS();
@@ -46,6 +48,7 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Test
+    @Tag("Bank Transfer")
     @DisplayName("Bank Transfer")
     void bankPayTestGuestIS() {
         configureUrlsIS();
@@ -59,6 +62,7 @@ public class CheckoutTestsIS extends TestBase {
 
     @Disabled
     @Test
+    @Tag("SparkXpress")
     @DisplayName("SparkXpress")
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
