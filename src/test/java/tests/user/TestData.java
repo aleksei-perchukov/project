@@ -1,37 +1,40 @@
 package tests.user;
 
 import com.github.javafaker.Faker;
+import utils.RandomUtils;
 
 import java.util.HashMap;
 
 import static utils.RandomUtils.*;
 
 public class TestData {
+    Components components = new Components();
+    RandomUtils randomUtils = new RandomUtils();
     //ADMIN CREDS
 //    public static String adminLogin = "n.brevnov@belvg.com";
 //    public static String adminPassword = "n.brevnovBelVG$ecuRiTy2021";
 
     //CREATE USER
-    static Faker faker = new Faker();
-    public static String firstName = faker.name().firstName();
-    public static String lastName = faker.name().lastName();
-    public static String email = firstName + lastName + "@test.com";
-    public static String password = getRandomString(16);
-    public static String mobileNumber = getRandomLong(00000000L, 99999999L).toString();
+    Faker faker = new Faker();
+    public String firstName = faker.name().firstName();
+    public String lastName = faker.name().lastName();
+    public String email = firstName + lastName + "@test.com";
+    public String password = randomUtils.getRandomString(16);
+    public String mobileNumber = randomUtils.getRandomLong(00000000L, 99999999L).toString();
 
     //PAGES
-    static String homePage = "";
-    public static String createUserPage = "/customer/account/create";
-    static String loginPage = "/customer/account/login";
-    static String contactPage = "/info/kontakt";
-    static String vinduerCatalogPage = "/vinduer";
-    static String doreCatalogPage = "/doere";
-    static String terrassedoreCatalogPage = "/terrassedoere";
-    static String skydedoreCatalogPage = "/skydedoere";
-    static String adminPage = "/skanvacms/admin";
-    public static String addToCartPage = "/tr/topstyret-vindue-2-fags";
+    String homePage = "";
+    public String createUserPage = "/customer/account/create";
+    public String loginPage = "/customer/account/login";
+    public String contactPage = "/info/kontakt";
+    public String vinduerCatalogPage = "/vinduer";
+    public String doreCatalogPage = "/doere";
+    public String terrassedoreCatalogPage = "/terrassedoere";
+    public String skydedoreCatalogPage = "/skydedoere";
+    public String adminPage = "/skanvacms/admin";
+    public String addToCartPage = "/tr/topstyret-vindue-2-fags";
 
-    static public HashMap getAddToCartParams() {
+    public HashMap getAddToCartParams() {
     HashMap<String, String> addToCartParams = new HashMap<>();
     addToCartParams.put("product", "4404");
     addToCartParams.put("item", "4404");

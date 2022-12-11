@@ -6,17 +6,17 @@ import static utils.StaticData.*;
 
 public class CheckoutData {
 
-    public static String paypalExpressPay = "PayPal Express";
-    public static String quickPay = "Quick Pay";
-    public static String bankPay = "Bank Transfer";
-    public static String viaBillPay = "ViaBill";
-    public static String sparkXpressPay = "SparkXpress Pay";
-    public static String klarnaPay = "Klarna";
-    public static String netgiroPay = "Netgiro";
-    public static String valitorPay = "Valitor";
+    public String paypalExpressPay = "PayPal Express";
+    public String quickPay = "Quick Pay";
+    public String bankPay = "Bank Transfer";
+    public String viaBillPay = "ViaBill";
+    public String sparkXpressPay = "SparkXpress Pay";
+    public String klarnaPay = "Klarna";
+    public String netgiroPay = "Netgiro";
+    public String valitorPay = "Valitor";
 
     //ADD PRODUCT BODY
-    public static String getAddToCartBody() {
+    public String getAddToCartBody() {
         String addToCartBody = null;
         if (Configuration.baseUrl.equals(urlDK)) {
             addToCartBody = "product=4404&selected_configurable_option=&related_product=&item=4404&form_key=" + cookieFormKeyStatic + "&estimated_delivery_time=%5B8%2C10%5D&width=190&height=120&qty=1&options%5B60380%5D=190&options%5B60381%5D=120&options%5B60382%5D=%7B%22height%22%3A120%2C%22width%22%3A190%2C%22width1%22%3A95%2C%22fieldwidth2%22%3A95%7D&options%5B48328%5D=2131878&special_color_ral%5B5234147%5D=none&options%5B48326%5D=305016&special_color_ral%5B5222597%5D=none&options%5B48327%5D=305021&options%5B48330%5D=305036&options%5B860699%5D=5193080&options%5B57298%5D=361683&options%5B53127%5D=337474&options%5B859559%5D=5190887&options%5B245170%5D=1100313&options%5B352864%5D=2232309";
@@ -32,7 +32,7 @@ public class CheckoutData {
         return addToCartBody;
     }
 
-    public static String getZipCode(){
+    public String getZipCode(){
         String zipCode = null;
         if(Configuration.baseUrl.equals(urlDK)) {
             zipCode = "8000";

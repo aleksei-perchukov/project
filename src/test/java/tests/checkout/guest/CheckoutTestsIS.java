@@ -1,6 +1,7 @@
 package tests.checkout.guest;
 
 import org.junit.jupiter.api.*;
+import tests.checkout.CheckoutData;
 import tests.checkout.TestBase;
 import tests.user.TestData;
 
@@ -17,6 +18,8 @@ public class CheckoutTestsIS extends TestBase {
     void configureUrlsIS() {
         mainUrl = urlIS;
         baseUrl = mainUrl;
+        CheckoutData checkoutData = new CheckoutData();
+
     }
 
     @Test

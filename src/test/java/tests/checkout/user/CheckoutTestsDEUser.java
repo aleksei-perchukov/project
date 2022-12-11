@@ -1,9 +1,10 @@
 package tests.checkout.user;
 
+import api.AdminAPIMethods;
 import org.junit.jupiter.api.*;
 import tests.checkout.TestBase;
 
-import static api.AdminAPIMethods.createUserAPI;
+import api.AdminAPIMethods.createUserAPI;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.open;
 import static tests.checkout.websteps.CheckoutApiMethods.*;
@@ -18,6 +19,7 @@ public class CheckoutTestsDEUser extends TestBase {
     void configureUrlsDE() {
         mainUrl = urlDE;
         baseUrl = mainUrl;
+        AdminAPIMethods adminAPIMethods = new AdminAPIMethods();
     }
 
     @Test

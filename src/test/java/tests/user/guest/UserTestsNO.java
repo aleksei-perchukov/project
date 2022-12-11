@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
+import tests.user.TestData;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
@@ -19,6 +20,7 @@ public class UserTestsNO {
     void configureUrlsNO() {
         mainUrl = urlNO;
         baseUrl = mainUrl;
+        TestData testData = new TestData();
     }
 
     @DisplayName("Create user test")

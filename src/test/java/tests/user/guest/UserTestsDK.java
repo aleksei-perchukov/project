@@ -2,13 +2,13 @@ package tests.user.guest;
 
 import org.junit.jupiter.api.*;
 import tests.user.TestBase;
+import tests.user.TestData;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 import static utils.StaticData.*;
 import static tests.user.Components.openPage;
-import static tests.user.TestData.*;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("-DK- / USER TEST SUITE")
@@ -17,6 +17,7 @@ public class UserTestsDK extends TestBase {
     void configureUrlsDK() {
         mainUrl = urlDK;
         baseUrl = mainUrl;
+        TestData testData = new TestData();
     }
 
     @DisplayName("Create user test")
