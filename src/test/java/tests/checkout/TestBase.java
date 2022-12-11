@@ -23,9 +23,9 @@ public class TestBase {
             capabilities.setCapability("enableVideo", true);
         }
         Configuration.browserCapabilities = capabilities;
-        Configuration.browser = System.getProperty("browser_name", "chrome");
-        Configuration.browserVersion = System.getProperty("browser_version", "100.0");
-        Configuration.browserSize = System.getProperty("browser_size", "1900x1080");
+        Configuration.browser = System.getProperty("browser_name", "vnc");
+        Configuration.browserVersion = System.getProperty("browser_version", "chrome_108.0");
+        Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 30000;
         if(remote != null) {

@@ -4,9 +4,7 @@ public class StaticData {
 
     static RandomUtils randomUtils = new RandomUtils();
     public static String basicAuthLogin = System.getProperty("basicAuthLogin");
-    //System.getProperty("basicAuthLogin");
     public static String basicAuthPassword = System.getProperty("basicAuthPassword");
-    //System.getProperty("basicAuthPassword");
     public static String adminLogin = System.getProperty("adminLogin");
     public static String adminPassword = System.getProperty("adminPassword");
     public static String authHeaderValue = System.getProperty("authHeaderValue");
