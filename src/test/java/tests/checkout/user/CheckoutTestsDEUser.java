@@ -1,17 +1,20 @@
 package tests.checkout.user;
 
 import api.AdminAPIMethods;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
+import org.junit.jupiter.api.Test;
 import tests.checkout.TestBase;
+import tests.user.UserTestData;
 
-import api.AdminAPIMethods.createUserAPI;
-import static com.codeborne.selenide.Configuration.*;
+import static api.AdminAPIMethods.createUserAPI;
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
-import static tests.checkout.websteps.CheckoutApiMethods.*;
-import static tests.checkout.CheckoutData.*;
+import static data.StaticAPIMethods.apiAddToCart;
+import static data.StaticAPIMethods.openBrowserWithCookiesLogin;
+import static data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
-import static utils.StaticData.*;
-import static tests.user.TestData.*;
 
 @DisplayName("-DE- / USER / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("DE")})
@@ -27,16 +30,17 @@ public class CheckoutTestsDEUser extends TestBase {
     @DisplayName("QuickPay")
     void quickPayGuestDE() {
         configureUrlsDE();
-        String userId = createUserAPI();
+        UserTestData testData = new UserTestData();
+        String userId = createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
-        login();
+        login(testData.email, testData.password);
         open("/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
-        checkOrderSuccess(firstName, quickPay);
+        checkOrderSuccess(testData.firstName, sparkXpressPay, testData.email);
     }
 
     @Test
@@ -44,14 +48,16 @@ public class CheckoutTestsDEUser extends TestBase {
     @DisplayName("BankTransfer")
     void bankPayTestGuestDE() {
         configureUrlsDE();
-        String userId = createUserAPI();
+        UserTestData testData = new UserTestData();
+        String userId = createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
-        login();
+        login(testData.email, testData.password);
         open("/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
-        checkOrderSuccess(firstName, bankPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, bankPay, testData.email);
     }
 }

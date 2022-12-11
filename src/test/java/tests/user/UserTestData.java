@@ -1,18 +1,12 @@
 package tests.user;
 
 import com.github.javafaker.Faker;
-import utils.RandomUtils;
+import data.RandomUtils;
 
 import java.util.HashMap;
 
-import static utils.RandomUtils.*;
-
-public class TestData {
-    Components components = new Components();
+public class UserTestData {
     RandomUtils randomUtils = new RandomUtils();
-    //ADMIN CREDS
-//    public static String adminLogin = "n.brevnov@belvg.com";
-//    public static String adminPassword = "n.brevnovBelVG$ecuRiTy2021";
 
     //CREATE USER
     Faker faker = new Faker();
@@ -21,18 +15,6 @@ public class TestData {
     public String email = firstName + lastName + "@test.com";
     public String password = randomUtils.getRandomString(16);
     public String mobileNumber = randomUtils.getRandomLong(00000000L, 99999999L).toString();
-
-    //PAGES
-    String homePage = "";
-    public String createUserPage = "/customer/account/create";
-    public String loginPage = "/customer/account/login";
-    public String contactPage = "/info/kontakt";
-    public String vinduerCatalogPage = "/vinduer";
-    public String doreCatalogPage = "/doere";
-    public String terrassedoreCatalogPage = "/terrassedoere";
-    public String skydedoreCatalogPage = "/skydedoere";
-    public String adminPage = "/skanvacms/admin";
-    public String addToCartPage = "/tr/topstyret-vindue-2-fags";
 
     public HashMap getAddToCartParams() {
     HashMap<String, String> addToCartParams = new HashMap<>();

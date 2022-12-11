@@ -4,14 +4,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import tests.checkout.websteps.CheckoutWebSteps;
 import tests.checkout.TestBase;
-import tests.user.TestData;
+import tests.user.UserTestData;
 
-import static com.codeborne.selenide.Configuration.*;
-import static tests.checkout.websteps.CheckoutApiMethods.*;
-import static tests.checkout.CheckoutData.*;
-import static utils.StaticData.*;
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static data.StaticAPIMethods.apiAddToCart;
+import static data.StaticAPIMethods.openBrowserWithCookies;
+import static data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
 
 @DisplayName("-NO- / GUEST / PAYMENT METHODS TEST SUITE")
@@ -27,40 +26,43 @@ public class CheckoutTestsNO extends TestBase {
     @DisplayName("Klarna")
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(klarnaPay);
-        CheckoutWebSteps.fillKlarnaPay();
-        checkOrderSuccess(TestData.firstName, klarnaPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, klarnaPay, testData.email);
     }
 
     @Test
-    @Tag("Debug")
     @DisplayName("QuickPay")
     @Tag("QuickPay")
     void quickPayTestGuestNO() {
         configureUrlsNO();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
-        checkOrderSuccess(TestData.firstName, quickPay);
+        checkOrderSuccess(testData.firstName, quickPay, testData.email);
     }
-    
+
     @Test
-    @Tag("Bank Transfer")
+    @Tag("BankTransfer")
     @DisplayName("Bank Transfer")
     void bankPayTestGuestNO() {
         configureUrlsNO();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
-        checkOrderSuccess(TestData.firstName, bankPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, bankPay, testData.email);
     }
 }

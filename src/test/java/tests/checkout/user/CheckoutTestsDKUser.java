@@ -2,17 +2,15 @@ package tests.checkout.user;
 
 import org.junit.jupiter.api.*;
 import tests.checkout.TestBase;
+import tests.user.UserTestData;
 
 import static api.AdminAPIMethods.createUserAPI;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
-import static tests.checkout.websteps.CheckoutApiMethods.*;
-import static tests.checkout.CheckoutData.*;
-import static tests.checkout.CheckoutData.viaBillPay;
+import static data.StaticAPIMethods.apiAddToCart;
+import static data.StaticAPIMethods.openBrowserWithCookiesLogin;
+import static data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
-import static tests.checkout.websteps.CheckoutWebSteps.checkOrderSuccess;
-import static tests.user.TestData.firstName;
-import static utils.StaticData.*;
 
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("DK")})
 @DisplayName("-DK- / USER / PAYMENT METHODS TEST SUITE")
@@ -28,52 +26,56 @@ public class CheckoutTestsDKUser extends TestBase {
     @DisplayName("PaypalExpress")
     void paypalExpressPayTestUser() {
         configureUrlsDK();
-        String userId = createUserAPI();
+        UserTestData testData = new UserTestData();
+        String userId = createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         acceptCookies();
-        login();
+        login(testData.email, testData.password);
         open("/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(paypalExpressPay);
-        checkOrderSuccess(firstName, paypalExpressPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, paypalExpressPay, testData.email);
     }
 
-    @Tag("Debug")
     @Test
     @Tag("QuickPay")
     @DisplayName("QuickPay")
     void quickPayTestUser() {
         configureUrlsDK();
-        String userId = createUserAPI();
+        UserTestData testData = new UserTestData();
+        String userId = createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         acceptCookies();
-        login();
+        login(testData.email, testData.password);
         open("/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
-        checkOrderSuccess(firstName, quickPay);
+        checkOrderSuccess(testData.firstName, quickPay, testData.email);
     }
 
     @Test
-    @Tag("Bank Transfer")
+    @Tag("BankTransfer")
     @DisplayName("Bank Transfer")
     void bankPayTestUser() {
         configureUrlsDK();
-        String userId = createUserAPI();
+        UserTestData testData = new UserTestData();
+        String userId = createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         acceptCookies();
-        login();
+        login(testData.email, testData.password);
         open("/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
-        checkOrderSuccess(firstName, bankPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, bankPay, testData.email);
     }
 
     @Test
@@ -81,16 +83,18 @@ public class CheckoutTestsDKUser extends TestBase {
     @DisplayName("SparkXpress")
     void sparkXpressPayTestUser() {
         configureUrlsDK();
-        String userId = createUserAPI();
+        UserTestData testData = new UserTestData();
+        String userId = createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         acceptCookies();
-        login();
+        login(testData.email, testData.password);
         open("/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
-        checkOrderSuccess(firstName, sparkXpressPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, sparkXpressPay, testData.email);
     }
 
     @Test
@@ -98,15 +102,17 @@ public class CheckoutTestsDKUser extends TestBase {
     @DisplayName("ViaBill")
     void viaBillPayTestUser() {
         configureUrlsDK();
-        String userId = createUserAPI();
+        UserTestData testData = new UserTestData();
+        String userId = createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
         acceptCookies();
-        login();
+        login(testData.email, testData.password);
         open("/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(viaBillPay);
-        checkOrderSuccess(firstName, viaBillPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, viaBillPay, testData.email);
     }
 }

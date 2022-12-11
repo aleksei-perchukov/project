@@ -3,16 +3,14 @@ package tests.checkout.guest;
 
 import org.junit.jupiter.api.*;
 import tests.checkout.TestBase;
-import utils.StaticData;
+import data.StaticData;
+import tests.user.UserTestData;
 
-import static com.codeborne.selenide.Selenide.open;
-import static utils.StaticData.*;
+import static data.StaticAPIMethods.apiAddToCart;
+import static data.StaticAPIMethods.openBrowserWithCookies;
+import static data.StaticData.*;
 import static com.codeborne.selenide.Configuration.*;
-import static tests.checkout.websteps.CheckoutApiMethods.apiAddToCart;
-import static tests.checkout.websteps.CheckoutApiMethods.openBrowserWithCookies;
-import static tests.checkout.CheckoutData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
-import static tests.user.TestData.*;
 
 @Tag("Checkout")
 @Tag("DK")
@@ -29,42 +27,47 @@ public class CheckoutTestsDK extends TestBase {
     @DisplayName("PaypalExpress")
     void paypalExpressPayTestGuest() {
         configureUrlsDK();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, StaticData.cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         acceptCookies();
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(paypalExpressPay);
-        checkOrderSuccess(firstName, paypalExpressPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, paypalExpressPay, testData.email);
     }
-    @Tag("Debug")
+
     @Test
     @Tag("QuickPay")
     @DisplayName("QuickPay")
     void quickPayTestGuest() {
         configureUrlsDK();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         acceptCookies();
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
-        checkOrderSuccess(firstName, quickPay);
+        checkOrderSuccess(testData.firstName, quickPay, testData.email);
     }
 
     @Test
-    @Tag("Bank Transfer")
+    @Tag("BankTransfer")
     @DisplayName("Bank Transfer")
     void bankPayTestGuest() {
         configureUrlsDK();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         acceptCookies();
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
-        checkOrderSuccess(firstName, bankPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, bankPay, testData.email);
     }
 
     @Test
@@ -72,13 +75,15 @@ public class CheckoutTestsDK extends TestBase {
     @DisplayName("SparkXpress")
     void sparkXpressPayTestGuest() {
         configureUrlsDK();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         acceptCookies();
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
-        checkOrderSuccess(firstName, sparkXpressPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, sparkXpressPay, testData.email);
     }
 
     @Test
@@ -86,12 +91,14 @@ public class CheckoutTestsDK extends TestBase {
     @DisplayName("ViaBill")
     void viaBillPayTestGuest() {
         configureUrlsDK();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
         acceptCookies();
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(viaBillPay);
-        checkOrderSuccess(firstName, viaBillPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, viaBillPay, testData.email);
     }
 }

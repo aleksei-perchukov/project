@@ -2,18 +2,9 @@ package tests.checkout;
 
 import com.codeborne.selenide.Configuration;
 
-import static utils.StaticData.*;
+import static data.StaticData.*;
 
-public class CheckoutData {
-
-    public String paypalExpressPay = "PayPal Express";
-    public String quickPay = "Quick Pay";
-    public String bankPay = "Bank Transfer";
-    public String viaBillPay = "ViaBill";
-    public String sparkXpressPay = "SparkXpress Pay";
-    public String klarnaPay = "Klarna";
-    public String netgiroPay = "Netgiro";
-    public String valitorPay = "Valitor";
+public class CheckoutTestData {
 
     //ADD PRODUCT BODY
     public String getAddToCartBody() {

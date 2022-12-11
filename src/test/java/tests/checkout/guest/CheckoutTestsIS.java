@@ -1,15 +1,13 @@
 package tests.checkout.guest;
 
 import org.junit.jupiter.api.*;
-import tests.checkout.CheckoutData;
 import tests.checkout.TestBase;
-import tests.user.TestData;
+import tests.user.UserTestData;
 
 import static com.codeborne.selenide.Configuration.*;
-import static tests.checkout.websteps.CheckoutApiMethods.*;
-import static tests.checkout.CheckoutData.*;
-import static tests.checkout.CheckoutData.bankPay;
-import static utils.StaticData.*;
+import static data.StaticAPIMethods.apiAddToCart;
+import static data.StaticAPIMethods.openBrowserWithCookies;
+import static data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
 
 @DisplayName("-IS- / GUEST / PAYMENT METHODS TEST SUITE")
@@ -18,8 +16,6 @@ public class CheckoutTestsIS extends TestBase {
     void configureUrlsIS() {
         mainUrl = urlIS;
         baseUrl = mainUrl;
-        CheckoutData checkoutData = new CheckoutData();
-
     }
 
     @Test
@@ -27,13 +23,14 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("Netgiro")
     void netgiroTestGuestIS() {
         configureUrlsIS();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(netgiroPay);
-        fillNetgiroPay();
-        checkOrderSuccess(TestData.firstName, netgiroPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, netgiroPay, testData.email);
     }
 
     @Test
@@ -41,26 +38,29 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("Valitor")
     void valitorPayTestGuestIS() {
         configureUrlsIS();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(valitorPay);
-        fillValitorPay();
-        checkOrderSuccess(TestData.firstName, valitorPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, valitorPay, testData.email);
     }
 
     @Test
-    @Tag("Bank Transfer")
+    @Tag("BankTransfer")
     @DisplayName("Bank Transfer")
     void bankPayTestGuestIS() {
         configureUrlsIS();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
-        checkOrderSuccess(TestData.firstName, bankPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, bankPay, testData.email);
     }
 
     @Disabled
@@ -69,12 +69,13 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("SparkXpress")
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
+        UserTestData testData = new UserTestData();
         apiAddToCart(phpSessId, cookieFormKeyStatic);
         openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
-        //       acceptCookies();
-        fillShippingForm();
+        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
-        checkOrderSuccess(TestData.firstName, sparkXpressPay);
+        fillQuickPay();
+        checkOrderSuccess(testData.firstName, sparkXpressPay, testData.email);
     }
 }

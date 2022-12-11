@@ -1,4 +1,4 @@
-package utils;
+package data;
 
 import com.github.javafaker.Faker;
 import com.mifmif.common.regex.Generex;

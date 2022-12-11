@@ -4,19 +4,18 @@ import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
-import tests.user.TestData;
+import tests.checkout.CheckoutTestData;
+import tests.user.UserTestData;
 
-import static tests.checkout.CheckoutData.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
-import static tests.user.TestData.*;
-import static utils.StaticData.*;
+import static data.StaticData.*;
 
 public class CheckoutWebSteps {
     @Step("Login")
-    public static void login(){
+    public static void login(String email, String password){
         $("#email").setValue(email);
         $("#pass").setValue(password);
         $("[for=show-password]").click();
@@ -28,18 +27,19 @@ public class CheckoutWebSteps {
     }
 
     @Step("-SHIPPING FORM-")
-    public static void fillShippingForm() {
-        String zipCode = getZipCode();
+    public static void fillShippingForm(String firstName, String lastName, String email, String mobileNumber) {
+        CheckoutTestData testData = new CheckoutTestData();
+        String zipCode = testData.getZipCode();
         if (Configuration.baseUrl.equals(urlIS)) {
             step("Shipping form -> Kennitala = '1234567890'", () ->
                     $$(".field._required.full-width").first().$(".input-text").setValue("1234567890")
             );
         }
-        step("Shipping form -> First name = " + TestData.firstName, () -> {
-            $("[name=firstname]").setValue(TestData.firstName);
+        step("Shipping form -> First name = " + firstName, () -> {
+            $("[name=firstname]").setValue(firstName);
         });
-        step("Shipping form -> Last Name = " + TestData.lastName, () -> {
-            $("[name=lastname]").setValue(TestData.lastName);
+        step("Shipping form -> Last Name = " + lastName, () -> {
+            $("[name=lastname]").setValue(lastName);
         });
         step("Shipping form -> Address = 'Test str.'", () -> {
             $("[name='street[0]']").setValue("Test str.");
@@ -53,8 +53,8 @@ public class CheckoutWebSteps {
         if (Configuration.baseUrl.equals(urlNO) || Configuration.baseUrl.equals(urlIS) || Configuration.baseUrl.equals(urlDE)) {
             $("[name=city]").setValue("Test City");
         }
-        step("Shipping form -> Telefonnummer = " + TestData.mobileNumber + " in mobile phone field", () -> {
-            $(".telephone-input__telephone.input-text").setValue(TestData.mobileNumber);
+        step("Shipping form -> Telefonnummer = " + mobileNumber + " in mobile phone field", () -> {
+            $(".telephone-input__telephone.input-text").setValue(mobileNumber);
         });
         step("Shipping form -> E-mail = " + email, () -> {
             if ($("#customer-email").exists()) {
@@ -324,6 +324,7 @@ public class CheckoutWebSteps {
 
     @Step("-NETGIRO PAY FORM-")
     public static void fillNetgiroPay() {
+        UserTestData testData = new UserTestData();
         step("NETGIRO PAY -> Entering '1231231' mobile number", () -> {
             Selenide.sleep(5000);
             $("#customerPaymentRequestGSM").sendKeys("1231231");
@@ -335,7 +336,7 @@ public class CheckoutWebSteps {
             $("#customerSSN").setValue("1234567890");
         });
         step("NETGIRO PAY -> Entering password", () -> {
-            $("#customerPassword").setValue(password);
+            $("#customerPassword").setValue(testData.password);
         });
         step("NETGIRO PAY -> Clicking 'Buy' button", () -> {
             $(".tab-header.custom-link.payment-request-tab").click();
@@ -365,7 +366,7 @@ public class CheckoutWebSteps {
     }
 
     @Step("Check order success")
-    public static void checkOrderSuccess(String firstName, String paymentMethod) {
+    public static void checkOrderSuccess(String firstName, String paymentMethod, String email) {
         if (paymentMethod.equals(paypalExpressPay)) {
             $("#headerText").shouldHave(text("Bei PayPal einloggen"));
         } else if (paymentMethod.equals(quickPay) || paymentMethod.equals(bankPay)) {
@@ -441,7 +442,7 @@ public class CheckoutWebSteps {
             } else if (Configuration.baseUrl.equals(urlNO)) {
 
             } else if (Configuration.baseUrl.equals(urlIS)) {
-                $(".checkout-success__agreement").shouldHave(text("" + email));
+                $(".checkout-success__agreement").shouldHave(text(email));
             } else if (Configuration.baseUrl.equals(urlDE)) {
 
             } else if (Configuration.baseUrl.equals(urlSE)) {
