@@ -8,7 +8,7 @@ import io.restassured.specification.ResponseSpecification;
 import static helpers.APIListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
         ;
-import static data.StaticData.*;
+import static tests.data.StaticData.*;
 
 public class Specs {
     public static RequestSpecification requestSpecification1 = with()

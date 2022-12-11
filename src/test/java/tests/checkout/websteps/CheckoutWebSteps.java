@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
-import static data.StaticData.*;
+import static tests.data.StaticData.*;
 
 public class CheckoutWebSteps {
     @Step("Login")
@@ -55,10 +55,11 @@ public class CheckoutWebSteps {
         }
         step("Shipping form -> Telefonnummer = " + mobileNumber + " in mobile phone field", () -> {
             $(".telephone-input__telephone.input-text").setValue(mobileNumber);
+            refresh();
+            Selenide.sleep(3000);
         });
         step("Shipping form -> E-mail = " + email, () -> {
-            if ($("#customer-email").exists()) {
-               // refresh();
+            if ($("#customer-email").isDisplayed()) {
                 $("#customer-email").setValue(email);
         }
         });
@@ -71,7 +72,6 @@ public class CheckoutWebSteps {
     public static void fillShippingMethod() {
         step("Clicking on the first shipping method", () -> {
             Selenide.sleep(2000);
-
             refresh();
             $(".shipping-method-item").click();
         });
@@ -87,7 +87,9 @@ public class CheckoutWebSteps {
     public static void fillPaymentMethod(String paymentMethod) {
         step("Clicking on " + paymentMethod + " payment method", () -> {
             if(paymentMethod.equals("paypalExpressPay")) {
-                $("[for=paypal_express]").click();
+                Selenide.sleep(7000);
+         //       $("[for=paypal_express]").click();
+                $(byText("PayPal Express Checkout")).doubleClick();
             } else if(paymentMethod.equals(quickPay)) {
                 $("[for=quickpay]").click();
             } else if(paymentMethod.equals(bankPay)) {
@@ -111,11 +113,11 @@ public class CheckoutWebSteps {
         step("Submitting payment form", () -> {
             $("#co-payment-form").submit();
         });
-        Selenide.sleep(10000);
+        Selenide.sleep(5000);
         if (paymentMethod.equals(paypalExpressPay)) {
             step("Clicking on 'Accept terms of conditions' checkbox", () -> {
                 $("[for=agreement_paypal_express_1]").click(ClickOptions.usingJavaScript().offsetX(-100));
-                Selenide.sleep(10000);
+                Selenide.sleep(5000);
             });
             step("Clicking on 'Place order' button", () -> {
                 if (Configuration.baseUrl.equals(urlDK)) {
@@ -233,7 +235,7 @@ public class CheckoutWebSteps {
 
                 }
             });
-            Selenide.sleep(10000);
+            Selenide.sleep(5000);
             step("Clicking on 'Place order' button", () -> {
                 if (Configuration.baseUrl.equals(urlDK)) {
                     $$(".action.primary.checkout").get(4).click();
@@ -368,7 +370,7 @@ public class CheckoutWebSteps {
     @Step("Check order success")
     public static void checkOrderSuccess(String firstName, String paymentMethod, String email) {
         if (paymentMethod.equals(paypalExpressPay)) {
-            $("#headerText").shouldHave(text("Bei PayPal einloggen"));
+            $("#headerText").shouldHave(text("PayPal"));
         } else if (paymentMethod.equals(quickPay) || paymentMethod.equals(bankPay)) {
             if (Configuration.baseUrl.equals(urlDK)) {
                 $("#success-page-custom").shouldHave(text("Mange tak for din ordre, " + firstName));

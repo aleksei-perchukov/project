@@ -29,7 +29,7 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 30000;
         if(remote != null) {
-            Configuration.remote = "https://user1:1234@" + remote;
+            Configuration.remote = remote;
         }
     }
 

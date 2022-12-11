@@ -14,6 +14,7 @@ public class UserModel {
         public String lastname;
         public String email;
         public int website_id;
+
         public Addresses addresses;
 
         @Data
@@ -23,6 +24,7 @@ public class UserModel {
             public Boolean defaultBilling;
             public String firstname;
             public String lastname;
+
             public Region region;
 
             @Data
@@ -34,6 +36,7 @@ public class UserModel {
             }
 
             private String postcode;
+
             private Street street;
 
             @Data

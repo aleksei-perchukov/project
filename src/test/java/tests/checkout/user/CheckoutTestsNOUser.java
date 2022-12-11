@@ -4,15 +4,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
+import tests.api.Admin;
 import tests.checkout.TestBase;
 import tests.user.UserTestData;
 
-import static api.AdminAPIMethods.createUserAPI;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
-import static data.StaticAPIMethods.apiAddToCart;
-import static data.StaticAPIMethods.openBrowserWithCookiesLogin;
-import static data.StaticData.*;
+import static tests.data.StaticAPIMethods.apiAddToCart;
+import static tests.data.StaticAPIMethods.openBrowserWithCookiesLogin;
+import static tests.data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
 
 @DisplayName("-NO- / USER / PAYMENT METHODS TEST SUITE")
@@ -28,10 +28,11 @@ public class CheckoutTestsNOUser extends TestBase {
     @DisplayName("Klarna")
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
+        Admin admin = new Admin();
         UserTestData testData = new UserTestData();
-        String userId = createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
-        apiAddToCart(phpSessId, cookieFormKeyStatic);
-        openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
+        String userId = admin.createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
+        apiAddToCart();
+        openBrowserWithCookiesLogin("/customer/account/login/");
         login(testData.email, testData.password);
         open("/checkout");
         fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
@@ -46,10 +47,11 @@ public class CheckoutTestsNOUser extends TestBase {
     @DisplayName("QuickPay")
     void quickPayTestGuestNO() {
         configureUrlsNO();
+        Admin admin = new Admin();
         UserTestData testData = new UserTestData();
-        String userId = createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
-        apiAddToCart(phpSessId, cookieFormKeyStatic);
-        openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
+        String userId = admin.createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
+        apiAddToCart();
+        openBrowserWithCookiesLogin("/customer/account/login/");
         login(testData.email, testData.password);
         open("/checkout");
         fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
@@ -64,10 +66,11 @@ public class CheckoutTestsNOUser extends TestBase {
     @DisplayName("Bank Transfer")
     void bankPayTestGuestNO() {
         configureUrlsNO();
+        Admin admin = new Admin();
         UserTestData testData = new UserTestData();
-        String userId = createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
-        apiAddToCart(phpSessId, cookieFormKeyStatic);
-        openBrowserWithCookiesLogin(cookieFormKeyStatic, "/customer/account/login/");
+        String userId = admin.createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
+        apiAddToCart();
+        openBrowserWithCookiesLogin("/customer/account/login/");
         login(testData.email, testData.password);
         open("/checkout");
         fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);

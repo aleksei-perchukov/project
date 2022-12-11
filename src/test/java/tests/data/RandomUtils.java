@@ -1,4 +1,4 @@
-package data;
+package tests.data;
 
 import com.github.javafaker.Faker;
 import com.mifmif.common.regex.Generex;

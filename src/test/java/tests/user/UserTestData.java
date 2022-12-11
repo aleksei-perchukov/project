@@ -1,7 +1,7 @@
 package tests.user;
 
 import com.github.javafaker.Faker;
-import data.RandomUtils;
+import tests.data.RandomUtils;
 
 import java.util.HashMap;
 
@@ -15,6 +15,7 @@ public class UserTestData {
     public String email = firstName + lastName + "@test.com";
     public String password = randomUtils.getRandomString(16);
     public String mobileNumber = randomUtils.getRandomLong(00000000L, 99999999L).toString();
+
 
     public HashMap getAddToCartParams() {
     HashMap<String, String> addToCartParams = new HashMap<>();

@@ -1,8 +1,8 @@
-package data;
+package tests.data;
 
 import static com.codeborne.selenide.Selenide.open;
-import static data.StaticData.basicAuthLogin;
-import static data.StaticData.basicAuthPassword;
+import static tests.data.StaticData.basicAuthLogin;
+import static tests.data.StaticData.basicAuthPassword;
 
 public class StaticMethods {
     public static void openPage(String url) {

@@ -1,8 +1,7 @@
-package data;
-
-import static api.AdminAPIMethods.getAdminTokenAPI;
+package tests.data;
 
 public class StaticData {
+
     static RandomUtils randomUtils = new RandomUtils();
     public static String basicAuthLogin = System.getProperty("basicAuthLogin");
     //System.getProperty("basicAuthLogin");
@@ -11,14 +10,13 @@ public class StaticData {
     public static String adminLogin = System.getProperty("adminLogin");
     public static String adminPassword = System.getProperty("adminPassword");
     public static String authHeaderValue = System.getProperty("authHeaderValue");
-    public static String adminToken = getAdminTokenAPI();
     public static String mainUrl;
     public static String urlDK = "https://skanva.dk";
     public static String urlNO = "https://no.skanva.dk";
     public static String urlIS = "https://is.skanva.dk";
     public static String urlDE = "https://de.skanva.dk";
     public static String urlSE = "https://se.skanva.dk";
-    public static String cookieFormKeyStatic = randomUtils.generateRegexSymbolsNumbers(16);
+    public static String formKey = randomUtils.generateRegexSymbolsNumbers(16);
     public static String phpSessId = randomUtils.generateRegexSymbolsNumbers(26);
     public static String customerId;
     //PAGES
@@ -40,5 +38,4 @@ public class StaticData {
     public static String klarnaPay = "Klarna";
     public static String netgiroPay = "Netgiro";
     public static String valitorPay = "Valitor";
-
 }

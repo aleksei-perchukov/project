@@ -8,9 +8,9 @@ import tests.checkout.TestBase;
 import tests.user.UserTestData;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static data.StaticAPIMethods.apiAddToCart;
-import static data.StaticAPIMethods.openBrowserWithCookies;
-import static data.StaticData.*;
+import static tests.data.StaticAPIMethods.apiAddToCart;
+import static tests.data.StaticAPIMethods.openBrowserWithCookies;
+import static tests.data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
 
 @DisplayName("-NO- / GUEST / PAYMENT METHODS TEST SUITE")
@@ -27,8 +27,8 @@ public class CheckoutTestsNO extends TestBase {
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
         UserTestData testData = new UserTestData();
-        apiAddToCart(phpSessId, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
+        apiAddToCart();
+        openBrowserWithCookies("/checkout");
         fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(klarnaPay);
@@ -42,8 +42,8 @@ public class CheckoutTestsNO extends TestBase {
     void quickPayTestGuestNO() {
         configureUrlsNO();
         UserTestData testData = new UserTestData();
-        apiAddToCart(phpSessId, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
+        apiAddToCart();
+        openBrowserWithCookies("/checkout");
         fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
@@ -57,8 +57,8 @@ public class CheckoutTestsNO extends TestBase {
     void bankPayTestGuestNO() {
         configureUrlsNO();
         UserTestData testData = new UserTestData();
-        apiAddToCart(phpSessId, cookieFormKeyStatic);
-        openBrowserWithCookies(phpSessId, cookieFormKeyStatic, "/checkout");
+        apiAddToCart();
+        openBrowserWithCookies("/checkout");
         fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);

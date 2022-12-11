@@ -10,8 +10,8 @@ import tests.user.UserTestData;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.$;
-import static data.StaticData.*;
-import static data.StaticMethods.openPage;
+import static tests.data.StaticData.*;
+import static tests.data.StaticMethods.openPage;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("-DK- / USER TEST SUITE")

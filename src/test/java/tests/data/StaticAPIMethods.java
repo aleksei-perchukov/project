@@ -1,4 +1,4 @@
-package data;
+package tests.data;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -8,38 +8,38 @@ import io.restassured.response.ResponseBodyExtractionOptions;
 import org.openqa.selenium.Cookie;
 import tests.checkout.CheckoutTestData;
 
-import static data.StaticData.*;
-import static data.StaticData.mainUrl;
-import static data.StaticMethods.openPage;
+import static tests.data.StaticData.*;
+import static tests.data.StaticData.mainUrl;
+import static tests.data.StaticMethods.openPage;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecification1;
 import static specs.Specs.responseSpecification1;
 
 public class StaticAPIMethods {
     @Step("Opening browser with session cookies (PHPSESSID & form_key)")
-    public static void openBrowserWithCookies(String phpSessId, String cookieFormKey, String url) {
+    public static void openBrowserWithCookies(String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Selenide.sleep(2000);
         Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + mainUrl.substring(8),"/", null);
-        Cookie form_keyCookie = new Cookie("form_key", cookieFormKey);
+        Cookie form_keyCookie = new Cookie("form_key", formKey);
         WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
         WebDriverRunner.getWebDriver().manage().addCookie(form_keyCookie);
         openPage(url);
     }
 
     @Step("Opening browser with 'form_key' session cookie")
-    public static void openBrowserWithCookiesLogin(String cookieFormKey, String url) {
+    public static void openBrowserWithCookiesLogin(String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Selenide.sleep(2000);
         Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + mainUrl.substring(8),"/", null);
-        Cookie form_keyCookie = new Cookie("form_key", cookieFormKey);
+        Cookie form_keyCookie = new Cookie("form_key", formKey);
         WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
         WebDriverRunner.getWebDriver().manage().addCookie(form_keyCookie);
         openPage(url);
     }
 
     @Step("Adding product to cart by API")
-    public static ResponseBodyExtractionOptions apiAddToCart(String phpSessId, String formKeyCookie) {
+    public static ResponseBodyExtractionOptions apiAddToCart() {
         CheckoutTestData testData = new CheckoutTestData();
         String productId = null;
         Selenide.sleep(2000);
@@ -59,7 +59,7 @@ public class StaticAPIMethods {
         ResponseBodyExtractionOptions cart_id_json = given()
                 .spec(requestSpecification1)
                 .cookie(phpSessIdDomain)
-                .cookie("form_key", formKeyCookie)
+                .cookie("form_key", formKey)
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body(testData.getAddToCartBody()).when()
                 .post(mainUrl + "/checkout/cart/add/product/" + productId + "/")

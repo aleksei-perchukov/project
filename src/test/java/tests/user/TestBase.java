@@ -28,7 +28,7 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.pageLoadStrategy = "none";
 
-        Configuration.timeout = 20000;
+        Configuration.timeout = 30000;
         if(remote != null) {
             Configuration.remote = remote;
         }

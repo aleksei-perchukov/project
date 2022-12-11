@@ -22,7 +22,7 @@
 </head>
 <body>
 <div>
-    <pre><code><#if data.method??>${data.method}<#else>GET</#if>: <#if data.url??>${data.url}<#else>Unknown</#if></code></pre>
+    <pre><code><#if data.method??>${data.method}<#else>GET</#if></code></pre>
 </div>
 
 <#if data.body??>

@@ -1,27 +1,25 @@
-package api;
+package tests.api;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
-import tests.checkout.CheckoutTestData;
-import tests.user.UserTestData;
+import tests.data.StaticData;
 import tests.user.models.UserModel;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static data.StaticData.*;
+import static tests.data.StaticData.*;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.*;
 
-public class AdminAPIMethods {
-    CheckoutTestData checkoutTestData = new CheckoutTestData();
-    UserTestData userTestData = new UserTestData();
+public class Admin {
+    public String adminToken = getAdminTokenAPI();
 
     @Step("Get admin token / API")
-    public static String getAdminTokenAPI() {
+    public String getAdminTokenAPI() {
         Response response = given()
                 .spec(adminRequestSpecification)
                 .formParam("username", adminLogin)
                 .formParam("password", adminPassword)
-                .post(baseUrl + "/rest/V1/integration/admin/token")
+                .post("/rest/V1/integration/admin/token")
                 .then()
                 .spec(responseSpecification1)
                 .extract()
@@ -32,7 +30,8 @@ public class AdminAPIMethods {
     }
 
     @Step("Create user / API")
-    public static String createUserAPI(String firstName, String lastName, String email, String password) {
+    public String createUserAPI(String firstName, String lastName, String email, String password) {
+        StaticData staticData = new StaticData();
         String customerId;
         int website_id = 0;
         if (baseUrl.equals(urlDK)) {
@@ -71,12 +70,12 @@ public class AdminAPIMethods {
     }
 
     @Step("Get user token / API")
-    String getUserTokenAPI() {
+    String getUserTokenAPI(String email, String password) {
         Response response = given()
                 .spec(adminRequestSpecification)
                 .cookie("admin", adminToken)
-                .formParam("username", userTestData.email)
-                .formParam("password", userTestData.password)
+                .formParam("username", email)
+                .formParam("password", password)
                 .post(baseUrl + "/rest/V1/integration/customer/token")
                 .then()
                 .spec(adminResponseSpecification)
@@ -90,7 +89,6 @@ public class AdminAPIMethods {
     @Step("Delete user / API")
     public void deleteUserAPI(String customerId) {
         String adminToken = getAdminTokenAPI();
-        String userToken = getUserTokenAPI();
         given()
                 .spec(adminRequestSpecification)
                 .cookie("admin", adminToken)
@@ -99,12 +97,11 @@ public class AdminAPIMethods {
                 .then()
                 .spec(adminResponseSpecification)
                 .statusCode(204);
-        System.out.println(userTestData.email + " user is successfully deleted");
+        System.out.println(customerId + " user is successfully deleted");
     }
 
     @Step("Deleting order / API")
-    static void deleteOrderFromDB() {
+    void deleteOrderFromDB() {
         String adminToken = getAdminTokenAPI();
-
     }
 }
