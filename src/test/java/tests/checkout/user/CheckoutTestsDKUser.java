@@ -32,7 +32,7 @@ public class CheckoutTestsDKUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         acceptCookies();
         login(data.email, data.password);
@@ -52,7 +52,7 @@ public class CheckoutTestsDKUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         acceptCookies();
         login(data.email, data.password);
@@ -73,7 +73,7 @@ public class CheckoutTestsDKUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         acceptCookies();
         login(data.email, data.password);
@@ -93,7 +93,7 @@ public class CheckoutTestsDKUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         acceptCookies();
         login(data.email, data.password);
@@ -113,7 +113,7 @@ public class CheckoutTestsDKUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         acceptCookies();
         login(data.email, data.password);

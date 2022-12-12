@@ -34,7 +34,7 @@ public class CheckoutTestsDEUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
         open("/checkout");
@@ -54,7 +54,7 @@ public class CheckoutTestsDEUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
         open("/checkout");

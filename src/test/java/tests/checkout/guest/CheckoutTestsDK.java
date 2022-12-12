@@ -31,7 +31,7 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -47,7 +47,7 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -64,7 +64,7 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -80,7 +80,7 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -96,7 +96,7 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);

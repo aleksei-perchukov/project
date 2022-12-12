@@ -30,7 +30,7 @@ public class CheckoutTestsDE extends TestBase {
         configureUrlsDE();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -46,7 +46,7 @@ public class CheckoutTestsDE extends TestBase {
         configureUrlsDE();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart();
+        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
