@@ -10,7 +10,7 @@ import static tests.data.StaticData.*;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.*;
 
-public class Admin {
+public class APIAdmin {
     public String adminToken = getAdminTokenAPI();
 
     @Step("Get admin token / API")

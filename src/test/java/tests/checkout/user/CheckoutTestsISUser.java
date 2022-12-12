@@ -1,17 +1,17 @@
 package tests.checkout.user;
 
 import org.junit.jupiter.api.*;
-import tests.api.Admin;
+import tests.api.APIAdmin;
+import tests.api.APIMethods;
 import tests.checkout.TestBase;
 import tests.user.UserTestData;
 
 import static io.restassured.RestAssured.baseURI;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
-import static tests.data.StaticAPIMethods.apiAddToCart;
-import static tests.data.StaticAPIMethods.openBrowserWithCookiesLogin;
 import static tests.data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
+import static tests.data.StaticMethods.openBrowserWithCookiesLogin;
 
 @DisplayName("-IS- / USER / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
@@ -27,10 +27,11 @@ public class CheckoutTestsISUser extends TestBase {
     @Test
     void netgiroTestGuestIS() {
         configureUrlsIS();
-        Admin admin = new Admin();
         UserTestData data = new UserTestData();
+        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
         open("/checkout");
@@ -46,10 +47,11 @@ public class CheckoutTestsISUser extends TestBase {
     @Test
     void valitorPayTestGuestIS() {
         configureUrlsIS();
-        Admin admin = new Admin();
         UserTestData data = new UserTestData();
+        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
         open("/checkout");
@@ -65,10 +67,11 @@ public class CheckoutTestsISUser extends TestBase {
     @Test
     void bankPayTestGuestIS() {
         configureUrlsIS();
-        Admin admin = new Admin();
         UserTestData data = new UserTestData();
+        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
         open("/checkout");
@@ -84,10 +87,11 @@ public class CheckoutTestsISUser extends TestBase {
     @Test
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
-        Admin admin = new Admin();
         UserTestData data = new UserTestData();
+        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
         open("/checkout");

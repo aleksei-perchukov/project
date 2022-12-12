@@ -4,17 +4,17 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import tests.api.Admin;
+import tests.api.APIAdmin;
+import tests.api.APIMethods;
 import tests.checkout.TestBase;
 import tests.user.UserTestData;
 
 import static io.restassured.RestAssured.baseURI;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
-import static tests.data.StaticAPIMethods.apiAddToCart;
-import static tests.data.StaticAPIMethods.openBrowserWithCookiesLogin;
 import static tests.data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
+import static tests.data.StaticMethods.openBrowserWithCookiesLogin;
 
 @DisplayName("-NO- / USER / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
@@ -30,10 +30,11 @@ public class CheckoutTestsNOUser extends TestBase {
     @Test
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
-        Admin admin = new Admin();
         UserTestData data = new UserTestData();
+        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
         open("/checkout");
@@ -49,11 +50,11 @@ public class CheckoutTestsNOUser extends TestBase {
     @Test
     void quickPayTestGuestNO() {
         configureUrlsNO();
-        Admin admin = new Admin();
         UserTestData data = new UserTestData();
+        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        apiAddToCart();
-        openBrowserWithCookiesLogin("/customer/account/login/");
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         login(data.email, data.password);
         open("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -68,10 +69,11 @@ public class CheckoutTestsNOUser extends TestBase {
     @Test
     void bankPayTestGuestNO() {
         configureUrlsNO();
-        Admin admin = new Admin();
         UserTestData data = new UserTestData();
+        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
         open("/checkout");

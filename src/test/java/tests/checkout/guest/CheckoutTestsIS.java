@@ -1,15 +1,15 @@
 package tests.checkout.guest;
 
 import org.junit.jupiter.api.*;
+import tests.api.APIMethods;
 import tests.checkout.TestBase;
 import tests.user.UserTestData;
 
 import static io.restassured.RestAssured.baseURI;
 import static com.codeborne.selenide.Configuration.*;
-import static tests.data.StaticAPIMethods.apiAddToCart;
-import static tests.data.StaticAPIMethods.openBrowserWithCookies;
 import static tests.data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
+import static tests.data.StaticMethods.openBrowserWithCookies;
 
 @DisplayName("-IS- / GUEST / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
@@ -26,7 +26,8 @@ public class CheckoutTestsIS extends TestBase {
     void netgiroTestGuestIS() {
         configureUrlsIS();
         UserTestData data = new UserTestData();
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -41,7 +42,8 @@ public class CheckoutTestsIS extends TestBase {
     void valitorPayTestGuestIS() {
         configureUrlsIS();
         UserTestData data = new UserTestData();
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -56,7 +58,8 @@ public class CheckoutTestsIS extends TestBase {
     void bankPayTestGuestIS() {
         configureUrlsIS();
         UserTestData data = new UserTestData();
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -71,7 +74,8 @@ public class CheckoutTestsIS extends TestBase {
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
         UserTestData data = new UserTestData();
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();

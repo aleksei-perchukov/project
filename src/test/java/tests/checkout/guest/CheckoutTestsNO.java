@@ -4,15 +4,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
+import tests.api.APIMethods;
 import tests.checkout.TestBase;
 import tests.user.UserTestData;
 
 import static io.restassured.RestAssured.baseURI;
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static tests.data.StaticAPIMethods.apiAddToCart;
-import static tests.data.StaticAPIMethods.openBrowserWithCookies;
 import static tests.data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
+import static tests.data.StaticMethods.openBrowserWithCookies;
 
 @DisplayName("-NO- / GUEST / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
@@ -29,7 +29,8 @@ public class CheckoutTestsNO extends TestBase {
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
         UserTestData data = new UserTestData();
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -44,7 +45,8 @@ public class CheckoutTestsNO extends TestBase {
     void quickPayTestGuestNO() {
         configureUrlsNO();
         UserTestData data = new UserTestData();
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -59,7 +61,8 @@ public class CheckoutTestsNO extends TestBase {
     void bankPayTestGuestNO() {
         configureUrlsNO();
         UserTestData data = new UserTestData();
-        apiAddToCart();
+        APIMethods api = new APIMethods();
+        api.AddToCart();
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();

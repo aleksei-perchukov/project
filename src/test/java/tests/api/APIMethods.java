@@ -1,6 +1,5 @@
-package tests.data;
+package tests.api;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
@@ -15,31 +14,10 @@ import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecification1;
 import static specs.Specs.responseSpecification1;
 
-public class StaticAPIMethods {
-    @Step("Opening browser with session cookies (PHPSESSID & form_key)")
-    public static void openBrowserWithCookies(String url) {
-        openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
-        Selenide.sleep(2000);
-        Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + baseUrl.substring(8),"/", null);
-        Cookie form_keyCookie = new Cookie("form_key", formKey);
-        WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
-        WebDriverRunner.getWebDriver().manage().addCookie(form_keyCookie);
-        openPage(url);
-    }
-
-    @Step("Opening browser with 'form_key' session cookie")
-    public static void openBrowserWithCookiesLogin(String url) {
-        openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
-        Selenide.sleep(2000);
-        Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + baseUrl.substring(8),"/", null);
-        Cookie form_keyCookie = new Cookie("form_key", formKey);
-        WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
-        WebDriverRunner.getWebDriver().manage().addCookie(form_keyCookie);
-        openPage(url);
-    }
+public class APIMethods {
 
     @Step("Adding product to cart by API")
-    public static ResponseBodyExtractionOptions apiAddToCart() {
+    public ResponseBodyExtractionOptions AddToCart() {
         CheckoutTestData data = new CheckoutTestData();
         String productId = null;
         Selenide.sleep(2000);
@@ -74,7 +52,7 @@ public class StaticAPIMethods {
     }
 
     @Step("Checking cart number increased")
-    static ResponseBodyExtractionOptions apiCheckCartNumberUpdate(String phpSessId) {
+    ResponseBodyExtractionOptions apiCheckCartNumberUpdate(String phpSessId) {
         ResponseBodyExtractionOptions cart_update_json = given().spec(requestSpecification1)
                 .cookie("PHPSESSID", phpSessId)
                 .cookie("form_key", "x2OdeHWwSION73Xc")
