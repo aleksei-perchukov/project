@@ -1,15 +1,11 @@
 package tests.api;
 
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
 import io.restassured.response.ResponseBodyExtractionOptions;
-import org.openqa.selenium.Cookie;
 import tests.checkout.CheckoutTestData;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.data.StaticData.*;
-import static tests.data.StaticMethods.openPage;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecification1;
 import static specs.Specs.responseSpecification1;
@@ -17,7 +13,7 @@ import static specs.Specs.responseSpecification1;
 public class APIMethods {
 
     @Step("Adding product to cart by API")
-    public ResponseBodyExtractionOptions AddToCart(String mainUrl) {
+    public ResponseBodyExtractionOptions AddToCart(String baseUrl) {
         CheckoutTestData data = new CheckoutTestData();
         String productId = null;
         Selenide.sleep(2000);
@@ -40,8 +36,7 @@ public class APIMethods {
                 .cookie("form_key", formKey)
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body(data.getAddToCartBody()).when()
-                .baseUri(mainUrl)
-                .post("/checkout/cart/add/product/" + productId + "/")
+                .post(baseUrl + "/checkout/cart/add/product/" + productId + "/")
                 .then()
                 .spec(responseSpecification1)
                 .log().status()

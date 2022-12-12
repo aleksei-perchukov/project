@@ -5,7 +5,6 @@ import io.restassured.response.Response;
 import tests.data.StaticData;
 import tests.user.models.UserModel;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.data.StaticData.*;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.*;
@@ -59,8 +58,7 @@ public class APIAdmin {
                 .spec(adminRequestSpecification)
                 .cookie("admin", adminToken)
                 .body(userBody)
-                .baseUri(baseUrl)
-                .post("/rest/V1/customers/")
+                .post(baseUrl + "/rest/V1/customers/")
                 .then()
                 .spec(adminResponseSpecification)
                 .extract()
