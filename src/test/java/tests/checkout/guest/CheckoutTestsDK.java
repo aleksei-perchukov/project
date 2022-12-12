@@ -20,7 +20,7 @@ import static tests.checkout.websteps.CheckoutWebSteps.*;
 public class CheckoutTestsDK extends TestBase {
 
     static void configureUrlsDK() {
-        mainUrl = urlDK;
+        String mainUrl = urlDK;
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }

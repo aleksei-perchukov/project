@@ -8,7 +8,6 @@ public class StaticData {
     public static String adminLogin = System.getProperty("adminLogin");
     public static String adminPassword = System.getProperty("adminPassword");
     public static String authHeaderValue = System.getProperty("authHeaderValue");
-    public static String mainUrl;
     public static String urlDK = "https://skanva.dk";
     public static String urlNO = "https://no.skanva.dk";
     public static String urlIS = "https://is.skanva.dk";

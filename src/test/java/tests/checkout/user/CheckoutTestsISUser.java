@@ -17,7 +17,7 @@ import static tests.checkout.websteps.CheckoutWebSteps.*;
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
 public class CheckoutTestsISUser extends TestBase {
     static void configureUrlsIS() {
-        mainUrl = urlIS;
+        String mainUrl = urlIS;
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }

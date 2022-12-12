@@ -17,7 +17,7 @@ import static tests.checkout.websteps.CheckoutWebSteps.*;
 @DisplayName("-DK- / USER / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDKUser extends TestBase {
     static void configureUrlsDK() {
-        mainUrl = urlDK;
+        String mainUrl = urlDK;
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }

@@ -18,7 +18,7 @@ import static io.qameta.allure.Allure.step;
 @Tags({@Tag("UserAccount"), @Tag("WEB"), @Tag("IS")})
 public class UserTestsIS {
     void configureUrlsIS() {
-        mainUrl = urlIS;
+        String mainUrl = urlIS;
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }

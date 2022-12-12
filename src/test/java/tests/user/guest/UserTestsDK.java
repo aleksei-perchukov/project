@@ -19,7 +19,7 @@ import static io.qameta.allure.Allure.step;
 @Tags({@Tag("UserAccount"), @Tag("WEB"), @Tag("DK")})
 public class UserTestsDK extends TestBase {
     void configureUrlsDK() {
-        mainUrl = urlDK;
+        String mainUrl = urlDK;
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }

@@ -18,7 +18,7 @@ import static io.qameta.allure.Allure.step;
 @Tags({@Tag("UserAccount"), @Tag("WEB"), @Tag("NO")})
 public class UserTestsNO {
     void configureUrlsNO() {
-        mainUrl = urlNO;
+        String mainUrl = urlNO;
         baseUrl = mainUrl;
     }
 

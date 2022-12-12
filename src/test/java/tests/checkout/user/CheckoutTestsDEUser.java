@@ -20,7 +20,7 @@ import static tests.checkout.websteps.CheckoutWebSteps.*;
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("DE")})
 public class CheckoutTestsDEUser extends TestBase {
     static void configureUrlsDE() {
-        mainUrl = urlDE;
+        String mainUrl = urlDE;
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
