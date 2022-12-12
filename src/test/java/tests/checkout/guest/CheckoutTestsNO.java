@@ -30,8 +30,8 @@ public class CheckoutTestsNO extends TestBase {
         configureUrlsNO();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(klarnaPay);
@@ -46,8 +46,8 @@ public class CheckoutTestsNO extends TestBase {
         configureUrlsNO();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
@@ -62,8 +62,8 @@ public class CheckoutTestsNO extends TestBase {
         configureUrlsNO();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);

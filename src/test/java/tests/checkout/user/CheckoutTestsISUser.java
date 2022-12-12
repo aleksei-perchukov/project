@@ -31,8 +31,8 @@ public class CheckoutTestsISUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password, baseUrl);
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
+        api.AddToCart(baseUrl);
         login(data.email, data.password);
         open("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -51,8 +51,8 @@ public class CheckoutTestsISUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password, baseUrl);
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
+        api.AddToCart(baseUrl);
         login(data.email, data.password);
         open("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -71,8 +71,8 @@ public class CheckoutTestsISUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password, baseUrl);
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
+        api.AddToCart(baseUrl);
         login(data.email, data.password);
         open("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -91,8 +91,8 @@ public class CheckoutTestsISUser extends TestBase {
         APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password, baseUrl);
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
+        api.AddToCart(baseUrl);
         login(data.email, data.password);
         open("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);

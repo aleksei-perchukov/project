@@ -31,8 +31,8 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -47,8 +47,8 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -64,8 +64,8 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -80,8 +80,8 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -96,8 +96,8 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();

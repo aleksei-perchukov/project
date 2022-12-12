@@ -27,8 +27,8 @@ public class CheckoutTestsIS extends TestBase {
         configureUrlsIS();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(netgiroPay);
@@ -43,8 +43,8 @@ public class CheckoutTestsIS extends TestBase {
         configureUrlsIS();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(valitorPay);
@@ -59,8 +59,8 @@ public class CheckoutTestsIS extends TestBase {
         configureUrlsIS();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
@@ -75,8 +75,8 @@ public class CheckoutTestsIS extends TestBase {
         configureUrlsIS();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
+        api.AddToCart(baseUrl);
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
