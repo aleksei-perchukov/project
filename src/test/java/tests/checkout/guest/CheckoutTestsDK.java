@@ -31,8 +31,8 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        openBrowserWithCookies("/checkout");
         api.AddToCart(baseUrl);
+        openBrowserWithCookies("/checkout");
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -47,8 +47,8 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        openBrowserWithCookies("/checkout");
         api.AddToCart(baseUrl);
+        openBrowserWithCookies("/checkout");
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -64,8 +64,8 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        openBrowserWithCookies("/checkout");
         api.AddToCart(baseUrl);
+        openBrowserWithCookies("/checkout");
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -73,6 +73,7 @@ public class CheckoutTestsDK extends TestBase {
         checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 
+    @Disabled
     @Tag("SparkXpress")
     @DisplayName("SparkXpress")
     @Test
@@ -80,8 +81,8 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        openBrowserWithCookies("/checkout");
         api.AddToCart(baseUrl);
+        openBrowserWithCookies("/checkout");
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
@@ -96,8 +97,8 @@ public class CheckoutTestsDK extends TestBase {
         configureUrlsDK();
         UserTestData data = new UserTestData();
         APIMethods api = new APIMethods();
-        openBrowserWithCookies("/checkout");
         api.AddToCart(baseUrl);
+        openBrowserWithCookies("/checkout");
         acceptCookies();
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
