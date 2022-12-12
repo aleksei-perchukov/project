@@ -22,6 +22,7 @@ public class CheckoutTestsDKUser extends TestBase {
         baseURI = mainUrl;
     }
 
+    @Disabled
     @Tag("PaypalExpress")
     @DisplayName("PaypalExpress")
     @Test

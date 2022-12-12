@@ -22,7 +22,7 @@ public class CheckoutTestsNO extends TestBase {
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
-    
+
     @Tag("Klarna")
     @DisplayName("Klarna")
     @Test
