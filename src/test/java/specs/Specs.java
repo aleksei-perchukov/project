@@ -7,8 +7,6 @@ import io.restassured.specification.ResponseSpecification;
 
 import static helpers.APIListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
-        ;
-import static tests.data.StaticData.*;
 
 public class Specs {
     public static RequestSpecification requestSpecification1 = with()
@@ -17,7 +15,6 @@ public class Specs {
   //          .header("authorization", authHeaderValue)
             .header("x-requested-with", "XMLHttpRequest")
             .header("Connection", "keep-alive")
-            .baseUri(mainUrl)
             .filter(withCustomTemplates())
             .log().uri()
             .log().cookies();
@@ -33,7 +30,6 @@ public class Specs {
             .basic("admin", "BilarIsgreaT2020!%23")
             .header("Authorization", "Basic YWRtaW46QmlsYXJJc2dyZWFUMjAyMCEj")
             .contentType("application/json")
-            .baseUri(mainUrl)
             .filter(withCustomTemplates())
             .log().uri()
             .log().cookies();
