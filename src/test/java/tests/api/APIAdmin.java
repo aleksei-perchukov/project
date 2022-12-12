@@ -5,6 +5,7 @@ import io.restassured.response.Response;
 import tests.data.StaticData;
 import tests.user.models.UserModel;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.data.StaticData.*;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.*;
@@ -18,7 +19,7 @@ public class APIAdmin {
                 .spec(adminRequestSpecification)
                 .formParam("username", adminLogin)
                 .formParam("password", adminPassword)
-                .post("/rest/V1/integration/admin/token")
+                .post(baseUrl + "/rest/V1/integration/admin/token")
                 .then()
                 .spec(responseSpecification1)
                 .extract()
@@ -56,7 +57,7 @@ public class APIAdmin {
 
         Response response = given()
                 .spec(adminRequestSpecification)
-                .cookie("admin", adminToken)
+                .cookie("admin", getAdminTokenAPI())
                 .body(userBody)
                 .post(baseUrl + "/rest/V1/customers/")
                 .then()
