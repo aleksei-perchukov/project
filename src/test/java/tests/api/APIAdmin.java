@@ -30,7 +30,7 @@ public class APIAdmin {
     }
 
     @Step("Create user / API")
-    public String createUserAPI(String firstName, String lastName, String email, String password) {
+    public String createUserAPI(String firstName, String lastName, String email, String password, String baseUrl) {
         StaticData staticData = new StaticData();
         String customerId;
         int website_id = 0;
@@ -59,6 +59,7 @@ public class APIAdmin {
                 .spec(adminRequestSpecification)
                 .cookie("admin", adminToken)
                 .body(userBody)
+                .baseUri(baseUrl)
                 .post("/rest/V1/customers/")
                 .then()
                 .spec(adminResponseSpecification)

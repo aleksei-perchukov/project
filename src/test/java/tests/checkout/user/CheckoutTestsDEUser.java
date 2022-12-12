@@ -32,7 +32,7 @@ public class CheckoutTestsDEUser extends TestBase {
         configureUrlsDE();
         UserTestData data = new UserTestData();
         APIAdmin admin = new APIAdmin();
-        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
+        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password, baseUrl);
         APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
@@ -52,7 +52,7 @@ public class CheckoutTestsDEUser extends TestBase {
         configureUrlsDE();
         UserTestData data = new UserTestData();
         APIAdmin admin = new APIAdmin();
-        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
+        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password, baseUrl);
         APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
