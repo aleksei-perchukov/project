@@ -28,8 +28,8 @@ public class CheckoutWebSteps {
 
     @Step("-SHIPPING FORM-")
     public static void fillShippingForm(String firstName, String lastName, String email, String mobileNumber) {
-        CheckoutTestData testData = new CheckoutTestData();
-        String zipCode = testData.getZipCode();
+        CheckoutTestData data = new CheckoutTestData();
+        String zipCode = data.getZipCode();
         if (Configuration.baseUrl.equals(urlIS)) {
             step("Shipping form -> Kennitala = '1234567890'", () ->
                     $$(".field._required.full-width").first().$(".input-text").setValue("1234567890")
@@ -326,7 +326,7 @@ public class CheckoutWebSteps {
 
     @Step("-NETGIRO PAY FORM-")
     public static void fillNetgiroPay() {
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         step("NETGIRO PAY -> Entering '1231231' mobile number", () -> {
             Selenide.sleep(5000);
             $("#customerPaymentRequestGSM").sendKeys("1231231");
@@ -338,7 +338,7 @@ public class CheckoutWebSteps {
             $("#customerSSN").setValue("1234567890");
         });
         step("NETGIRO PAY -> Entering password", () -> {
-            $("#customerPassword").setValue(testData.password);
+            $("#customerPassword").setValue(data.password);
         });
         step("NETGIRO PAY -> Clicking 'Buy' button", () -> {
             $(".tab-header.custom-link.payment-request-tab").click();

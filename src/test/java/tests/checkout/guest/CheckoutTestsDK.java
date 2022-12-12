@@ -19,9 +19,10 @@ import static tests.checkout.websteps.CheckoutWebSteps.*;
 @DisplayName("-DK- / GUEST / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDK extends TestBase {
 
-    void configureUrlsDK() {
+    static void configureUrlsDK() {
         mainUrl = urlDK;
         baseUrl = mainUrl;
+        baseURI = mainUrl;
     }
 
     @Disabled
@@ -30,15 +31,15 @@ public class CheckoutTestsDK extends TestBase {
     @DisplayName("PaypalExpress")
     void paypalExpressPayTestGuest() {
         configureUrlsDK();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
         acceptCookies();
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(paypalExpressPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, paypalExpressPay, testData.email);
+        checkOrderSuccess(data.firstName, paypalExpressPay, data.email);
     }
 
     @Test
@@ -46,15 +47,15 @@ public class CheckoutTestsDK extends TestBase {
     @DisplayName("QuickPay")
     void quickPayTestGuest() {
         configureUrlsDK();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
         acceptCookies();
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, quickPay, testData.email);
+        checkOrderSuccess(data.firstName, quickPay, data.email);
     }
 
     @Test
@@ -62,15 +63,15 @@ public class CheckoutTestsDK extends TestBase {
     @DisplayName("Bank Transfer")
     void bankPayTestGuest() {
         configureUrlsDK();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
         acceptCookies();
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, bankPay, testData.email);
+        checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 
     @Test
@@ -78,15 +79,15 @@ public class CheckoutTestsDK extends TestBase {
     @DisplayName("SparkXpress")
     void sparkXpressPayTestGuest() {
         configureUrlsDK();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
         acceptCookies();
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, sparkXpressPay, testData.email);
+        checkOrderSuccess(data.firstName, sparkXpressPay, data.email);
     }
 
     @Test
@@ -94,14 +95,14 @@ public class CheckoutTestsDK extends TestBase {
     @DisplayName("ViaBill")
     void viaBillPayTestGuest() {
         configureUrlsDK();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
         acceptCookies();
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(viaBillPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, viaBillPay, testData.email);
+        checkOrderSuccess(data.firstName, viaBillPay, data.email);
     }
 }

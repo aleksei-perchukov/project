@@ -4,6 +4,7 @@ import org.junit.jupiter.api.*;
 import tests.checkout.TestBase;
 import tests.user.UserTestData;
 
+import static io.restassured.RestAssured.baseURI;
 import static com.codeborne.selenide.Configuration.*;
 import static tests.data.StaticAPIMethods.apiAddToCart;
 import static tests.data.StaticAPIMethods.openBrowserWithCookies;
@@ -13,9 +14,10 @@ import static tests.checkout.websteps.CheckoutWebSteps.*;
 @DisplayName("-IS- / GUEST / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
 public class CheckoutTestsIS extends TestBase {
-    void configureUrlsIS() {
+    static void configureUrlsIS() {
         mainUrl = urlIS;
         baseUrl = mainUrl;
+        baseURI = mainUrl;
     }
 
     @Test
@@ -23,14 +25,14 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("Netgiro")
     void netgiroTestGuestIS() {
         configureUrlsIS();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(netgiroPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, netgiroPay, testData.email);
+        checkOrderSuccess(data.firstName, netgiroPay, data.email);
     }
 
     @Test
@@ -38,14 +40,14 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("Valitor")
     void valitorPayTestGuestIS() {
         configureUrlsIS();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(valitorPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, valitorPay, testData.email);
+        checkOrderSuccess(data.firstName, valitorPay, data.email);
     }
 
     @Test
@@ -53,14 +55,14 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("Bank Transfer")
     void bankPayTestGuestIS() {
         configureUrlsIS();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, bankPay, testData.email);
+        checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 
     @Disabled
@@ -69,13 +71,13 @@ public class CheckoutTestsIS extends TestBase {
     @DisplayName("SparkXpress")
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, sparkXpressPay, testData.email);
+        checkOrderSuccess(data.firstName, sparkXpressPay, data.email);
     }
 }

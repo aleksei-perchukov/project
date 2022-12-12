@@ -15,14 +15,4 @@ public class UserTestData {
     public String email = firstName + lastName + "@test.com";
     public String password = randomUtils.getRandomString(16);
     public String mobileNumber = randomUtils.getRandomLong(00000000L, 99999999L).toString();
-
-
-    public HashMap getAddToCartParams() {
-    HashMap<String, String> addToCartParams = new HashMap<>();
-    addToCartParams.put("product", "4404");
-    addToCartParams.put("item", "4404");
-    addToCartParams.put("qty", "1");
-    addToCartParams.put("options[60382]", "{\"height\":120,\"width\":190,\"width1\":95,\"fieldwidth2\":95}");
-        return addToCartParams;
-    }
 }

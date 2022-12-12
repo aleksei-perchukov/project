@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import tests.checkout.TestBase;
 import tests.user.UserTestData;
 
+import static io.restassured.RestAssured.baseURI;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.data.StaticAPIMethods.apiAddToCart;
 import static tests.data.StaticAPIMethods.openBrowserWithCookies;
@@ -16,9 +17,10 @@ import static tests.checkout.websteps.CheckoutWebSteps.*;
 @DisplayName("-DE- / GUEST / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("DE")})
 public class CheckoutTestsDE extends TestBase {
-    void configureUrlsDE() {
+    static void configureUrlsDE() {
         mainUrl = urlDE;
         baseUrl = mainUrl;
+        baseURI = mainUrl;
     }
 
     @Test
@@ -26,14 +28,14 @@ public class CheckoutTestsDE extends TestBase {
     @DisplayName("QuickPay")
     void quickPayGuestDE() {
         configureUrlsDE();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, quickPay, testData.email);
+        checkOrderSuccess(data.firstName, quickPay, data.email);
     }
 
     @Test
@@ -41,13 +43,13 @@ public class CheckoutTestsDE extends TestBase {
     @DisplayName("BankTransfer")
     void bankPayTestGuestDE() {
         configureUrlsDE();
-        UserTestData testData = new UserTestData();
+        UserTestData data = new UserTestData();
         apiAddToCart();
         openBrowserWithCookies("/checkout");
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, bankPay, testData.email);
+        checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 }

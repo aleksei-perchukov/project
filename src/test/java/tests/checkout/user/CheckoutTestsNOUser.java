@@ -8,6 +8,7 @@ import tests.api.Admin;
 import tests.checkout.TestBase;
 import tests.user.UserTestData;
 
+import static io.restassured.RestAssured.baseURI;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
 import static tests.data.StaticAPIMethods.apiAddToCart;
@@ -18,9 +19,10 @@ import static tests.checkout.websteps.CheckoutWebSteps.*;
 @DisplayName("-NO- / USER / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
 public class CheckoutTestsNOUser extends TestBase {
-    void configureUrlsNO() {
+    static void configureUrlsNO() {
         mainUrl = urlNO;
         baseUrl = mainUrl;
+        baseURI = mainUrl;
     }
 
     @Test
@@ -29,17 +31,17 @@ public class CheckoutTestsNOUser extends TestBase {
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
         Admin admin = new Admin();
-        UserTestData testData = new UserTestData();
-        String userId = admin.createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
+        UserTestData data = new UserTestData();
+        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         apiAddToCart();
         openBrowserWithCookiesLogin("/customer/account/login/");
-        login(testData.email, testData.password);
+        login(data.email, data.password);
         open("/checkout");
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(klarnaPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, klarnaPay, testData.email);
+        checkOrderSuccess(data.firstName, klarnaPay, data.email);
     }
 
     @Test
@@ -48,17 +50,17 @@ public class CheckoutTestsNOUser extends TestBase {
     void quickPayTestGuestNO() {
         configureUrlsNO();
         Admin admin = new Admin();
-        UserTestData testData = new UserTestData();
-        String userId = admin.createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
+        UserTestData data = new UserTestData();
+        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         apiAddToCart();
         openBrowserWithCookiesLogin("/customer/account/login/");
-        login(testData.email, testData.password);
+        login(data.email, data.password);
         open("/checkout");
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(quickPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, quickPay, testData.email);
+        checkOrderSuccess(data.firstName, quickPay, data.email);
     }
 
     @Test
@@ -67,16 +69,16 @@ public class CheckoutTestsNOUser extends TestBase {
     void bankPayTestGuestNO() {
         configureUrlsNO();
         Admin admin = new Admin();
-        UserTestData testData = new UserTestData();
-        String userId = admin.createUserAPI(testData.firstName, testData.lastName, testData.email, testData.password);
+        UserTestData data = new UserTestData();
+        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         apiAddToCart();
         openBrowserWithCookiesLogin("/customer/account/login/");
-        login(testData.email, testData.password);
+        login(data.email, data.password);
         open("/checkout");
-        fillShippingForm(testData.firstName, testData.lastName, testData.email, testData.mobileNumber);
+        fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
         fillQuickPay();
-        checkOrderSuccess(testData.firstName, bankPay, testData.email);
+        checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 }

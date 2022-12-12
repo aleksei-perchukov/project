@@ -40,7 +40,7 @@ public class StaticAPIMethods {
 
     @Step("Adding product to cart by API")
     public static ResponseBodyExtractionOptions apiAddToCart() {
-        CheckoutTestData testData = new CheckoutTestData();
+        CheckoutTestData data = new CheckoutTestData();
         String productId = null;
         Selenide.sleep(2000);
         if (Configuration.baseUrl.equals(urlDK)) {
@@ -61,7 +61,7 @@ public class StaticAPIMethods {
                 .cookie(phpSessIdDomain)
                 .cookie("form_key", formKey)
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-                .body(testData.getAddToCartBody()).when()
+                .body(data.getAddToCartBody()).when()
                 .post(mainUrl + "/checkout/cart/add/product/" + productId + "/")
                 .then()
                 .spec(responseSpecification1)

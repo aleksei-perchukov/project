@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import tests.user.UserTestData;
 
+import static io.restassured.RestAssured.baseURI;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.$;
@@ -25,31 +26,31 @@ public class UserTestsNO {
     @Test
     void createUserNO() {
         configureUrlsNO();
-        UserTestData userTestData = new UserTestData();
+        UserTestData data = new UserTestData();
         step("Opening page: " + createUserPage, () -> {
             openPage(createUserPage);
         });
-        step("Entering first name: " + userTestData.firstName, () -> {
-            $("#firstname").setValue(userTestData.firstName);
+        step("Entering first name: " + data.firstName, () -> {
+            $("#firstname").setValue(data.firstName);
         });
-        step("Entering last name: " + userTestData.lastName, () -> {
-            $("#lastname").setValue(userTestData.lastName);
+        step("Entering last name: " + data.lastName, () -> {
+            $("#lastname").setValue(data.lastName);
         });
-        step("Entering e-mail: " + userTestData.email, () -> {
-            $("#email_address").setValue(userTestData.email);
+        step("Entering e-mail: " + data.email, () -> {
+            $("#email_address").setValue(data.email);
         });
-        step("Entering password: " + userTestData.password, () -> {
-            $("#password").setValue(userTestData.password);
+        step("Entering password: " + data.password, () -> {
+            $("#password").setValue(data.password);
         });
-        step("Entering confirm password: " + userTestData.password, () -> {
-            $("#password-confirmation").setValue(userTestData.password);
+        step("Entering confirm password: " + data.password, () -> {
+            $("#password-confirmation").setValue(data.password);
         });
         step("Submitting form", () -> {
             $(".submit").click();
         });
         step("Confirming that user is registered by checking e-mail which should be shown in account menu", () ->
         {
-            $(".block-dashboard-info").shouldHave(text(userTestData.email));
+            $(".block-dashboard-info").shouldHave(text(data.email));
         });
     }
 }
