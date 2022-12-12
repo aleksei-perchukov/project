@@ -20,9 +20,9 @@ public class CheckoutTestsIS extends TestBase {
         baseURI = mainUrl;
     }
 
-    @Test
     @Tag("Netgiro")
     @DisplayName("Netgiro")
+    @Test
     void netgiroTestGuestIS() {
         configureUrlsIS();
         UserTestData data = new UserTestData();
@@ -35,9 +35,9 @@ public class CheckoutTestsIS extends TestBase {
         checkOrderSuccess(data.firstName, netgiroPay, data.email);
     }
 
-    @Test
     @Tag("Valitor")
     @DisplayName("Valitor")
+    @Test
     void valitorPayTestGuestIS() {
         configureUrlsIS();
         UserTestData data = new UserTestData();
@@ -50,9 +50,9 @@ public class CheckoutTestsIS extends TestBase {
         checkOrderSuccess(data.firstName, valitorPay, data.email);
     }
 
-    @Test
     @Tag("BankTransfer")
     @DisplayName("Bank Transfer")
+    @Test
     void bankPayTestGuestIS() {
         configureUrlsIS();
         UserTestData data = new UserTestData();
@@ -65,9 +65,9 @@ public class CheckoutTestsIS extends TestBase {
     }
 
     @Disabled
-    @Test
     @Tag("SparkXpress")
     @DisplayName("SparkXpress")
+    @Test
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
         UserTestData data = new UserTestData();

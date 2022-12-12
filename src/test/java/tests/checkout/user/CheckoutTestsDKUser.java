@@ -22,9 +22,9 @@ public class CheckoutTestsDKUser extends TestBase {
         baseURI = mainUrl;
     }
 
-    @Test
     @Tag("PaypalExpress")
     @DisplayName("PaypalExpress")
+    @Test
     void paypalExpressPayTestUser() {
         configureUrlsDK();
         Admin admin = new Admin();
@@ -41,9 +41,9 @@ public class CheckoutTestsDKUser extends TestBase {
         checkOrderSuccess(data.firstName, paypalExpressPay, data.email);
     }
 
-    @Test
     @Tag("QuickPay")
     @DisplayName("QuickPay")
+    @Test
     void quickPayTestUser() {
         configureUrlsDK();
         Admin admin = new Admin();
@@ -61,9 +61,9 @@ public class CheckoutTestsDKUser extends TestBase {
         checkOrderSuccess(data.firstName, quickPay, data.email);
     }
 
-    @Test
     @Tag("BankTransfer")
     @DisplayName("Bank Transfer")
+    @Test
     void bankPayTestUser() {
         configureUrlsDK();
         Admin admin = new Admin();
@@ -80,9 +80,9 @@ public class CheckoutTestsDKUser extends TestBase {
         checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 
-    @Test
     @Tag("SparkXpress")
     @DisplayName("SparkXpress")
+    @Test
     void sparkXpressPayTestUser() {
         configureUrlsDK();
         Admin admin = new Admin();
@@ -99,9 +99,9 @@ public class CheckoutTestsDKUser extends TestBase {
         checkOrderSuccess(data.firstName, sparkXpressPay, data.email);
     }
 
-    @Test
     @Tag("ViaBill")
     @DisplayName("ViaBill")
+    @Test
     void viaBillPayTestUser() {
         configureUrlsDK();
         Admin admin = new Admin();

@@ -25,9 +25,9 @@ public class CheckoutTestsNOUser extends TestBase {
         baseURI = mainUrl;
     }
 
-    @Test
     @Tag("Klarna")
     @DisplayName("Klarna")
+    @Test
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
         Admin admin = new Admin();
@@ -44,9 +44,9 @@ public class CheckoutTestsNOUser extends TestBase {
         checkOrderSuccess(data.firstName, klarnaPay, data.email);
     }
 
-    @Test
     @Tag("QuickPay")
     @DisplayName("QuickPay")
+    @Test
     void quickPayTestGuestNO() {
         configureUrlsNO();
         Admin admin = new Admin();
@@ -63,9 +63,9 @@ public class CheckoutTestsNOUser extends TestBase {
         checkOrderSuccess(data.firstName, quickPay, data.email);
     }
 
-    @Test
     @Tag("BankTransfer")
     @DisplayName("Bank Transfer")
+    @Test
     void bankPayTestGuestNO() {
         configureUrlsNO();
         Admin admin = new Admin();

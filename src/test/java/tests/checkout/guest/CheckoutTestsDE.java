@@ -24,9 +24,9 @@ public class CheckoutTestsDE extends TestBase {
         baseURI = mainUrl;
     }
 
-    @Test
     @Tag("QuickPay")
     @DisplayName("QuickPay")
+    @Test
     void quickPayGuestDE() {
         configureUrlsDE();
         UserTestData data = new UserTestData();
@@ -39,9 +39,9 @@ public class CheckoutTestsDE extends TestBase {
         checkOrderSuccess(data.firstName, quickPay, data.email);
     }
 
-    @Test
     @Tag("BankTransfer")
     @DisplayName("BankTransfer")
+    @Test
     void bankPayTestGuestDE() {
         configureUrlsDE();
         UserTestData data = new UserTestData();

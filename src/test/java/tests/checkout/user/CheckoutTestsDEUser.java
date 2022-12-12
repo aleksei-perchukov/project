@@ -25,9 +25,9 @@ public class CheckoutTestsDEUser extends TestBase {
         baseURI = mainUrl;
     }
 
-    @Test
     @Tag("QuickPay")
     @DisplayName("QuickPay")
+    @Test
     void quickPayGuestDE() {
         configureUrlsDE();
         UserTestData data = new UserTestData();
@@ -44,9 +44,9 @@ public class CheckoutTestsDEUser extends TestBase {
         checkOrderSuccess(data.firstName, sparkXpressPay, data.email);
     }
 
-    @Test
     @Tag("BankTransfer")
     @DisplayName("BankTransfer")
+    @Test
     void bankPayTestGuestDE() {
         configureUrlsDE();
         UserTestData data = new UserTestData();

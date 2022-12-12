@@ -26,9 +26,9 @@ public class CheckoutTestsDK extends TestBase {
     }
 
     @Disabled
-    @Test
     @Tag("PaypalExpress")
     @DisplayName("PaypalExpress")
+    @Test
     void paypalExpressPayTestGuest() {
         configureUrlsDK();
         UserTestData data = new UserTestData();
@@ -41,9 +41,9 @@ public class CheckoutTestsDK extends TestBase {
         checkOrderSuccess(data.firstName, paypalExpressPay, data.email);
     }
 
-    @Test
     @Tag("QuickPay")
     @DisplayName("QuickPay")
+    @Test
     void quickPayTestGuest() {
         configureUrlsDK();
         UserTestData data = new UserTestData();
@@ -57,9 +57,9 @@ public class CheckoutTestsDK extends TestBase {
         checkOrderSuccess(data.firstName, quickPay, data.email);
     }
 
-    @Test
     @Tag("BankTransfer")
     @DisplayName("Bank Transfer")
+    @Test
     void bankPayTestGuest() {
         configureUrlsDK();
         UserTestData data = new UserTestData();
@@ -72,9 +72,9 @@ public class CheckoutTestsDK extends TestBase {
         checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 
-    @Test
     @Tag("SparkXpress")
     @DisplayName("SparkXpress")
+    @Test
     void sparkXpressPayTestGuest() {
         configureUrlsDK();
         UserTestData data = new UserTestData();
@@ -87,9 +87,9 @@ public class CheckoutTestsDK extends TestBase {
         checkOrderSuccess(data.firstName, sparkXpressPay, data.email);
     }
 
-    @Test
     @Tag("ViaBill")
     @DisplayName("ViaBill")
+    @Test
     void viaBillPayTestGuest() {
         configureUrlsDK();
         UserTestData data = new UserTestData();

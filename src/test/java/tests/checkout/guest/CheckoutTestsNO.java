@@ -22,10 +22,10 @@ public class CheckoutTestsNO extends TestBase {
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
-
-    @Test
+    
     @Tag("Klarna")
     @DisplayName("Klarna")
+    @Test
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
         UserTestData data = new UserTestData();
@@ -38,9 +38,9 @@ public class CheckoutTestsNO extends TestBase {
         checkOrderSuccess(data.firstName, klarnaPay, data.email);
     }
 
-    @Test
     @DisplayName("QuickPay")
     @Tag("QuickPay")
+    @Test
     void quickPayTestGuestNO() {
         configureUrlsNO();
         UserTestData data = new UserTestData();
@@ -53,9 +53,9 @@ public class CheckoutTestsNO extends TestBase {
         checkOrderSuccess(data.firstName, quickPay, data.email);
     }
 
-    @Test
     @Tag("BankTransfer")
     @DisplayName("Bank Transfer")
+    @Test
     void bankPayTestGuestNO() {
         configureUrlsNO();
         UserTestData data = new UserTestData();
