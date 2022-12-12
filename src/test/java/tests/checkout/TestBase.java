@@ -41,9 +41,9 @@ public class TestBase {
         if (remote != null) {
             Attach.addVideo();
         }
-        driver().clearCookies();
         clearBrowserCache();
-        closeWebDriver();
+        driver().clearCookies();
+        driver().getWebDriver().quit();
     }
 
     @AfterAll
