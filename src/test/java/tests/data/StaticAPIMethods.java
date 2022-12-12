@@ -8,8 +8,8 @@ import io.restassured.response.ResponseBodyExtractionOptions;
 import org.openqa.selenium.Cookie;
 import tests.checkout.CheckoutTestData;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.data.StaticData.*;
-import static tests.data.StaticData.mainUrl;
 import static tests.data.StaticMethods.openPage;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecification1;
@@ -20,7 +20,7 @@ public class StaticAPIMethods {
     public static void openBrowserWithCookies(String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Selenide.sleep(2000);
-        Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + mainUrl.substring(8),"/", null);
+        Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + baseUrl.substring(8),"/", null);
         Cookie form_keyCookie = new Cookie("form_key", formKey);
         WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
         WebDriverRunner.getWebDriver().manage().addCookie(form_keyCookie);
@@ -31,7 +31,7 @@ public class StaticAPIMethods {
     public static void openBrowserWithCookiesLogin(String url) {
         openPage("/static/version1668170969/frontend/BelVG/vinduesgrossisten/da_DK/images/logo.svg");
         Selenide.sleep(2000);
-        Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + mainUrl.substring(8),"/", null);
+        Cookie authCookie = new Cookie("PHPSESSID", phpSessId, "." + baseUrl.substring(8),"/", null);
         Cookie form_keyCookie = new Cookie("form_key", formKey);
         WebDriverRunner.getWebDriver().manage().addCookie(authCookie);
         WebDriverRunner.getWebDriver().manage().addCookie(form_keyCookie);
@@ -43,26 +43,26 @@ public class StaticAPIMethods {
         CheckoutTestData data = new CheckoutTestData();
         String productId = null;
         Selenide.sleep(2000);
-        if (Configuration.baseUrl.equals(urlDK)) {
+        if (baseUrl.equals(urlDK)) {
             productId = "4404";
-        } else if (Configuration.baseUrl.equals(urlNO)) {
+        } else if (baseUrl.equals(urlNO)) {
             productId = "5550";
-        } else if (Configuration.baseUrl.equals(urlIS)) {
+        } else if (baseUrl.equals(urlIS)) {
             productId = "4404";
-        } else if (Configuration.baseUrl.equals(urlDE)) {
+        } else if (baseUrl.equals(urlDE)) {
             productId = "4404";
-        } else if (Configuration.baseUrl.equals(urlSE)) {
+        } else if (baseUrl.equals(urlSE)) {
             productId = "";
         }
 
-        io.restassured.http.Cookie phpSessIdDomain = new io.restassured.http.Cookie.Builder("PHPSESSID", phpSessId).setDomain("." + mainUrl.substring(8)).build();
+        io.restassured.http.Cookie phpSessIdDomain = new io.restassured.http.Cookie.Builder("PHPSESSID", phpSessId).setDomain("." + baseUrl.substring(8)).build();
         ResponseBodyExtractionOptions cart_id_json = given()
                 .spec(requestSpecification1)
                 .cookie(phpSessIdDomain)
                 .cookie("form_key", formKey)
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body(data.getAddToCartBody()).when()
-                .post(mainUrl + "/checkout/cart/add/product/" + productId + "/")
+                .post("/checkout/cart/add/product/" + productId + "/")
                 .then()
                 .spec(responseSpecification1)
                 .log().status()
@@ -82,7 +82,7 @@ public class StaticAPIMethods {
                 .header("x-requested-with", "XMLHttpRequest")
                 .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36")
                 .when()
-                .get(mainUrl + "customer/section/load/?sections=cart&force_new_section_timestamp=true")
+                .get("customer/section/load/?sections=cart&force_new_section_timestamp=true")
                 .then()
                 .spec(responseSpecification1)
                 .statusCode(200)
