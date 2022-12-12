@@ -126,9 +126,9 @@ public class CheckoutWebSteps {
             });
             step("Clicking on 'Place order' button", () -> {
                 if (Configuration.baseUrl.equals(urlDK)) {
-                    $$(".action.primary.checkout").get(0).click();
+                    $$(".action.primary.checkout").get(0).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlNO)) {
-                    $$(".action.primary.checkout").get(1).click();
+                    $$(".action.primary.checkout").get(1).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlIS)) {
 
                 } else if (Configuration.baseUrl.equals(urlDE)) {
@@ -168,13 +168,13 @@ public class CheckoutWebSteps {
             });
             step("Clicking on 'Place order' button", () -> {
                 if (Configuration.baseUrl.equals(urlDK)) {
-                    $$(".action.primary.checkout").get(1).click();
+                    $$(".action.primary.checkout").get(1).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlNO)) {
-                    $$(".action.primary.checkout").get(2).click();
+                    $$(".action.primary.checkout").get(2).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlIS)) {
-                    $$(".action.primary.checkout").get(2).click();
+                    $$(".action.primary.checkout").get(2).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlDE)) {
-                    $$(".action.primary.checkout").get(1).click();
+                    $$(".action.primary.checkout").get(1).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlSE)) {
 
                 }
@@ -196,13 +196,13 @@ public class CheckoutWebSteps {
             });
             step("Clicking on 'Place order' button", () -> {
                 if (Configuration.baseUrl.equals(urlDK)) {
-                    $$(".action.primary.checkout").get(2).click();
+                    $$(".action.primary.checkout").get(2).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlNO)) {
-                    $$(".action.primary.checkout").get(3).click();
+                    $$(".action.primary.checkout").get(3).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlIS)) {
-                    $$(".action.primary.checkout").get(2).click();
+                    $$(".action.primary.checkout").get(2).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlDE)) {
-                    $$(".action.primary.checkout").get(2).click();
+                    $$(".action.primary.checkout").get(2).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlSE)) {
 
                 }
@@ -214,10 +214,10 @@ public class CheckoutWebSteps {
             Selenide.sleep(10000);
             step("Clicking on 'Place order' button", () -> {
                 if (Configuration.baseUrl.equals(urlDK)) {
-                    $$(".action.primary.checkout").get(3).click();
+                    $$(".action.primary.checkout").get(3).click(ClickOptions.usingJavaScript());
                     $(byText("APPROVED")).click();
                 } else if (Configuration.baseUrl.equals(urlNO)) {
-                    $$(".action.primary.checkout").get(5).click();
+                    $$(".action.primary.checkout").get(5).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlIS)) {
 
                 } else if (Configuration.baseUrl.equals(urlDE)) {
@@ -242,12 +242,13 @@ public class CheckoutWebSteps {
             });
             Selenide.sleep(5000);
             step("Clicking on 'Place order' button", () -> {
+
                 if (Configuration.baseUrl.equals(urlDK)) {
-                    $$(".action.primary.checkout").get(4).click();
+                    $$(".action.primary.checkout").get(4).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlNO)) {
 
                 } else if (Configuration.baseUrl.equals(urlIS)) {
-                    $$(".action.primary.checkout").get(3).click();
+                    $$(".action.primary.checkout").get(3).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlDE)) {
 
                 } else if (Configuration.baseUrl.equals(urlSE)) {
@@ -261,9 +262,9 @@ public class CheckoutWebSteps {
             Selenide.sleep(5000);
             step("Clicking on 'Place order' button", () -> {
                 if (Configuration.baseUrl.equals(urlDK)) {
-                    $$(".action.primary.checkout").get(0).click();
+                    $$(".action.primary.checkout").get(0).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlNO)) {
-                    $$(".action.primary.checkout").get(0).click();
+                    $$(".action.primary.checkout").get(0).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlIS)) {
 
                 } else if (Configuration.baseUrl.equals(urlDE)) {
@@ -283,7 +284,7 @@ public class CheckoutWebSteps {
                 } else if (Configuration.baseUrl.equals(urlNO)) {
 
                 } else if (Configuration.baseUrl.equals(urlIS)) {
-                    $$(".action.primary.checkout").get(0).click();
+                    $$(".action.primary.checkout").get(0).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlDE)) {
 
                 } else if (Configuration.baseUrl.equals(urlSE)) {
@@ -366,7 +367,7 @@ public class CheckoutWebSteps {
             $("#valitor_cc_cid").setValue("123");
         });
         step("VALITOR PAY -> Clicking 'Buy' button", () -> {
-            $$(".action.primary.checkout").get(1).click();
+            $$(".action.primary.checkout").get(1).click(ClickOptions.usingJavaScript());
             $("#webform0").submit();
             $("[name=submitBtn]").submit();
         });
