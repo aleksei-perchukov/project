@@ -65,7 +65,7 @@ public class CheckoutWebSteps {
         });
         step("Shipping form -> E-mail = " + email, () -> {
             if ($("#customer-email").isDisplayed()) {
-                $("#customer-email").setValue(email);
+                $("#customer-email").sendKeys(email);
         }
         });
         step("Click on 'Proceed to shipping method' button", () -> {
