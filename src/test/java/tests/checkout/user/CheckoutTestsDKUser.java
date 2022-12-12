@@ -38,7 +38,6 @@ public class CheckoutTestsDKUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(paypalExpressPay);
-        fillQuickPay();
         checkOrderSuccess(data.firstName, paypalExpressPay, data.email);
     }
 
@@ -78,7 +77,6 @@ public class CheckoutTestsDKUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
-        fillQuickPay();
         checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 
@@ -98,7 +96,6 @@ public class CheckoutTestsDKUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
-        fillQuickPay();
         checkOrderSuccess(data.firstName, sparkXpressPay, data.email);
     }
 
@@ -118,7 +115,6 @@ public class CheckoutTestsDKUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(viaBillPay);
-        fillQuickPay();
         checkOrderSuccess(data.firstName, viaBillPay, data.email);
     }
 }

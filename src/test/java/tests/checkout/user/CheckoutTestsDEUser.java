@@ -59,7 +59,6 @@ public class CheckoutTestsDEUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
-        fillQuickPay();
         checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 }

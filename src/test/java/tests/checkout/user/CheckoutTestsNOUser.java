@@ -40,7 +40,7 @@ public class CheckoutTestsNOUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(klarnaPay);
-        fillQuickPay();
+        fillKlarnaPay();
         checkOrderSuccess(data.firstName, klarnaPay, data.email);
     }
 
@@ -78,7 +78,6 @@ public class CheckoutTestsNOUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
-        fillQuickPay();
         checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 }

@@ -37,7 +37,7 @@ public class CheckoutTestsISUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(netgiroPay);
-        fillQuickPay();
+        fillNetgiroPay();
         checkOrderSuccess(data.firstName, netgiroPay, data.email);
     }
 
@@ -56,7 +56,7 @@ public class CheckoutTestsISUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(valitorPay);
-        fillQuickPay();
+        fillValitorPay();
         checkOrderSuccess(data.firstName, valitorPay, data.email);
     }
 
@@ -75,7 +75,6 @@ public class CheckoutTestsISUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(bankPay);
-        fillQuickPay();
         checkOrderSuccess(data.firstName, bankPay, data.email);
     }
 
@@ -95,7 +94,6 @@ public class CheckoutTestsISUser extends TestBase {
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
         fillShippingMethod();
         fillPaymentMethod(sparkXpressPay);
-        fillQuickPay();
         checkOrderSuccess(data.firstName, sparkXpressPay, data.email);
     }
 }
