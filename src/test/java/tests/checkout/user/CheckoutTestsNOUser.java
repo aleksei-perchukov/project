@@ -32,7 +32,7 @@ public class CheckoutTestsNOUser extends TestBase {
         configureUrlsNO();
         UserTestData data = new UserTestData();
         APIAdmin admin = new APIAdmin();
-        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password, baseUrl);
+        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
@@ -52,7 +52,7 @@ public class CheckoutTestsNOUser extends TestBase {
         configureUrlsNO();
         UserTestData data = new UserTestData();
         APIAdmin admin = new APIAdmin();
-        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password, baseUrl);
+        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         login(data.email, data.password);
@@ -71,7 +71,7 @@ public class CheckoutTestsNOUser extends TestBase {
         configureUrlsNO();
         UserTestData data = new UserTestData();
         APIAdmin admin = new APIAdmin();
-        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password, baseUrl);
+        String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");

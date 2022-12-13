@@ -15,10 +15,15 @@ public class APIAdmin {
 
     @Step("Get admin token / API")
     public String getAdminTokenAPI() {
+        String body = "{\n" +
+                "  \"username\": \"" + adminLogin + "\",\n" +
+                "  \"password\": \"" + adminPassword + "\"\n" +
+                "}";
         Response response = given()
                 .spec(adminRequestSpecification)
                 .formParam("username", adminLogin)
                 .formParam("password", adminPassword)
+                //                .body(body)
                 .post(baseUrl + "/rest/V1/integration/admin/token")
                 .then()
                 .spec(responseSpecification1)
@@ -30,7 +35,7 @@ public class APIAdmin {
     }
 
     @Step("Create user / API")
-    public String createUserAPI(String firstName, String lastName, String email, String password, String baseUrl) {
+    public String createUserAPI(String firstName, String lastName, String email, String password) {
         StaticData staticData = new StaticData();
         String customerId;
         int website_id = 0;
