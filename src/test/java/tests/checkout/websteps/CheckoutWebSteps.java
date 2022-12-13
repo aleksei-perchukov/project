@@ -24,7 +24,9 @@ public class CheckoutWebSteps {
         $("#email").setValue(email);
         $("#pass").setValue(password);
         $("[for=show-password]").click();
-        $("#login-form").submit();
+//        $("#login-form").submit();
+        $("#send2").click(ClickOptions.usingJavaScript());
+        $("").shouldHave(text(email));
     }
     @Step("Clicking 'Accept all cookies' button")
     public static void acceptCookies() {
