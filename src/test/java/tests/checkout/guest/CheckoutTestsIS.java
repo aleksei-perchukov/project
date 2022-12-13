@@ -20,6 +20,7 @@ public class CheckoutTestsIS extends TestBase {
         baseURI = mainUrl;
     }
 
+    @Disabled
     @Tag("Netgiro")
     @DisplayName("Netgiro")
     @Test

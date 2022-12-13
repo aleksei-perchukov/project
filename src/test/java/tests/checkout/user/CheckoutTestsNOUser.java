@@ -56,6 +56,7 @@ public class CheckoutTestsNOUser extends TestBase {
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
         APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
+        openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
         open("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
