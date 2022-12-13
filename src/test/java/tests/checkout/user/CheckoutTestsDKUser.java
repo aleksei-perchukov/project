@@ -103,8 +103,7 @@ public class CheckoutTestsDKUser extends TestBase {
         fillPaymentMethod(sparkXpressPay);
         checkOrderSuccess(data.firstName, sparkXpressPay, data.email);
     }
-
-    @Tag("Debug")
+    
     @Tag("ViaBill")
     @DisplayName("ViaBill")
     @Test
