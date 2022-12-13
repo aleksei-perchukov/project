@@ -410,7 +410,7 @@ public class CheckoutWebSteps {
             }
         } else if (paymentMethod.equals(viaBillPay)) {
             if (Configuration.baseUrl.equals(urlDK)) {
-                $("#success-page-custom").shouldHave(text("Mange tak for din ordre, "));
+                $(".base").shouldHave(text("Indkøbskurv"));
             } else if (Configuration.baseUrl.equals(urlNO)) {
 
             } else if (Configuration.baseUrl.equals(urlIS)) {
