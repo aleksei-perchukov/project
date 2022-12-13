@@ -44,6 +44,7 @@ public class CheckoutTestsDKUser extends TestBase {
     }
 
     @Tag("QuickPay")
+    @Tag("Debug")
     @DisplayName("QuickPay")
     @Test
     void quickPayTestUser() {
