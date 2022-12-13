@@ -3,21 +3,21 @@ package tests.checkout.websteps;
 import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
-import org.openqa.selenium.Cookie;
 import tests.checkout.CheckoutTestData;
 import tests.user.UserTestData;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static tests.data.StaticData.*;
-import static tests.data.StaticMethods.openPage;
 
 public class CheckoutWebSteps {
+    @Step("Opening checkout page")
+    public void openCheckoutPage() {
+        open("/checkout");
+    }
 
     @Step("Login")
     public static void login(String email, String password){
