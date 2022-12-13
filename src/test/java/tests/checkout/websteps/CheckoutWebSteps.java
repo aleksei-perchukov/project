@@ -453,7 +453,8 @@ public class CheckoutWebSteps {
             } else if (Configuration.baseUrl.equals(urlNO)) {
 
             } else if (Configuration.baseUrl.equals(urlIS)) {
-                $(".checkout-success__agreement").shouldHave(text(email));
+ //               $(".checkout-success__agreement").shouldHave(text(email));
+                $(".base").shouldHave(text("Karfa"));
             } else if (Configuration.baseUrl.equals(urlDE)) {
 
             } else if (Configuration.baseUrl.equals(urlSE)) {
