@@ -69,7 +69,8 @@ public class CheckoutWebSteps {
         }
         });
         step("Click on 'Proceed to shipping method' button", () -> {
-            $("#shipping-address-step").submit();
+ //           $("#shipping-address-step").submit();
+            $(".button.action.continue.primary").click(ClickOptions.usingJavaScript());
         });
     }
 
