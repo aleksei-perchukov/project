@@ -12,8 +12,8 @@ import static com.codeborne.selenide.Configuration.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
 import static tests.data.StaticMethods.openBrowserWithCookies;
 
-@Tag("Checkout")
-@Tag("DK")
+@Tag("Debug")
+@Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("DK")})
 @DisplayName("-DK- / GUEST / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDK extends TestBase {
 
