@@ -19,7 +19,7 @@ import static tests.data.StaticMethods.openBrowserWithCookiesLogin;
 @DisplayName("-DE- / USER / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("DE")})
 public class CheckoutTestsDEUser extends TestBase {
-    static void configureUrlsDE() {
+    void configureUrlsDE() {
         String mainUrl = urlDE;
         baseUrl = mainUrl;
         baseURI = mainUrl;

@@ -17,7 +17,7 @@ import static tests.data.StaticMethods.openBrowserWithCookies;
 @DisplayName("-DK- / GUEST / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDK extends TestBase {
 
-    static void configureUrlsDK() {
+    void configureUrlsDK() {
         String mainUrl = urlDK;
         baseUrl = mainUrl;
         baseURI = mainUrl;

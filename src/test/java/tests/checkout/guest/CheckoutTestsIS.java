@@ -14,7 +14,7 @@ import static tests.data.StaticMethods.openBrowserWithCookies;
 @DisplayName("-IS- / GUEST / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
 public class CheckoutTestsIS extends TestBase {
-    static void configureUrlsIS() {
+    void configureUrlsIS() {
         String mainUrl = urlIS;
         baseUrl = mainUrl;
         baseURI = mainUrl;

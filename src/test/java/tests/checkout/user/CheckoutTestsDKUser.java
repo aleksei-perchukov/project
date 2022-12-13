@@ -16,7 +16,7 @@ import static tests.data.StaticMethods.openBrowserWithCookiesLogin;
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("DK")})
 @DisplayName("-DK- / USER / PAYMENT METHODS TEST SUITE")
 public class CheckoutTestsDKUser extends TestBase {
-    static void configureUrlsDK() {
+    void configureUrlsDK() {
         String mainUrl = urlDK;
         baseUrl = mainUrl;
         baseURI = mainUrl;

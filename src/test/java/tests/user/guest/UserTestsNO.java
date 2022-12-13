@@ -20,6 +20,7 @@ public class UserTestsNO {
     void configureUrlsNO() {
         String mainUrl = urlNO;
         baseUrl = mainUrl;
+        baseURI = mainUrl;
     }
 
     @DisplayName("Create user test")
