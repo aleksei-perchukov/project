@@ -14,6 +14,7 @@ import static tests.data.StaticData.*;
 import static tests.checkout.websteps.CheckoutWebSteps.*;
 import static tests.data.StaticMethods.openBrowserWithCookies;
 
+@Tag("Debug")
 @DisplayName("-NO- / GUEST / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("IS")})
 public class CheckoutTestsNO extends TestBase {
