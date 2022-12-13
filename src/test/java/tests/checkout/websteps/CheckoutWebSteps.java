@@ -24,7 +24,6 @@ public class CheckoutWebSteps {
         $("#email").setValue(email);
         $("#pass").setValue(password);
         $("[for=show-password]").click();
-//        $("#login-form").submit();
         $("#send2").click(ClickOptions.usingJavaScript());
         $(".block.block-dashboard-info").shouldHave(text(email));
     }
@@ -67,7 +66,8 @@ public class CheckoutWebSteps {
         });
         step("Shipping form -> E-mail = " + email, () -> {
             if ($("#customer-email").isDisplayed()) {
-                $("#customer-email").sendKeys(email);
+                $("#customer-email").clear();
+                $("#customer-email").setValue(email);
         }
         });
         step("Click on 'Proceed to shipping method' button", () -> {

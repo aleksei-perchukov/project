@@ -5,12 +5,38 @@ import io.qameta.allure.Step;
 import io.restassured.response.ResponseBodyExtractionOptions;
 import tests.checkout.CheckoutTestData;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.data.StaticData.*;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecification1;
 import static specs.Specs.responseSpecification1;
 
 public class APIMethods {
+    @Step ("Submitting shipping address form")
+    public void submitShippingForm(){
+        CheckoutTestData data = new CheckoutTestData();
+        String postcode = data.getZipCode();
+        String countryId = data.getCountryId();
+
+        String body = "{\"addressInformation\":{\"shipping_address\":{\"countryId\":\"" +
+                countryId
+                 + "\",\"regionCode\":\"\",\"region\":\"\",\"street\":[\"Test 123\"],\"telephone\":\"+3544567890\",\"postcode\":\"" +
+                postcode
+        + "\",\"city\":\"Test city\",\"firstname\":\"Test\",\"lastname\":\"Test\",\"customAttributes\":[{\"attribute_code\":\"house_number\",\"value\":\"123\"},{\"attribute_code\":\"firma_name\",\"value\":\"\"},{\"attribute_code\":\"billing_address\",\"value\":{\"billing_firma_name\":\"\",\"billing_house_number\":\"\",\"billing_title\":\"Heimilisfang greiðanda\",\"billing_firstname\":\"\",\"billing_lastname\":\"\",\"billing_street\":\"\",\"billing_city\":\"\",\"billing_telephone\":\"\",\"billing_postcode\":\"\",\"billing_kennitala\":\"\",\"billing_privacy_status\":\"3\",\"billing_checkbox\":true}},{\"attribute_code\":\"kennitala\",\"value\":\"1234567890\"},{\"attribute_code\":\"privacy_status\",\"value\":\"3\"}],\"save_in_address_book\":1},\"billing_address\":{\"countryId\":\"IS\",\"regionCode\":\"\",\"region\":\"\",\"street\":[\"Test 123\"],\"telephone\":\"+3544567890\",\"postcode\":\"155\",\"city\":\"Test city\",\"firstname\":\"Test\",\"lastname\":\"Test\",\"customAttributes\":[{\"attribute_code\":\"house_number\",\"value\":\"123\"},{\"attribute_code\":\"firma_name\",\"value\":\"\"},{\"attribute_code\":\"billing_address\",\"value\":{\"billing_firma_name\":\"\",\"billing_house_number\":\"\",\"billing_title\":\"Heimilisfang greiðanda\",\"billing_firstname\":\"\",\"billing_lastname\":\"\",\"billing_street\":\"\",\"billing_city\":\"\",\"billing_telephone\":\"\",\"billing_postcode\":\"\",\"billing_kennitala\":\"\",\"billing_privacy_status\":\"3\",\"billing_checkbox\":true}},{\"attribute_code\":\"kennitala\",\"value\":\"1234567890\"},{\"attribute_code\":\"privacy_status\",\"value\":\"3\"}],\"save_in_address_book\":1,\"saveInAddressBook\":null},\"shipping_method_code\":\"matrixrate_16460\",\"shipping_carrier_code\":\"matrixrate\",\"extension_attributes\":{}}}";
+        String responseBody = given()
+                .spec(requestSpecification1)
+                .cookie("PHPSESSID", phpSessId)
+                .cookie("form_key", formKey)
+                .body(body)
+                .post("/rest/skanvais/V1/carts/mine/shipping-information")
+                .then()
+                .spec(responseSpecification1)
+                .extract()
+                .body()
+                .toString();
+        System.out.println(responseBody);
+        System.out.println("Hi");
+    }
 
     @Step("Adding product to cart by API")
     public ResponseBodyExtractionOptions AddToCart(String baseUrl) {

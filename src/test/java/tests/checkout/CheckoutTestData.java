@@ -2,6 +2,7 @@ package tests.checkout;
 
 import com.codeborne.selenide.Configuration;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.data.StaticData.*;
 
 public class CheckoutTestData {
@@ -37,5 +38,21 @@ public class CheckoutTestData {
             zipCode = "";
         }
         return zipCode;
+    }
+
+    public String getCountryId(){
+        String countryId = null;
+        if (baseUrl.equals(urlDK)) {
+            countryId = "DK";
+        } else if (baseUrl.equals(urlNO)) {
+            countryId = "NO";
+        } else if (baseUrl.equals(urlIS)) {
+            countryId = "IS";
+        } else if (baseUrl.equals(urlDE)) {
+            countryId = "DE";
+        } else if (baseUrl.equals(urlSE)) {
+            countryId = "SE";
+        }
+        return countryId;
     }
 }
