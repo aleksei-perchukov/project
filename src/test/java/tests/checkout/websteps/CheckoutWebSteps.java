@@ -144,7 +144,7 @@ public class CheckoutWebSteps {
                 } else if (Configuration.baseUrl.equals(urlNO)) {
                     $("[for=agreement_quickpay_3]").click(ClickOptions.usingJavaScript().offsetX(-100));
                 } else if (Configuration.baseUrl.equals(urlIS)) {
-                    $("[for=agreement_quickpay_5]").click();
+                    $("[for=agreement_quickpay_5]").click(ClickOptions.usingJavaScript().offsetX(-100));
                 } else if (Configuration.baseUrl.equals(urlDE)) {
                     $("[for=agreement_quickpay_5]").click(ClickOptions.usingJavaScript().offsetX(100));
                 } else if (Configuration.baseUrl.equals(urlSE)) {
@@ -154,9 +154,9 @@ public class CheckoutWebSteps {
             });
             step("Clicking on 'confirm 50% payment' checkbox", () -> {
                 if (Configuration.baseUrl.equals(urlDK)) {
-                    $("[for=agreement_quickpay_2]").click();
+                    $("[for=agreement_quickpay_2]").click(ClickOptions.usingJavaScript().offsetX(-100));
                 } else if (Configuration.baseUrl.equals(urlNO)) {
-                    $("[for=agreement_quickpay_4]").click();
+                    $("[for=agreement_quickpay_4]").click(ClickOptions.usingJavaScript().offsetX(-100));
                 } else if (Configuration.baseUrl.equals(urlIS)) {
 
                 } else if (Configuration.baseUrl.equals(urlDE)) {
