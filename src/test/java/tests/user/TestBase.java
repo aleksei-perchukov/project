@@ -28,10 +28,10 @@ public class TestBase {
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.pageLoadStrategy = "none";
         Configuration.fastSetValue = true;
-
+        Configuration.remote = "http://139.59.207.235:4444/wd/hub";
         Configuration.timeout = 60000;
         if(remote != null) {
-            Configuration.remote = "http://139.59.207.235:4444/wd/hub";
+            Configuration.remote = remote;
         }
 
     }
