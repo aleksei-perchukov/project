@@ -248,6 +248,7 @@ public class CheckoutWebSteps {
             });
             Selenide.sleep(5000);
             step("Clicking on 'Place order' button", () -> {
+                $("#payment").scrollTo();
 
                 if (Configuration.baseUrl.equals(urlDK)) {
                     $$(".action.primary.checkout").get(4).click(ClickOptions.usingJavaScript());
