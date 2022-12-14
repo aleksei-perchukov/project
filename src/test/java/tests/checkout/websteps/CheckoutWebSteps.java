@@ -63,7 +63,7 @@ public class CheckoutWebSteps {
         step("Shipping form -> Telefonnummer = " + mobileNumber + " in mobile phone field", () -> {
             $(".telephone-input__telephone.input-text").setValue(mobileNumber);
             refresh();
-            Selenide.sleep(5000);
+            Selenide.sleep(10000);
         });
         step("Shipping form -> E-mail = " + email, () -> {
             if ($(".input-text").isDisplayed()) {
