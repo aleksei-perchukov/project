@@ -25,6 +25,7 @@ public class CheckoutTestsNO extends TestBase {
     UserTestData data = new UserTestData();
     APIMethods api = new APIMethods();
 
+    @Tag("Debug")
     @Tag("Klarna")
     @DisplayName("Klarna")
     @Test
@@ -53,6 +54,7 @@ public class CheckoutTestsNO extends TestBase {
         checkOrderSuccess(data.firstName, quickPay, data.email);
     }
 
+    @Tag("Debug")
     @Tag("BankTransfer")
     @DisplayName("Bank Transfer")
     @Test

@@ -37,6 +37,7 @@ public class CheckoutTestsIS extends TestBase {
         checkOrderSuccess(data.firstName, netgiroPay, data.email);
     }
 
+    @Tag("Debug")
     @Tag("Valitor")
     @DisplayName("Valitor")
     @Test

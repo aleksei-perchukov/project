@@ -204,7 +204,7 @@ public class CheckoutWebSteps {
                 if (Configuration.baseUrl.equals(urlDK)) {
                     $$(".action.primary.checkout").get(2).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlNO)) {
-                    $$(".action.primary.checkout").get(3).submit();
+                    $$(".action.primary.checkout").get(3).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlIS)) {
                     $$(".action.primary.checkout").get(2).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlDE)) {
@@ -330,7 +330,9 @@ public class CheckoutWebSteps {
         step("KLARNA PAY -> Entering '01087000571' personal number", () -> {
             Selenide.sleep(5000);
             switchTo().innerFrame("klarna-pay-later-fullscreen");
-            $("#invoice_kp-purchase-approval-form-national-identification-number").setValue("01087000571");
+            $("#invoice_kp-purchase-approval-form-national-identification-number").click();
+            $("#invoice_kp-purchase-approval-form-national-identification-number").clear();
+            $("#invoice_kp-purchase-approval-form-national-identification-number").sendKeys(BACK_SPACE, "01087000571");
         });
         step("KLARNA PAY -> Clicking 'Buy' button", () -> {
             $("#invoice_kp-purchase-approval-form-continue-button").click();
@@ -376,7 +378,7 @@ public class CheckoutWebSteps {
         step("VALITOR PAY -> Clicking 'Buy' button", () -> {
             $$(".action.primary.checkout").get(1).click(ClickOptions.usingJavaScript());
             $("#webform0").submit();
-            $("[name=submitBtn]").submit();
+            $("[name=submitBtn]").click();
         });
     }
 

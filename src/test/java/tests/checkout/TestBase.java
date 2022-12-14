@@ -32,7 +32,7 @@ public class TestBase {
 
         Configuration.timeout = 60000;
         if(remote != null) {
-            Configuration.remote = remote;
+            Configuration.remote = "http://139.59.207.235:4444/wd/hub";
         }
     }
 
