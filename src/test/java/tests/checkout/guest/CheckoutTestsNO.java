@@ -23,14 +23,14 @@ public class CheckoutTestsNO extends TestBase {
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
+    UserTestData data = new UserTestData();
+    APIMethods api = new APIMethods();
 
     @Tag("Klarna")
     @DisplayName("Klarna")
     @Test
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -45,8 +45,6 @@ public class CheckoutTestsNO extends TestBase {
     @Test
     void quickPayTestGuestNO() {
         configureUrlsNO();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -61,8 +59,6 @@ public class CheckoutTestsNO extends TestBase {
     @Test
     void bankPayTestGuestNO() {
         configureUrlsNO();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);

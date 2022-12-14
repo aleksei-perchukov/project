@@ -17,19 +17,20 @@ import static tests.data.StaticMethods.openBrowserWithCookies;
 @DisplayName("-DE- / GUEST / PAYMENT METHODS TEST SUITE")
 @Tags({@Tag("Checkout"), @Tag("WEB"), @Tag("DE")})
 public class CheckoutTestsDE extends TestBase {
+
     void configureUrlsDE() {
         String mainUrl = urlDE;
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
+    UserTestData data = new UserTestData();
+    APIMethods api = new APIMethods();
 
     @Tag("QuickPay")
     @DisplayName("QuickPay")
     @Test
     void quickPayGuestDE() {
         configureUrlsDE();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -44,8 +45,6 @@ public class CheckoutTestsDE extends TestBase {
     @Test
     void bankPayTestGuestDE() {
         configureUrlsDE();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);

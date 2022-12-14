@@ -19,6 +19,8 @@ public class CheckoutTestsIS extends TestBase {
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
+    UserTestData data = new UserTestData();
+    APIMethods api = new APIMethods();
 
     @Disabled
     @Tag("Netgiro")
@@ -26,8 +28,6 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     void netgiroTestGuestIS() {
         configureUrlsIS();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -42,8 +42,6 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     void valitorPayTestGuestIS() {
         configureUrlsIS();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -58,8 +56,6 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     void bankPayTestGuestIS() {
         configureUrlsIS();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);
@@ -74,8 +70,6 @@ public class CheckoutTestsIS extends TestBase {
     @Test
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         fillShippingForm(data.firstName, data.lastName, data.email, data.mobileNumber);

@@ -24,16 +24,15 @@ public class CheckoutTestsNOUser extends TestBase {
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
-
+    UserTestData data = new UserTestData();
+    APIAdmin admin = new APIAdmin();
+    APIMethods api = new APIMethods();
     @Tag("Klarna")
     @DisplayName("Klarna")
     @Test
     void klarnaPayTestGuestNO() {
         configureUrlsNO();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
@@ -50,10 +49,7 @@ public class CheckoutTestsNOUser extends TestBase {
     @Test
     void quickPayTestGuestNO() {
         configureUrlsNO();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
@@ -70,10 +66,7 @@ public class CheckoutTestsNOUser extends TestBase {
     @Test
     void bankPayTestGuestNO() {
         configureUrlsNO();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);

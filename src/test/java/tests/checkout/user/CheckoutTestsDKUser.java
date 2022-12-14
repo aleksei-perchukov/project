@@ -21,6 +21,9 @@ public class CheckoutTestsDKUser extends TestBase {
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
+    UserTestData data = new UserTestData();
+    APIMethods api = new APIMethods();
+    APIAdmin admin = new APIAdmin();
 
     @Disabled
     @Tag("PaypalExpress")
@@ -28,10 +31,7 @@ public class CheckoutTestsDKUser extends TestBase {
     @Test
     void paypalExpressPayTestUser() {
         configureUrlsDK();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         acceptCookies();
@@ -48,10 +48,7 @@ public class CheckoutTestsDKUser extends TestBase {
     @Test
     void quickPayTestUser() {
         configureUrlsDK();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         acceptCookies();
@@ -69,10 +66,7 @@ public class CheckoutTestsDKUser extends TestBase {
     @Test
     void bankPayTestUser() {
         configureUrlsDK();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         acceptCookies();
@@ -89,10 +83,7 @@ public class CheckoutTestsDKUser extends TestBase {
     @Test
     void sparkXpressPayTestUser() {
         configureUrlsDK();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         acceptCookies();
@@ -109,10 +100,7 @@ public class CheckoutTestsDKUser extends TestBase {
     @Test
     void viaBillPayTestUser() {
         configureUrlsDK();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         acceptCookies();

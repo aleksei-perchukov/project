@@ -21,6 +21,9 @@ public class CheckoutTestsISUser extends TestBase {
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
+    UserTestData data = new UserTestData();
+    APIMethods api = new APIMethods();
+    APIAdmin admin = new APIAdmin();
 
     @Disabled
     @Tag("Netgiro")
@@ -28,10 +31,7 @@ public class CheckoutTestsISUser extends TestBase {
     @Test
     void netgiroTestGuestIS() {
         configureUrlsIS();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
@@ -48,10 +48,7 @@ public class CheckoutTestsISUser extends TestBase {
     @Test
     void valitorPayTestGuestIS() {
         configureUrlsIS();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
@@ -68,10 +65,7 @@ public class CheckoutTestsISUser extends TestBase {
     @Test
     void bankPayTestGuestIS() {
         configureUrlsIS();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
@@ -88,10 +82,7 @@ public class CheckoutTestsISUser extends TestBase {
     @Test
     void sparkXpressPayTestGuestIS() {
         configureUrlsIS();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);

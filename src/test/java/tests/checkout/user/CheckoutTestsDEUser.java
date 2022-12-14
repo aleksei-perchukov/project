@@ -24,16 +24,16 @@ public class CheckoutTestsDEUser extends TestBase {
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
+    UserTestData data = new UserTestData();
+    APIMethods api = new APIMethods();
+    APIAdmin admin = new APIAdmin();
 
     @Tag("QuickPay")
     @DisplayName("QuickPay")
     @Test
     void quickPayGuestDE() {
         configureUrlsDE();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);
@@ -50,10 +50,7 @@ public class CheckoutTestsDEUser extends TestBase {
     @Test
     void bankPayTestGuestDE() {
         configureUrlsDE();
-        UserTestData data = new UserTestData();
-        APIAdmin admin = new APIAdmin();
         String userId = admin.createUserAPI(data.firstName, data.lastName, data.email, data.password);
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookiesLogin("/customer/account/login/");
         login(data.email, data.password);

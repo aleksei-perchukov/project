@@ -21,6 +21,8 @@ public class CheckoutTestsDK extends TestBase {
         baseUrl = mainUrl;
         baseURI = mainUrl;
     }
+    UserTestData data = new UserTestData();
+    APIMethods api = new APIMethods();
 
     @Disabled
     @Tag("PaypalExpress")
@@ -28,8 +30,6 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     void paypalExpressPayTestGuest() {
         configureUrlsDK();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         acceptCookies();
@@ -44,8 +44,6 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     void quickPayTestGuest() {
         configureUrlsDK();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         acceptCookies();
@@ -61,8 +59,6 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     void bankPayTestGuest() {
         configureUrlsDK();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         acceptCookies();
@@ -78,8 +74,6 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     void sparkXpressPayTestGuest() {
         configureUrlsDK();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         acceptCookies();
@@ -94,8 +88,6 @@ public class CheckoutTestsDK extends TestBase {
     @Test
     void viaBillPayTestGuest() {
         configureUrlsDK();
-        UserTestData data = new UserTestData();
-        APIMethods api = new APIMethods();
         api.AddToCart(baseUrl);
         openBrowserWithCookies("/checkout");
         acceptCookies();

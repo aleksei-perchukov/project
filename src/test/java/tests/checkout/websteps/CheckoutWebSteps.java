@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
+import static org.openqa.selenium.Keys.*;
 import static tests.data.StaticData.*;
 
 public class CheckoutWebSteps {
@@ -65,9 +66,11 @@ public class CheckoutWebSteps {
             Selenide.sleep(5000);
         });
         step("Shipping form -> E-mail = " + email, () -> {
-            if ($("#customer-email").isDisplayed()) {
-                $("#customer-email").clear();
-                $("#customer-email").setValue(email);
+            if ($(".input-text").isDisplayed()) {
+                $(".input-text").click();
+                //                $("#customer-email").clear();
+                $(".input-text").sendKeys(BACK_SPACE, email);
+                //             $("#customer-email").setValue(email);
         }
         });
         step("Click on 'Proceed to shipping method' button", () -> {
@@ -201,7 +204,7 @@ public class CheckoutWebSteps {
                 if (Configuration.baseUrl.equals(urlDK)) {
                     $$(".action.primary.checkout").get(2).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlNO)) {
-                    $$(".action.primary.checkout").get(3).click(ClickOptions.usingJavaScript());
+                    $$(".action.primary.checkout").get(3).submit();
                 } else if (Configuration.baseUrl.equals(urlIS)) {
                     $$(".action.primary.checkout").get(2).click(ClickOptions.usingJavaScript());
                 } else if (Configuration.baseUrl.equals(urlDE)) {
