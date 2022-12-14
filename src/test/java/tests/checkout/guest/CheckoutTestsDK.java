@@ -2,9 +2,9 @@ package tests.checkout.guest;
 
 
 import org.junit.jupiter.api.*;
+import tests.TestBase;
 import tests.api.APIMethods;
-import tests.checkout.TestBase;
-import tests.user.UserTestData;
+import tests.data.UserTestData;
 
 import static io.restassured.RestAssured.baseURI;
 import static tests.data.StaticData.*;

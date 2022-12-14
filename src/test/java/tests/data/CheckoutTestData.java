@@ -1,4 +1,4 @@
-package tests.checkout;
+package tests.data;
 
 import com.codeborne.selenide.Configuration;
 

@@ -1,10 +1,10 @@
 package tests.checkout.user;
 
 import org.junit.jupiter.api.*;
+import tests.TestBase;
 import tests.api.APIAdmin;
 import tests.api.APIMethods;
-import tests.checkout.TestBase;
-import tests.user.UserTestData;
+import tests.data.UserTestData;
 
 import static io.restassured.RestAssured.baseURI;
 import static com.codeborne.selenide.Configuration.baseUrl;

@@ -3,9 +3,8 @@ package tests.api;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
 import io.restassured.response.ResponseBodyExtractionOptions;
-import tests.checkout.CheckoutTestData;
+import tests.data.CheckoutTestData;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static tests.data.StaticData.*;
 import static io.restassured.RestAssured.given;
 import static specs.Specs.requestSpecification1;

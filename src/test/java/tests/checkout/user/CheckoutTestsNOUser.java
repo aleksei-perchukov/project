@@ -4,10 +4,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
 import tests.api.APIAdmin;
 import tests.api.APIMethods;
-import tests.checkout.TestBase;
-import tests.user.UserTestData;
+import tests.data.UserTestData;
 
 import static io.restassured.RestAssured.baseURI;
 import static com.codeborne.selenide.Configuration.baseUrl;

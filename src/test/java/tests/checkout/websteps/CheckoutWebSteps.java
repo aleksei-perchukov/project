@@ -4,8 +4,8 @@ import com.codeborne.selenide.ClickOptions;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Step;
-import tests.checkout.CheckoutTestData;
-import tests.user.UserTestData;
+import tests.data.CheckoutTestData;
+import tests.data.UserTestData;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
